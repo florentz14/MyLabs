@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # =============================================================================
-# MyLabs — preparar entorno de desarrollo local
+# MyLabs — set up local development environment
 # -----------------------------------------------------------------------------
-# Ejecutar desde la raíz del repositorio (donde están pyproject.toml y settings.py):
+# Run from the repository root (where pyproject.toml and settings.py live):
 #   chmod +x setup_repo.sh
 #   ./setup_repo.sh
-#   ./setup_repo.sh --lock    # usar requirements-lock.txt en lugar de requirements.txt
+#   ./setup_repo.sh --lock    # use requirements-lock.txt instead of requirements.txt
 #
-# No crea el repositorio Git ni sube a GitHub; para eso sigue el README (clone, push, PAT/SSH).
+# Does not create a Git repo or push to GitHub; see README for clone, push, PAT/SSH.
 # =============================================================================
 set -euo pipefail
 
@@ -16,8 +16,8 @@ for arg in "$@"; do
   case "$arg" in
     --lock) USE_LOCK=1 ;;
     -h|--help)
-      echo "Uso: $0 [--lock]"
-      echo "  --lock   Instalar desde requirements-lock.txt (versiones fijas)."
+      echo "Usage: $0 [--lock]"
+      echo "  --lock   Install from requirements-lock.txt (pinned versions)."
       exit 0
       ;;
   esac
@@ -27,25 +27,25 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 
 if [[ ! -f "$ROOT/pyproject.toml" ]] || [[ ! -f "$ROOT/settings.py" ]]; then
-  echo "Error: ejecuta este script desde la raíz del proyecto MyLabs." >&2
+  echo "Error: run this script from the MyLabs project root." >&2
   exit 1
 fi
 
 PYTHON="${PYTHON:-python3}"
 if ! command -v "$PYTHON" >/dev/null 2>&1; then
-  echo "Error: no se encontró '$PYTHON'. Instala Python 3.10+ o define PYTHON=/ruta/al/python." >&2
+  echo "Error: '$PYTHON' not found. Install Python 3.10+ or set PYTHON=/path/to/python." >&2
   exit 1
 fi
 
 if [[ ! -d .venv ]]; then
-  echo "==> Creando entorno virtual .venv ..."
+  echo "==> Creating virtual environment .venv ..."
   "$PYTHON" -m venv .venv
 fi
 
 # shellcheck source=/dev/null
 source .venv/bin/activate
 
-echo "==> Actualizando pip ..."
+echo "==> Upgrading pip ..."
 python -m pip install --upgrade pip
 
 REQ_FILE="requirements.txt"
@@ -53,26 +53,26 @@ if [[ "$USE_LOCK" -eq 1 ]]; then
   REQ_FILE="requirements-lock.txt"
 fi
 if [[ ! -f "$REQ_FILE" ]]; then
-  echo "Error: no existe $REQ_FILE" >&2
+  echo "Error: $REQ_FILE not found." >&2
   exit 1
 fi
 
-echo "==> Instalando dependencias ($REQ_FILE) ..."
+echo "==> Installing dependencies ($REQ_FILE) ..."
 pip install -r "$REQ_FILE"
 
-echo "==> Instalando el paquete en modo editable (import settings / database) ..."
+echo "==> Installing package in editable mode (import settings / database) ..."
 pip install -e .
 
 if [[ ! -f .env ]] && [[ -f .env.example ]]; then
   cp .env.example .env
-  echo "==> Creado .env desde .env.example (revísalo y ajusta SQLALCHEMY_DATABASE_URL)."
+  echo "==> Created .env from .env.example (review and set SQLALCHEMY_DATABASE_URL)."
 elif [[ ! -f .env ]]; then
-  echo "Aviso: no hay .env ni .env.example; crea .env con SQLALCHEMY_DATABASE_URL (ver README)." >&2
+  echo "Warning: no .env or .env.example; create .env with SQLALCHEMY_DATABASE_URL (see README)." >&2
 fi
 
 echo
 echo "--------------------------------------------------"
-echo "Listo. Activa el venv con:"
+echo "Done. Activate the venv with:"
 echo "  source .venv/bin/activate"
-echo "Prueba: python labs/pandas/load_csv.py"
+echo "Try: python labs/pandas/load_csv.py"
 echo "--------------------------------------------------"
