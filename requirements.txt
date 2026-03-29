@@ -1,0 +1,63 @@
+# Direct dependencies only — pip installs transitive packages automatically.
+# Versions below match a full `pip install -U` pass (PyPI as of project update).
+# PyTorch 2.11 on Linux pulls CUDA 13 wheels (nvidia-*, cuda-toolkit) automatically.
+# Optional full lock after install: pip freeze > requirements-lock.txt
+
+# --- Database & config ---
+python-dotenv==1.2.2
+SQLAlchemy==2.0.48
+alembic==1.18.4
+
+# --- HTTP ---
+requests==2.33.0
+httpx==0.28.1
+
+# --- Data & numerics ---
+numpy==2.4.3
+pandas==3.0.1
+scipy==1.17.1
+scikit-learn==1.8.0
+sympy==1.14.0
+
+# --- ML / AI ---
+torch==2.11.0
+transformers==5.4.0
+sentence-transformers==5.3.0
+openai==2.30.0
+# GPU kernels for PyTorch on Linux (often unnecessary on macOS/CPU — omit line if install fails)
+triton==3.6.0; sys_platform == "linux"
+
+# --- Plotting ---
+matplotlib==3.10.8
+seaborn==0.13.2
+plotly==6.6.0
+
+# --- Spreadsheets & I/O ---
+openpyxl==3.1.5
+xlrd==2.0.2
+xlsxwriter==3.2.9
+
+# --- Jupyter ---
+jupyterlab==4.5.6
+ipykernel==7.2.0
+
+# --- Dev & quality ---
+pytest==9.0.2
+flake8==7.3.0
+mypy==1.19.1
+black==26.3.1
+ipython==9.12.0
+debugpy==1.8.20
+
+# --- CLI & UX ---
+rich==14.3.3
+tqdm==4.67.3
+
+# --- Parsing & config files ---
+beautifulsoup4==4.14.3
+jsonschema==4.26.0
+json5==0.14.0
+PyYAML==6.0.3
+
+# --- Labs (used in code) ---
+tabulate==0.10.0

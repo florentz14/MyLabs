@@ -1,0 +1,20 @@
+from pathlib import Path
+
+# Project root (directory containing this file)
+BASE_PATH = Path(__file__).resolve().parent
+
+# Data directories
+DATA_PATH = BASE_PATH / "data"
+CSV_PATH = DATA_PATH / "csv_files"
+EXPORT_PATH = DATA_PATH / "export_files"
+GEN_PATH = DATA_PATH / "gen_files"
+JSON_PATH = DATA_PATH / "json_files"
+PDF_PATH = DATA_PATH / "pdf_files"
+SQL_PATH = DATA_PATH / "sql_files"
+TEXT_PATH = DATA_PATH / "text_files"
+
+# Lab exercise directories
+LABS_PATH = BASE_PATH / "labs"
+CLASSES_PATH = LABS_PATH / "classes"
+MATPLOTLIB_PATH = LABS_PATH / "matplotlib"
+PANDAS_PATH = LABS_PATH / "pandas"

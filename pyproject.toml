@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mylabs"
+version = "0.1.0"
+description = "Personal Python lab workspace (local package for settings and database modules)"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+py-modules = ["settings", "database"]
