@@ -131,6 +131,7 @@ Then point `sqlalchemy.url` in `alembic.ini` (or `env.py`) at the same URL as `S
 | `requirements.txt` | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.) |
 | `requirements-lock.txt` | Full pinned environment (`pip freeze`) for reproducible installs |
 | `pyproject.toml` | Local package metadata; `pip install -e .` exposes `settings` and `database` |
+| `setup_repo.sh` | Optional bash script: venv, `requirements.txt`, editable install, `.env` from example |
 | `.env` | Local secrets and config — **not committed** (see `.gitignore`) |
 | `.env.example` | Template for required variables (copy to `.env`) |
 
@@ -168,6 +169,41 @@ On Linux/macOS, if needed: `python3 -m pytest -q`
 ## Git
 
 Use a branch such as `lab/<your-name>` for coursework-style workflows, or follow your own branching rules. Git commands are the same on Linux, macOS, and Windows.
+
+### Push this project to GitHub
+
+Target remote: [https://github.com/florentz14/MyLabs](https://github.com/florentz14/MyLabs).
+
+1. **Stage and commit** (from the repo root):
+
+   ```bash
+   git add -A
+   git status
+   git commit -m "Describe your change in a short message"
+   ```
+
+2. **Set the remote** (only once; skip if `git remote -v` already shows `origin`):
+
+   ```bash
+   git remote add origin https://github.com/florentz14/MyLabs.git
+   # or SSH:
+   # git remote add origin git@github.com:florentz14/MyLabs.git
+   ```
+
+3. **Push** the `main` branch:
+
+   ```bash
+   git push -u origin main
+   ```
+
+4. **Authentication** — GitHub does **not** accept your account password for Git over HTTPS. You must use one of:
+
+   - **HTTPS + Personal Access Token (classic):** [Create a token](https://github.com/settings/tokens) with the **`repo`** scope. When Git asks for a password, paste the **token** (username = your GitHub login).
+   - **SSH:** [Add an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) to your GitHub account, then use the remote URL `git@github.com:florentz14/MyLabs.git` and run `ssh -T git@github.com` to verify.
+
+If `git push` fails with `401` or “invalid credentials”, use a PAT or switch to SSH. If you see `Permission denied (publickey)`, your SSH key is missing or not loaded on GitHub.
+
+After the first successful push, the repository page will show your code instead of an empty repo.
 
 ---
 
@@ -211,7 +247,7 @@ ZIP downloads **do not** include Git history; use **clone** if you plan to contr
 ## Use this project (quick path)
 
 1. **Obtain** the code: [clone](#clone-with-git-recommended) or [download ZIP](#download-as-a-zip-no-git-required).
-2. **Follow [Setup](#setup)** above: create and activate `.venv`, install with `requirements.txt` or `requirements-lock.txt`, run **`pip install -e .`**, copy `.env.example` to `.env`, set `SQLALCHEMY_DATABASE_URL`.
+2. **Follow [Setup](#setup)** above: create and activate `.venv`, install with `requirements.txt` or `requirements-lock.txt`, run **`pip install -e .`**, copy `.env.example` to `.env`, set `SQLALCHEMY_DATABASE_URL`. On Linux/macOS you can run **`./setup_repo.sh`** from the repo root to automate venv + installs + `pip install -e .` (+ `.env` from example).
 3. **Run** what you need: e.g. [Running lab scripts](#running-lab-scripts), or import `database` / `settings` from the project root (or with `PYTHONPATH` set to the repo root if you run from elsewhere).
 
 If anything imports `database.py`, **`.env` must exist** with a valid `SQLALCHEMY_DATABASE_URL`.
