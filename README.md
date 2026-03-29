@@ -98,10 +98,10 @@ Create `.env` at the project root from the example file:
 
 Then edit `.env` and ensure **`SQLALCHEMY_DATABASE_URL`** is set — it is **required**. The app loads `.env` from the project directory (next to `database.py`), not from the shell’s current working directory.
 
-Example for the default SQLite file under `data/` (same value on every OS):
+Example for the school SQLite file (same value on every OS). Create or refresh the file with **`python labs/sql/init_school_db.py`** before using SQLAlchemy; the path matches **`settings.SCHOOL_DB_PATH`** (`data/sql_files/school.db`):
 
 ```bash
-SQLALCHEMY_DATABASE_URL=sqlite:///./data/students.db
+SQLALCHEMY_DATABASE_URL=sqlite:///./data/sql_files/school.db
 ```
 
 Relative SQLite paths are resolved against the project root, so the database file stays in the right place even if you run scripts from another directory.
