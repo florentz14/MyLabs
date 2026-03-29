@@ -140,7 +140,7 @@ Then point `sqlalchemy.url` in `alembic.ini` (or `env.py`) at the same URL as `S
 | `settings.py` | Project `BASE_PATH` and subpaths under `data/` and `labs/` |
 | `data/` | CSV, exports, JSON, PDFs, text files, SQL snippets, etc. (see `settings.py`) |
 | `data/text_files/` | Sample `.txt` files for `labs/files/` (`settings.FILES_PATH` / `TEXT_PATH`) |
-| `data/sql_files/` | School demo SQLite: `school_schema.sql`, `school_seed.sql`; **`school.db`** is built by `labs/sql/init_school_db.py` (`settings.SCHOOL_DB_PATH`) |
+| `data/sql_files/` | School demo SQLite: versioned files are `school_schema.sql` and `school_seed.sql`. **`school.db` is not committed** (`*.db` is in `.gitignore`); create it locally with `python labs/sql/init_school_db.py` → `settings.SCHOOL_DB_PATH` |
 | `labs/` | Lab code: `classes/`, `files/`, `pandas/`, `sql/`, etc. |
 | `labs/files/` | Text I/O exercises (read/write, append, upsert, folders, replace file) |
 | `labs/pandas/` | Pandas exercises (e.g. load CSV via `settings.CSV_PATH`) |
