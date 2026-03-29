@@ -138,8 +138,11 @@ Then point `sqlalchemy.url` in `alembic.ini` (or `env.py`) at the same URL as `S
 |------|---------|
 | `database.py` | SQLAlchemy engine, session, `Base`, `get_db()` |
 | `settings.py` | Project `BASE_PATH` and subpaths under `data/` and `labs/` |
-| `data/` | CSV, exports, JSON, PDFs, SQL snippets, etc. (see `settings.py`) |
-| `labs/` | Lab code (e.g. `classes/`, scripts) |
+| `data/` | CSV, exports, JSON, PDFs, text files, SQL snippets, etc. (see `settings.py`) |
+| `data/text_files/` | Sample `.txt` files for `labs/files/` (`settings.FILES_PATH` / `TEXT_PATH`) |
+| `labs/` | Lab code: `classes/`, `files/`, `pandas/`, etc. |
+| `labs/files/` | Text I/O exercises (read/write, append, upsert, folders, replace file) |
+| `labs/pandas/` | Pandas exercises (e.g. load CSV via `settings.CSV_PATH`) |
 | `requirements.txt` | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.) |
 | `requirements-lock.txt` | Full pinned environment (`pip freeze`) for reproducible installs |
 | `pyproject.toml` | Local package metadata; `pip install -e .` exposes `settings` and `database` |
@@ -152,18 +155,34 @@ Then point `sqlalchemy.url` in `alembic.ini` (or `env.py`) at the same URL as `S
 
 ## Running lab scripts
 
-From the repository root, with the venv activated:
+From the repository root, with the venv activated and **`pip install -e .`** run once so `import settings` works.
 
 | OS | Typical command |
 |----|-----------------|
-| **Linux** / **macOS** | `python3 labs/main.py` or `python labs/main.py` |
-| **Windows** | `python labs\main.py` or `py labs\main.py` |
+| **Linux** / **macOS** | `python3 labs/files/read_test.py` or `python labs/pandas/read_people.py` |
+| **Windows** | `python labs\files\read_test.py` or `py labs\pandas\read_people.py` |
 
-Forward slashes (`labs/main.py`) also work on Windows in current Python versions.
+Forward slashes work on Windows in current Python versions (`labs/files/read_test.py`).
 
-Example (pandas + `settings.CSV_PATH`): `python labs/pandas/load_csv.py` (requires `pip install -e .`).
+### `labs/files/` (text files under `data/text_files/`)
 
-Adjust paths if you add other entry points.
+Scripts use **`settings.FILES_PATH`**. Naming follows **action + topic** (e.g. `read_test`, `write_student`, `read_fruits`) so similar exercises stay easy to tell apart.
+
+| Script | Role |
+|--------|------|
+| `read_test.py` / `write_test.py` | Read/write `test.txt` |
+| `read_fruits.py` / `write_fruits.py` | Read/write `test2.txt` (line list) |
+| `read_student.py` / `write_student.py` | Read/write `student.txt` (CSV-style rows) |
+| `append_student.py` | Append rows to `student.txt` |
+| `update_student.py` | Upsert a row in `student.txt` by `id` |
+| `exist_folder.py` | Ensure a folder exists (`mkdir` with parents) |
+| `replace_file.py` | Ensure folder, replace or create a file (e.g. avatar path) |
+
+### `labs/pandas/`
+
+| Script | Role |
+|--------|------|
+| `read_people.py` | Load `people.csv` from **`settings.CSV_PATH`** into a DataFrame and print it |
 
 ---
 

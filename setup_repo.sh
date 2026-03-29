@@ -75,5 +75,5 @@ echo
 echo "--------------------------------------------------"
 echo "Done. Activate the venv with:"
 echo "  source .venv/bin/activate"
-echo "Try: python labs/pandas/load_csv.py"
+echo "Try: python labs/pandas/read_people.py"
 echo "--------------------------------------------------"

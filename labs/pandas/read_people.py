@@ -1,7 +1,7 @@
-# File: load_csv.py
+# File: read_people.py
 # Date: 2026-03-28
 # Author: Florentino
-# Description: Load people.csv from data/csv_files into a pandas DataFrame.
+# Description: Read people.csv from data/csv_files into a pandas DataFrame.
 
 from __future__ import annotations
 

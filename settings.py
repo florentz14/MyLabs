@@ -12,6 +12,8 @@ JSON_PATH = DATA_PATH / "json_files"
 PDF_PATH = DATA_PATH / "pdf_files"
 SQL_PATH = DATA_PATH / "sql_files"
 TEXT_PATH = DATA_PATH / "text_files"
+# Lab file examples (read/write in labs/files/)
+FILES_PATH = TEXT_PATH
 
 # Lab exercise directories
 LABS_PATH = BASE_PATH / "labs"
