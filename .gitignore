@@ -31,8 +31,10 @@ htmlcov/
 # Jupyter
 .ipynb_checkpoints/
 
-# Local SQLite databases (drop this line if you commit a seed .db)
+# SQLite and database files (regenerate with labs/sql/init_school_db.py, etc.)
 *.db
+*.db-shm
+*.db-wal
 
 # OS / editors
 .DS_Store

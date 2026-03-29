@@ -140,7 +140,8 @@ Then point `sqlalchemy.url` in `alembic.ini` (or `env.py`) at the same URL as `S
 | `settings.py` | Project `BASE_PATH` and subpaths under `data/` and `labs/` |
 | `data/` | CSV, exports, JSON, PDFs, text files, SQL snippets, etc. (see `settings.py`) |
 | `data/text_files/` | Sample `.txt` files for `labs/files/` (`settings.FILES_PATH` / `TEXT_PATH`) |
-| `labs/` | Lab code: `classes/`, `files/`, `pandas/`, etc. |
+| `data/sql_files/` | School demo SQLite: `school_schema.sql`, `school_seed.sql`; **`school.db`** is built by `labs/sql/init_school_db.py` (`settings.SCHOOL_DB_PATH`) |
+| `labs/` | Lab code: `classes/`, `files/`, `pandas/`, `sql/`, etc. |
 | `labs/files/` | Text I/O exercises (read/write, append, upsert, folders, replace file) |
 | `labs/pandas/` | Pandas exercises (e.g. load CSV via `settings.CSV_PATH`) |
 | `requirements.txt` | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.) |
@@ -183,6 +184,12 @@ Scripts use **`settings.FILES_PATH`**. Naming follows **action + topic** (e.g. `
 | Script | Role |
 |--------|------|
 | `read_people.py` | Load `people.csv` from **`settings.CSV_PATH`** into a DataFrame and print it |
+
+### `labs/sql/`
+
+| Script | Role |
+|--------|------|
+| `init_school_db.py` | Create or overwrite **`data/sql_files/school.db`** from `school_schema.sql` + `school_seed.sql` (departments, rooms, teachers, students, guardians, courses, prerequisites, offerings, enrollments) |
 
 ---
 
