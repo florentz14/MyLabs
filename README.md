@@ -74,6 +74,18 @@ On Linux/macOS, if `pip` is missing, use `python3 -m pip install …`.
 pip freeze > requirements-lock.txt
 ```
 
+#### Optional setup scripts
+
+| OS / environment | Command |
+|------------------|---------|
+| **Linux** / **macOS** | `./setup_repo.sh` or `./setup_repo.sh --lock` (run `chmod +x setup_repo.sh` once) |
+| **Windows — PowerShell** | `.\setup_repo.ps1` or `.\setup_repo.ps1 -Lock` (if `Activate.ps1` is blocked, see [Setup §2](#2-activate-the-virtual-environment)) |
+| **Windows — Git Bash** | Same as Linux: `./setup_repo.sh` |
+
+These scripts create `.venv`, install dependencies, run **`pip install -e .`**, and copy `.env.example` to `.env` when missing.
+
+Plain **cmd.exe** does not run `.sh` or `.ps1` by default; use **PowerShell**, **Git Bash**, or **WSL**, or follow the manual `pip` commands in the table above.
+
 ### 4. Configure the environment
 
 Create `.env` at the project root from the example file:
@@ -131,7 +143,8 @@ Then point `sqlalchemy.url` in `alembic.ini` (or `env.py`) at the same URL as `S
 | `requirements.txt` | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.) |
 | `requirements-lock.txt` | Full pinned environment (`pip freeze`) for reproducible installs |
 | `pyproject.toml` | Local package metadata; `pip install -e .` exposes `settings` and `database` |
-| `setup_repo.sh` | Optional bash script: venv, `requirements.txt`, editable install, `.env` from example |
+| `setup_repo.sh` | Optional setup (Linux/macOS/Git Bash): venv, deps, editable install, `.env` from example |
+| `setup_repo.ps1` | Same automation for **Windows PowerShell** |
 | `.env` | Local secrets and config — **not committed** (see `.gitignore`) |
 | `.env.example` | Template for required variables (copy to `.env`) |
 
@@ -247,7 +260,7 @@ ZIP downloads **do not** include Git history; use **clone** if you plan to contr
 ## Use this project (quick path)
 
 1. **Obtain** the code: [clone](#clone-with-git-recommended) or [download ZIP](#download-as-a-zip-no-git-required).
-2. **Follow [Setup](#setup)** above: create and activate `.venv`, install with `requirements.txt` or `requirements-lock.txt`, run **`pip install -e .`**, copy `.env.example` to `.env`, set `SQLALCHEMY_DATABASE_URL`. On Linux/macOS you can run **`./setup_repo.sh`** from the repo root to automate venv + installs + `pip install -e .` (+ `.env` from example).
+2. **Follow [Setup](#setup)** above: create and activate `.venv`, install with `requirements.txt` or `requirements-lock.txt`, run **`pip install -e .`**, copy `.env.example` to `.env`, set `SQLALCHEMY_DATABASE_URL`. Or use the **[optional setup scripts](#optional-setup-scripts)** (`./setup_repo.sh` on Linux/macOS/Git Bash, **`.\setup_repo.ps1`** on Windows PowerShell).
 3. **Run** what you need: e.g. [Running lab scripts](#running-lab-scripts), or import `database` / `settings` from the project root (or with `PYTHONPATH` set to the repo root if you run from elsewhere).
 
 If anything imports `database.py`, **`.env` must exist** with a valid `SQLALCHEMY_DATABASE_URL`.

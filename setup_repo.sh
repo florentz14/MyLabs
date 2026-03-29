@@ -8,6 +8,7 @@
 #   ./setup_repo.sh --lock    # use requirements-lock.txt instead of requirements.txt
 #
 # Does not create a Git repo or push to GitHub; see README for clone, push, PAT/SSH.
+# On Windows (PowerShell), use setup_repo.ps1 instead.
 # =============================================================================
 set -euo pipefail
 
