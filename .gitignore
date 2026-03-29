@@ -35,6 +35,15 @@ htmlcov/
 *.db
 *.db-shm
 *.db-wal
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+**/data/sql_files/*.db
+**/data/sql_files/*.sqlite
+**/data/sql_files/*.sqlite3
+**/data/sql_files/*.db-journal
+
 
 # OS / editors
 .DS_Store

@@ -18,6 +18,7 @@ SEED_SQL = SQL_PATH / "school_seed.sql"
 
 def _run_script(conn: sqlite3.Connection, path: str) -> None:
     with open(path, encoding="utf-8") as f:
+        # Execute many statements from one file string
         conn.executescript(f.read())
 
 
@@ -26,10 +27,12 @@ def main() -> None:
         raise FileNotFoundError(f"Missing {SCHEMA_SQL.name} or {SEED_SQL.name} under {SQL_PATH}")
 
     if DB_FILE.is_file():
+        # Rebuild from scratch each run
         DB_FILE.unlink()
 
     conn = sqlite3.connect(DB_FILE)
     try:
+        # SQLite needs this per connection for FK enforcement
         conn.execute("PRAGMA foreign_keys = ON")
         _run_script(conn, str(SCHEMA_SQL))
         _run_script(conn, str(SEED_SQL))

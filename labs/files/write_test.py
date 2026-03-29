@@ -7,15 +7,16 @@
 
 from __future__ import annotations
 
-import os
 from settings import FILES_PATH
 
 
 def main() -> None:
+    # File must already exist (create manually or via another script)
     file_path = FILES_PATH / "test.txt"
     if not file_path.is_file():
         raise FileNotFoundError(f"File not found: {file_path}")
 
+    # Truncate and replace whole contents
     with open(file_path, "w") as file:
         file.write("Hello, World!\n")
         file.write("This is a test file.\n")

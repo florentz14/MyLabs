@@ -17,6 +17,7 @@ TARGET_FOLDER = FILES_PATH / "avatars"
 
 def ensure_folder(path: Path) -> None:
     """Create the folder and any missing parents; no-op if it already exists."""
+    # Like mkdir -p; no error if path already exists
     path.mkdir(parents=True, exist_ok=True)
 
 
@@ -26,6 +27,7 @@ def main() -> None:
     else:
         print(f"Folder missing; creating: {TARGET_FOLDER}")
 
+    # Ensure directory exists before any file ops under it
     ensure_folder(TARGET_FOLDER)
     print(f"Ready: {TARGET_FOLDER.resolve()}")
 

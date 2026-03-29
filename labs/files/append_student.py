@@ -21,6 +21,7 @@ def main() -> None:
     if not file_path.is_file():
         raise FileNotFoundError(f"File not found: {file_path}")
 
+    # Append after existing content; cursor starts at end of file
     with open(file_path, "a", encoding="utf-8") as file:
         file.write(NEW_RECORD_LINE)
         file.write(NEW_RECORD_LINE_2)

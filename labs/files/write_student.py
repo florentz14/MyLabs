@@ -13,8 +13,10 @@ STUDENT_FILE = "student.txt"
 
 
 def main() -> None:
+    # CSV header plus data rows
     file_path = FILES_PATH / STUDENT_FILE
 
+    # Overwrite existing file completely
     with open(file_path, "w", encoding="utf-8") as file:
         file.write("id,name,email,year,course\n")
         file.write("1,Alice Johnson,alice.johnson@example.com,2025,Python Lab\n")

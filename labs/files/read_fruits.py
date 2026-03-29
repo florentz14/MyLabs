@@ -13,10 +13,12 @@ FRUIT_LIST_FILE = "test2.txt"
 
 
 def main() -> None:
+    # One fruit per line; pair with write_fruits.py
     file_path = FILES_PATH / FRUIT_LIST_FILE
     if not file_path.is_file():
         raise FileNotFoundError(f"File not found: {file_path}")
 
+    # Slurp full text (includes newlines)
     with open(file_path, "r", encoding="utf-8") as file:
         content = file.read()
         print(content)

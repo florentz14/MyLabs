@@ -11,7 +11,9 @@ from settings import FILES_PATH
 
 
 def main() -> None:
+    # Plain list; read_fruits.py reads this file back
     file_path = FILES_PATH / "test2.txt"
+    # Items have no trailing newlines yet
     line_list = [
         "apple",
         "banana",

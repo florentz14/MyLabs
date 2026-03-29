@@ -11,10 +11,12 @@ from settings import FILES_PATH
 
 
 def main() -> None:
+    # Lives under data/text_files/
     file_path = FILES_PATH / "test.txt"
     if not file_path.is_file():
         raise FileNotFoundError(f"File not found: {file_path}")
 
+    # Read entire file into memory
     with open(file_path, "r", encoding="utf-8") as file:
         content = file.read()
         print(content)

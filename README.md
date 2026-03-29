@@ -144,6 +144,7 @@ Then point `sqlalchemy.url` in `alembic.ini` (or `env.py`) at the same URL as `S
 | `labs/` | Lab code: `classes/`, `files/`, `pandas/`, `sql/`, etc. |
 | `labs/files/` | Text I/O exercises (read/write, append, upsert, folders, replace file) |
 | `labs/pandas/` | Pandas exercises (e.g. load CSV via `settings.CSV_PATH`) |
+| `labs/matplotlib/` | Small plots (e.g. `plot_people.py` from `people.csv`) |
 | `requirements.txt` | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.) |
 | `requirements-lock.txt` | Full pinned environment (`pip freeze`) for reproducible installs |
 | `pyproject.toml` | Local package metadata; `pip install -e .` exposes `settings` and `database` |
@@ -184,6 +185,12 @@ Scripts use **`settings.FILES_PATH`**. Naming follows **action + topic** (e.g. `
 | Script | Role |
 |--------|------|
 | `read_people.py` | Load `people.csv` from **`settings.CSV_PATH`** into a DataFrame and print it |
+
+### `labs/matplotlib/`
+
+| Script | Role |
+|--------|------|
+| `plot_people.py` | Bar chart of ages from **`people.csv`** (requires a display backend for `plt.show()`) |
 
 ### `labs/sql/`
 

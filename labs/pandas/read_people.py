@@ -6,15 +6,21 @@
 from __future__ import annotations
 
 import pandas as pd
+
+# Import the CSV_PATH from the settings module
 from settings import CSV_PATH
 
 
 def main() -> None:
+    # Path comes from the CSV_PATH import
     csv_path = CSV_PATH / "people.csv"
     if not csv_path.is_file():
         raise FileNotFoundError(f"CSV not found: {csv_path}")
 
+    # First row is treated as column names
     df = pd.read_csv(csv_path)
+
+    # Print the DataFrame
     print(df)
     print()
 

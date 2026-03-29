@@ -20,6 +20,7 @@ NEW_CONTENT = "avatar_id=user_42\nupdated=2026-03-29\nformat=png\n"
 
 
 def ensure_folder(path: Path) -> None:
+    # Create intermediate directories in one call
     path.mkdir(parents=True, exist_ok=True)
 
 
@@ -29,6 +30,7 @@ def write_replacing(path: Path, text: str, encoding: str = "utf-8") -> None:
     Ensures a true replace (useful if another process watches the path).
     """
     if path.is_file():
+        # Remove old inode so watchers see a true replace
         path.unlink()
     path.write_text(text, encoding=encoding)
 

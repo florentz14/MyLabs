@@ -23,6 +23,7 @@ def _is_header_line(line: str) -> bool:
 def _row_id(line: str) -> str | None:
     if not line.strip() or _is_header_line(line):
         return None
+    # Only the first CSV field is the row id
     return line.split(",", 1)[0].strip()
 
 
@@ -33,11 +34,13 @@ def upsert_row_by_id(lines: list[str], target_id: str, new_row: str) -> tuple[li
     replaced = False
     for line in lines:
         if _row_id(line) == tid:
+            # Replace existing row for this id
             out.append(new_row)
             replaced = True
         else:
             out.append(line)
     if not replaced:
+        # New id: add line at end of file
         out.append(new_row)
     return out, replaced
 
@@ -47,8 +50,10 @@ def main() -> None:
     if not file_path.is_file():
         raise FileNotFoundError(f"File not found: {file_path}")
 
+    # Lines without line-break characters; trailing blank line from EOF is dropped
     lines = file_path.read_text(encoding="utf-8").splitlines()
     new_lines, updated = upsert_row_by_id(lines, TARGET_ID, NEW_ROW)
+    # POSIX text files usually end with a newline
     file_path.write_text("\n".join(new_lines) + "\n", encoding="utf-8")
 
     action = "Updated" if updated else "Appended"
