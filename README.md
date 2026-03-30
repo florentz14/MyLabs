@@ -1,5 +1,20 @@
 # MyLabs — Python lab workspace
 
+## Contents
+
+- **[Overview](#overview)** — what this repo contains; `requirements.txt` vs lockfile  
+- **[Prerequisites](#prerequisites)** — Python, Git, terminal  
+- **[Setup](#setup)** — **virtual environment** (create, **activate on Linux/macOS/Windows/WSL/fish…**), **`python -m pip install`**, editable install, optional setup scripts, **`.env`**  
+- **[Database (`database.py`)](#database-databasepy)** — SQLAlchemy engine and sessions  
+- **[Alembic](#alembic)** — migrations (initialize when needed)  
+- **[Repository layout](#repository-layout)** — main folders and files  
+- **[Running lab scripts](#running-lab-scripts)** — `labs/files`, `pandas`, `matplotlib`, `sql/`  
+- **[Tests](#tests)**  
+- **[Git](#git)** — branch tips, push to GitHub  
+- **[Get the project (clone or download)](#get-the-project-clone-or-download)**  
+- **[Use this project (quick path)](#use-this-project-quick-path)**  
+- **[Contributing](#contributing)**
+
 ## Overview
 
 Personal Python lab materials: exercises under `labs/`, shared data under `data/`, and a small **SQLAlchemy** database layer (`database.py`) configured via **environment variables**. **Alembic** is included for future schema migrations.
@@ -11,8 +26,8 @@ Dependencies are listed in two ways:
 
 ## Prerequisites
 
-- Python 3.10 or newer (3.13 is used in this project)
-- Git
+- **Python** `3.10` or newer (`3.13` is used in this project)
+- **Git**
 - A terminal (Terminal on macOS, your distro’s terminal on Linux, **PowerShell** or **Command Prompt** on Windows)
 
 Commands below assume you **open a terminal**, **clone or enter the project folder**, and run steps from the **repository root** (`MyLabs/`).
@@ -21,57 +36,90 @@ Commands below assume you **open a terminal**, **clone or enter the project fold
 
 ## Setup
 
+Typical order: **create venv → activate → upgrade pip → install dependencies → `python -m pip install -e .` → copy `.env.example` to `.env`**. All `pip` / `python` commands below assume the **repository root** as the current directory unless noted.
+
 ### 1. Create a virtual environment
 
-The command is almost the same; use `python3` on Linux/macOS if `python` still points to Python 2.
+This project keeps the environment in **`.venv/`** at the repo root (ignored by Git). Use `python3` on Linux/macOS if `python` still points to Python 2.
 
 | OS | Command |
 |----|---------|
 | **Linux** | `python3 -m venv .venv` |
 | **macOS** | `python3 -m venv .venv` (or `python -m venv .venv` if `python` is 3.x) |
-| **Windows (PowerShell or CMD)** | `py -3 -m venv .venv` or `python -m venv .venv` |
+| **Windows — PowerShell or CMD** | `py -3 -m venv .venv` or `python -m venv .venv` |
+| **WSL** (Windows Subsystem for Linux) | Same as Linux: `python3 -m venv .venv` |
 
 ### 2. Activate the virtual environment
 
-You must activate **once per terminal session** before `pip` or `python` use `.venv`.
+Activate **once per terminal session**. Until you do, **`python -m pip install`** may target your **system** Python instead of **`.venv`**.
 
 | OS / shell | Command |
 |------------|---------|
-| **Linux** (bash, zsh, …) | `source .venv/bin/activate` |
-| **macOS** (bash, zsh, …) | `source .venv/bin/activate` |
+| **Linux** — bash, zsh, … | `source .venv/bin/activate` |
+| **Linux / macOS** — **fish** | `source .venv/bin/activate.fish` |
+| **Linux / macOS** — **csh/tcsh** | `source .venv/bin/activate.csh` |
+| **macOS** — bash, zsh, … | `source .venv/bin/activate` |
+| **WSL** | Same as Linux: `source .venv/bin/activate` |
 | **Windows — Command Prompt** | `.venv\Scripts\activate.bat` |
-| **Windows — PowerShell** | `.venv\Scripts\Activate.ps1` |
+| **Windows — PowerShell** | `.\.venv\Scripts\Activate.ps1` |
+| **Windows — Git Bash** | `source .venv/Scripts/activate` (if that fails, open **CMD** or **PowerShell** and use the rows above) |
 
-**PowerShell note:** If execution of scripts is disabled, run once (as Administrator if needed):
+**PowerShell note:** If script execution is disabled, run once (as Administrator only if your policy requires it):
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-After activation, your prompt usually shows `(.venv)`.
+**Check that activation worked** (optional):
+
+| OS | Command | Expected |
+|----|---------|----------|
+| **Linux / macOS / WSL** | `which python` | Path ending in `.venv/bin/python` |
+| **Windows — CMD** | `where python` | `.venv\Scripts\python.exe` first |
+| **Windows — PowerShell** | `Get-Command python` | Under `.venv\Scripts\` |
+
+After activation, your prompt usually shows **`(.venv)`**.
 
 **Deactivate** (any OS): `deactivate`
 
 ### 3. Install dependencies
 
-With the venv **activated**, choose one approach:
+With the venv **activated**, always prefer **`python -m pip`** so the same interpreter runs `pip`:
+
+```bash
+python -m pip install --upgrade pip
+```
+
+Then install this project’s dependencies (from the repo root).
 
 | Goal | Command |
 |------|---------|
-| **Normal install** (direct deps; pip resolves versions) | `pip install -r requirements.txt` |
-| **Reproducible install** (exact versions from the lockfile) | `pip install -r requirements-lock.txt` |
-| **Project as editable package** (so `import settings` / `import database` work from any folder) | `pip install -e .` |
+| **Normal install** (direct deps in `requirements.txt`; pip resolves versions) | `python -m pip install -r requirements.txt` |
+| **Reproducible install** (exact versions from `requirements-lock.txt`) | `python -m pip install -r requirements-lock.txt` |
+| **Editable install** (so `import settings` / `import database` work without `PYTHONPATH`) | `python -m pip install -e .` |
 
-Run **`pip install -e .`** once from the repo root after installing dependencies. That registers the top-level modules `settings` and `database` (see `pyproject.toml`) without duplicating path logic in each script.
+Run **`python -m pip install -e .`** once after the requirements install. That registers the top-level packages from `pyproject.toml` so lab scripts can import `settings` and `database`.
 
-On Linux/macOS, if `pip` is missing, use `python3 -m pip install …`.
+**Install, upgrade, or remove a single package** (examples):
+
+| Action | Command |
+|--------|---------|
+| Install one package | `python -m pip install requests` |
+| Pin a version | `python -m pip install "pandas>=2.0,<3"` |
+| Upgrade a package | `python -m pip install -U httpx` |
+| Uninstall | `python -m pip uninstall httpx` |
+| Show what is installed | `python -m pip list` or `python -m pip show pandas` |
+
+If you add a dependency for the whole project, edit **`requirements.txt`**, reinstall, and regenerate **`requirements-lock.txt`** when you use the lockfile workflow (`python -m pip freeze > requirements-lock.txt`).
+
+On Linux/macOS, if the `pip` command is missing, **`python3 -m pip`** is the reliable form.
 
 **PyTorch / GPU (Linux):** This stack pins **PyTorch 2.11** with **CUDA 13** wheels on Linux. You need a recent **NVIDIA driver** compatible with CUDA 13. Installs can be large. On macOS or CPU-only machines, you may need a different `torch` build (see [PyTorch get started](https://pytorch.org/get-started/locally/)).
 
 **Refresh the lockfile** after you change packages (so CI and others stay in sync):
 
 ```bash
-pip freeze > requirements-lock.txt
+python -m pip freeze > requirements-lock.txt
 ```
 
 #### Optional setup scripts
@@ -82,7 +130,7 @@ pip freeze > requirements-lock.txt
 | **Windows — PowerShell** | `.\setup_repo.ps1` or `.\setup_repo.ps1 -Lock` (if `Activate.ps1` is blocked, see [Setup §2](#2-activate-the-virtual-environment)) |
 | **Windows — Git Bash** | Same as Linux: `./setup_repo.sh` |
 
-These scripts create `.venv`, install dependencies, run **`pip install -e .`**, and copy `.env.example` to `.env` when missing.
+These scripts create `.venv`, install dependencies, run **`python -m pip install -e .`**, and copy `.env.example` to `.env` when missing.
 
 Plain **cmd.exe** does not run `.sh` or `.ps1` by default; use **PowerShell**, **Git Bash**, or **WSL**, or follow the manual `pip` commands in the table above.
 
@@ -96,9 +144,9 @@ Create `.env` at the project root from the example file:
 | **Windows — CMD** | `copy .env.example .env` |
 | **Windows — PowerShell** | `Copy-Item .env.example .env` |
 
-Then edit `.env` and ensure **`SQLALCHEMY_DATABASE_URL`** is set — it is **required**. The app loads `.env` from the project directory (next to `database.py`), not from the shell’s current working directory.
+Then edit **`.env`** and ensure **`SQLALCHEMY_DATABASE_URL`** is set — it is **required**. The app loads **`.env`** from the project directory (next to **`database.py`**), not from the shell’s current working directory.
 
-Example for the school SQLite file (same value on every OS). Create or refresh the file with **`python labs/sql/init_school_db.py`** before using SQLAlchemy; the path matches **`settings.SCHOOL_DB_PATH`** (`data/sql_files/school.db`):
+Example for the school SQLite file (same value on every OS). Create or refresh the file with **`python labs/sql/init_school_db.py`** before using SQLAlchemy; the path matches **`settings.SCHOOL_DB_PATH`** (**`data/sql_files/school.db`**):
 
 ```bash
 SQLALCHEMY_DATABASE_URL=sqlite:///./data/sql_files/school.db
@@ -114,9 +162,9 @@ Optional keys (see `.env.example` for the full list) include `SQLALCHEMY_ECHO`, 
 
 - **`engine`** / **`SessionLocal`** — SQLAlchemy engine and session factory.
 - **`Base`** — declarative base for ORM models.
-- **`get_db()`** — generator suitable for dependency injection (for example FastAPI): yields a session and closes it in a `finally` block.
+- **`get_db()`** — generator suitable for dependency injection (for example **`FastAPI`**): yields a session and closes it in a **`finally`** block.
 
-Import only after `.env` exists with `SQLALCHEMY_DATABASE_URL` set.
+Import only after **`.env`** exists with **`SQLALCHEMY_DATABASE_URL`** set.
 
 ---
 
@@ -128,7 +176,7 @@ Alembic is installed with the project. There is no `alembic/` folder in the repo
 alembic init alembic
 ```
 
-Then point `sqlalchemy.url` in `alembic.ini` (or `env.py`) at the same URL as `SQLALCHEMY_DATABASE_URL`, or import it from your settings module.
+Then point **`sqlalchemy.url`** in **`alembic.ini`** (or **`env.py`**) at the same URL as **`SQLALCHEMY_DATABASE_URL`**, or import it from your **`settings`** module.
 
 ---
 
@@ -146,8 +194,8 @@ Then point `sqlalchemy.url` in `alembic.ini` (or `env.py`) at the same URL as `S
 | `labs/pandas/` | Pandas exercises (e.g. load CSV via `settings.CSV_PATH`) |
 | `labs/matplotlib/` | Small plots (e.g. `plot_people.py` from `people.csv`) |
 | `requirements.txt` | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.) |
-| `requirements-lock.txt` | Full pinned environment (`pip freeze`) for reproducible installs |
-| `pyproject.toml` | Local package metadata; `pip install -e .` exposes `settings` and `database` |
+| `requirements-lock.txt` | Full pinned environment (`python -m pip freeze`) for reproducible installs |
+| `pyproject.toml` | Local package metadata; `python -m pip install -e .` exposes `settings` and `database` |
 | `setup_repo.sh` | Optional setup (Linux/macOS/Git Bash): venv, deps, editable install, `.env` from example |
 | `setup_repo.ps1` | Same automation for **Windows PowerShell** |
 | `.env` | Local secrets and config — **not committed** (see `.gitignore`) |
@@ -157,7 +205,7 @@ Then point `sqlalchemy.url` in `alembic.ini` (or `env.py`) at the same URL as `S
 
 ## Running lab scripts
 
-From the repository root, with the venv activated and **`pip install -e .`** run once so `import settings` works.
+From the repository root, with the venv activated and **`python -m pip install -e .`** run once so `import settings` works.
 
 | OS | Typical command |
 |----|-----------------|
@@ -245,9 +293,9 @@ Target remote: [https://github.com/florentz14/MyLabs](https://github.com/florent
 4. **Authentication** — GitHub does **not** accept your account password for Git over HTTPS. You must use one of:
 
    - **HTTPS + Personal Access Token (classic):** [Create a token](https://github.com/settings/tokens) with the **`repo`** scope. When Git asks for a password, paste the **token** (username = your GitHub login).
-   - **SSH:** [Add an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) to your GitHub account, then use the remote URL `git@github.com:florentz14/MyLabs.git` and run `ssh -T git@github.com` to verify.
+   - **SSH:** [Add an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) to your GitHub account, then use the remote URL `git@github.com:florentz14/MyLabs.git` and run **`ssh -T git@github.com`** to verify.
 
-If `git push` fails with `401` or “invalid credentials”, use a PAT or switch to SSH. If you see `Permission denied (publickey)`, your SSH key is missing or not loaded on GitHub.
+If **`git push`** fails with **`401`** or “invalid credentials”, use a PAT or switch to SSH. If you see **`Permission denied (publickey)`**, your SSH key is missing or not loaded on GitHub.
 
 After the first successful push, the repository page will show your code instead of an empty repo.
 
@@ -283,8 +331,8 @@ git pull
 1. Open the repository page in the browser (GitHub, GitLab, …).
 2. Use **Code** → **Download ZIP** (or the site’s equivalent).
 3. Extract the archive:
-   - **Linux** / **macOS**: unzip in the terminal or with the file manager; then `cd` into the extracted folder (often `MyLabs-main` if downloaded from GitHub — you may rename it to `MyLabs`).
-   - **Windows**: right-click the ZIP → **Extract All…**, then open **PowerShell** or **CMD** and `cd` into that folder.
+   - **Linux** / **macOS**: unzip in the terminal or with the file manager; then **`cd`** into the extracted folder (often **`MyLabs-main`** if downloaded from GitHub — you may rename it to **`MyLabs`**).
+   - **Windows**: right-click the ZIP → **Extract All…**, then open **PowerShell** or **CMD** and **`cd`** into that folder.
 
 ZIP downloads **do not** include Git history; use **clone** if you plan to contribute with branches and pull requests.
 
@@ -293,10 +341,10 @@ ZIP downloads **do not** include Git history; use **clone** if you plan to contr
 ## Use this project (quick path)
 
 1. **Obtain** the code: [clone](#clone-with-git-recommended) or [download ZIP](#download-as-a-zip-no-git-required).
-2. **Follow [Setup](#setup)** above: create and activate `.venv`, install with `requirements.txt` or `requirements-lock.txt`, run **`pip install -e .`**, copy `.env.example` to `.env`, set `SQLALCHEMY_DATABASE_URL`. Or use the **[optional setup scripts](#optional-setup-scripts)** (`./setup_repo.sh` on Linux/macOS/Git Bash, **`.\setup_repo.ps1`** on Windows PowerShell).
+2. **Follow [Setup](#setup)** above: create and activate **`.venv`**, install with **`requirements.txt`** or **`requirements-lock.txt`**, run **`python -m pip install -e .`**, copy **`.env.example`** to **`.env`**, set **`SQLALCHEMY_DATABASE_URL`**. Or use the **[optional setup scripts](#optional-setup-scripts)** (`./setup_repo.sh` on Linux/macOS/Git Bash, **`.\setup_repo.ps1`** on Windows PowerShell).
 3. **Run** what you need: e.g. [Running lab scripts](#running-lab-scripts), or import `database` / `settings` from the project root (or with `PYTHONPATH` set to the repo root if you run from elsewhere).
 
-If anything imports `database.py`, **`.env` must exist** with a valid `SQLALCHEMY_DATABASE_URL`.
+If anything imports **`database.py`**, **`.env` must exist** with a valid **`SQLALCHEMY_DATABASE_URL`**.
 
 ---
 
@@ -312,9 +360,9 @@ Contributions are welcome: fixes, docs, exercises, or small refactors. Typical f
    ```
 
 3. **Make changes** in small, focused commits with **clear messages** (what changed and why).
-4. **Run tests** if the project has them (`pytest -q`) and ensure new code matches existing style (formatting, naming).
+4. **Run tests** if the project has them (**`pytest -q`**) and ensure new code matches existing style (formatting, naming).
 5. **Do not commit** `.env`, local `.db` files, or `.venv/` — they are listed in `.gitignore`.
-6. If you change dependencies, update **`requirements.txt`** as needed and regenerate **`requirements-lock.txt`** (`pip freeze > requirements-lock.txt`) so others and CI stay aligned.
+6. If you change dependencies, update **`requirements.txt`** as needed and regenerate **`requirements-lock.txt`** (`python -m pip freeze > requirements-lock.txt`) so others and CI stay aligned.
 7. **Push** your branch and open a **pull request** / **merge request** against the upstream default branch. Describe the change and link any related issue.
 
 If there is no public remote yet, you can still use branches locally and share patches or zips; once a remote exists, the same Git workflow applies on Linux, macOS, and Windows.
