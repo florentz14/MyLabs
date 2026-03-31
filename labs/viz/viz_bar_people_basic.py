@@ -1,5 +1,5 @@
 # ------------------------------------------------------------ #
-# File: plot_people.py
+# File: viz_bar_people_basic.py
 # Date: 2026-03-29
 # Author: Florentino
 # Description: Small bar chart of ages from people.csv (same data as read_people.py).

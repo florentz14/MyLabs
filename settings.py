@@ -15,7 +15,7 @@ PDF_PATH = DATA_PATH / "pdf"
 SQL_PATH = DATA_PATH / "sql"
 TEXT_PATH = DATA_PATH / "text"
 
-# Built by labs/sql/init_school_db.py from school_schema.sql + school_seed.sql (SQLite database)
+# Built by labs/db/init_school_db.py from school_schema.sql + school_seed.sql (SQLite database)
 SCHOOL_DB_PATH = SQL_PATH / "school.db"
 
 # Lab file examples (read/write in labs/files/)
@@ -24,5 +24,12 @@ FILES_PATH = TEXT_PATH
 # Lab exercise directories (code under labs/)
 LABS_PATH = BASE_PATH / "labs"
 CLASSES_PATH = LABS_PATH / "classes"
-MATPLOTLIB_PATH = LABS_PATH / "matplotlib"
+NUMPY_PATH = LABS_PATH / "numpy"
+CLEANING_PATH = LABS_PATH / "cleaning"
+VIZ_PATH = LABS_PATH / "viz"
+STATS_PATH = LABS_PATH / "stats"
+FEATURES_PATH = LABS_PATH / "features"
+EVAL_PATH = LABS_PATH / "eval"
+PROJECTS_PATH = LABS_PATH / "projects"
+ML_PATH = LABS_PATH / "ml"
 PANDAS_PATH = LABS_PATH / "pandas"

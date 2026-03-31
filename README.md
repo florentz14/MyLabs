@@ -8,7 +8,7 @@
 - **[Database (`database.py`)](#database-databasepy)** — SQLAlchemy engine and sessions  
 - **[Alembic](#alembic)** — migrations (initialize when needed)  
 - **[Repository layout](#repository-layout)** — main folders and files  
-- **[Running lab scripts](#running-lab-scripts)** — `labs/files`, `pandas`, `matplotlib`, `sql/`  
+- **[Running lab scripts](#running-lab-scripts)** — `labs/files`, `pandas`, `viz`, `db/`  
 - **[Tests](#tests)**  
 - **[Git](#git)** — branch tips, push to GitHub  
 - **[Get the project (clone or download)](#get-the-project-clone-or-download)**  
@@ -146,7 +146,7 @@ Create `.env` at the project root from the example file:
 
 Then edit **`.env`** and ensure **`SQLALCHEMY_DATABASE_URL`** is set — it is **required**. The app loads **`.env`** from the project directory (next to **`database.py`**), not from the shell’s current working directory.
 
-Example for the school SQLite file (same value on every OS). Create or refresh the file with **`python labs/sql/init_school_db.py`** before using SQLAlchemy; the path matches **`settings.SCHOOL_DB_PATH`** (**`data/sql/school.db`**):
+Example for the school SQLite file (same value on every OS). Create or refresh the file with **`python labs/db/init_school_db.py`** before using SQLAlchemy; the path matches **`settings.SCHOOL_DB_PATH`** (**`data/sql/school.db`**):
 
 ```bash
 SQLALCHEMY_DATABASE_URL=sqlite:///./data/sql/school.db
@@ -192,11 +192,18 @@ Then point **`sqlalchemy.url`** in **`alembic.ini`** (or **`env.py`**) at the sa
 | `data/gen/` | Generated practice files (TSV, pipe-delimited TXT, XML, Pickle, NumPy binaries) |
 | `data/export/` | Export artifacts such as HTML tables |
 | `data/text/` | Sample `.txt` files for `labs/files/` (`settings.FILES_PATH` / `TEXT_PATH`) |
-| `data/sql/` | School demo SQLite: versioned files are `school_schema.sql` and `school_seed.sql`. **`school.db` is not committed** (`*.db` is in `.gitignore`); create it locally with `python labs/sql/init_school_db.py` → `settings.SCHOOL_DB_PATH` |
-| `labs/` | Lab code: `classes/`, `files/`, `pandas/`, `sql/`, etc. |
+| `data/sql/` | School demo SQLite: versioned files are `school_schema.sql` and `school_seed.sql`. **`school.db` is not committed** (`*.db` is in `.gitignore`); create it locally with `python labs/db/init_school_db.py` → `settings.SCHOOL_DB_PATH` |
+| `labs/` | Lab code grouped by topic (`classes/`, `files/`, `pandas/`, `db/`, `ml/`, etc.) |
 | `labs/files/` | Text I/O exercises (read/write, append, upsert, folders, replace file) |
 | `labs/pandas/` | Pandas exercises (e.g. load CSV via `settings.EXCEL_PATH`) |
-| `labs/matplotlib/` | Small plots (e.g. `plot_people.py` from `people.csv`) |
+| `labs/numpy/` | Basic NumPy arrays, vectorization, and numeric operations |
+| `labs/cleaning/` | Missing values, duplicates, outliers, and type-fixing exercises |
+| `labs/viz/` | Basic charting practice (`viz_<topic>_<level>.py`) |
+| `labs/stats/` | Intro statistics exercises for analysis workflows |
+| `labs/features/` | Encoding, scaling, and derived-feature practice |
+| `labs/eval/` | Intro metrics and validation exercises |
+| `labs/projects/` | Small end-to-end data projects |
+| `labs/ml/` | Very simple ML starter scripts and notes |
 | `requirements.txt` | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.) |
 | `requirements-lock.txt` | Full pinned environment (`python -m pip freeze`) for reproducible installs |
 | `pyproject.toml` | Local package metadata; `python -m pip install -e .` exposes `settings` and `database` |
@@ -237,20 +244,37 @@ Scripts use **`settings.FILES_PATH`**. Naming follows **action + topic** (e.g. `
 | Script | Role |
 |--------|------|
 | `read_people.py` | Load `people.csv` from **`settings.EXCEL_PATH`** into a DataFrame and print it |
+| `pandas_cleaning_basic.py` | Tiny cleaning starter (`drop_duplicates`, type coercion, fillna) |
+| `pandas_features_basic.py` | Tiny feature-engineering starter (boolean and scaled numeric features) |
+| `pandas_stats_basic.py` | Tiny descriptive-statistics starter (`mean`, `median`, `value_counts`) |
+
+Recommended naming in `labs/pandas`: `pandas_<topic>_<level>.py` (examples: `pandas_cleaning_basic.py`, `pandas_stats_basic.py`).
 
 `data/excel/people.csv` now includes richer columns for analysis practice: `name`, `age`, `city`, `department`, `salary`, `signup_date`, `is_active`.
 
-### `labs/matplotlib/`
+### `labs/viz/`
 
 | Script | Role |
 |--------|------|
-| `plot_people.py` | Bar chart of ages from **`people.csv`** (requires a display backend for `plt.show()`) |
+| `viz_line_basic.py` | Very basic line chart starter with matplotlib |
+| `viz_bar_people_basic.py` | Bar chart of ages from **`people.csv`** (requires a display backend for `plt.show()`) |
 
-### `labs/sql/`
+### `labs/db/`
 
 | Script | Role |
 |--------|------|
 | `init_school_db.py` | Create or overwrite **`data/sql/school.db`** from `school_schema.sql` + `school_seed.sql` (departments, rooms, teachers, students, guardians, courses, prerequisites, offerings, enrollments) |
+
+### Other topic folders
+
+- `labs/numpy/`
+- `labs/cleaning/`
+- `labs/viz/`
+- `labs/stats/`
+- `labs/features/`
+- `labs/eval/`
+- `labs/projects/`
+- `labs/ml/`
 
 ---
 
