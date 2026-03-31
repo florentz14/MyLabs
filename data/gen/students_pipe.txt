@@ -1,0 +1,11 @@
+student_id|first_name|last_name|age|enrollment_date|major|gpa|is_full_time|credits_completed|tuition_balance|graduation_year|email|city|last_login|scholarship_amount
+S-1001|Ana|Lopez|19|2024-09-01|Computer Science|3.78|True|28|1250.5|2028|ana.lopez@school.edu|Austin|2026-03-20 09:15:00|1500.0
+S-1002|Mark|Johnson|22|2022-09-01|Mathematics|3.21|True|82|0.0|2026|mark.johnson@school.edu|Boston|2026-03-19 22:40:00|0.0
+S-1003|Lina|Kim|20|2023-01-15|Data Science|3.95|False|46|420.75|2027|lina.kim@school.edu|Chicago|2026-03-18 18:05:00|2500.0
+S-1004|Noah|Brown|23|2021-09-01|History|2.89|False|96|2100.0|2025|noah.brown@school.edu|Denver|2026-03-14 11:30:00|
+S-1005|Emma|Davis|18|2025-09-01|Biology||True|12|890.0|2029|emma.davis@school.edu|Seattle||1800.0
+S-1006|Diego|Martinez|21|2022-01-10|Engineering|3.42|True|70|-150.25|2026|diego.martinez@school.edu|Miami|2026-03-21 07:02:00|500.0
+S-1007|Sophia|Nguyen|24|2020-09-01|Economics|3.67|False|110|0.0|2024|sophia.nguyen@school.edu|San Francisco|2026-03-10 16:48:00|0.0
+S-1008|Leo|Patel|20|2023-09-01|Physics|3.05|True|44|760.9|2027|leo.patel@school.edu|New York|2026-03-17 13:20:00|900.0
+S-1009|Iris|Garcia|21|2022-09-01|English|3.88|True|76|300.0|2026|iris.garcia@school.edu|Phoenix|2026-03-21 00:10:00|1200.0
+S-1010|Ethan|Wright|19|2024-01-20|Chemistry|2.74|True|30|1450.0|2028|ethan.wright@school.edu|Portland|2026-03-11 08:55:00|

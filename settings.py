@@ -5,13 +5,15 @@ BASE_PATH = Path(__file__).resolve().parent
 
 # Data directories
 DATA_PATH = BASE_PATH / "data"
-CSV_PATH = DATA_PATH / "csv_files"
-EXPORT_PATH = DATA_PATH / "export_files"
-GEN_PATH = DATA_PATH / "gen_files"
-JSON_PATH = DATA_PATH / "json_files"
-PDF_PATH = DATA_PATH / "pdf_files"
-SQL_PATH = DATA_PATH / "sql_files"
-TEXT_PATH = DATA_PATH / "text_files"
+EXCEL_PATH = DATA_PATH / "excel"
+# Backward-compatible alias used by existing labs.
+CSV_PATH = EXCEL_PATH
+EXPORT_PATH = DATA_PATH / "export"
+GEN_PATH = DATA_PATH / "gen"
+JSON_PATH = DATA_PATH / "json"
+PDF_PATH = DATA_PATH / "pdf"
+SQL_PATH = DATA_PATH / "sql"
+TEXT_PATH = DATA_PATH / "text"
 
 # Built by labs/sql/init_school_db.py from school_schema.sql + school_seed.sql (SQLite database)
 SCHOOL_DB_PATH = SQL_PATH / "school.db"

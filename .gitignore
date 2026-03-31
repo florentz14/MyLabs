@@ -39,10 +39,10 @@ htmlcov/
 *.sqlite
 *.sqlite3
 *.db-journal
-**/data/sql_files/*.db
-**/data/sql_files/*.sqlite
-**/data/sql_files/*.sqlite3
-**/data/sql_files/*.db-journal
+**/data/sql/*.db
+**/data/sql/*.sqlite
+**/data/sql/*.sqlite3
+**/data/sql/*.db-journal
 
 
 # OS / editors
@@ -55,5 +55,5 @@ Thumbs.db
 *~
 
 # Project-specific generated or large artifacts (uncomment if needed)
-# data/export_files/
+# data/export/
 # *.log

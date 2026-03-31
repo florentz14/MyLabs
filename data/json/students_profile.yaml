@@ -1,0 +1,160 @@
+- student_id: S-1001
+  name:
+    first: Ana
+    last: Lopez
+  academics:
+    major: Computer Science
+    gpa: 3.78
+    credits_completed: 28
+    graduation_year: 2028
+  finance:
+    tuition_balance: 1250.5
+    scholarship_amount: 1500.0
+  meta:
+    is_full_time: true
+    city: Austin
+    last_login: '2026-03-20 09:15:00'
+- student_id: S-1002
+  name:
+    first: Mark
+    last: Johnson
+  academics:
+    major: Mathematics
+    gpa: 3.21
+    credits_completed: 82
+    graduation_year: 2026
+  finance:
+    tuition_balance: 0.0
+    scholarship_amount: 0.0
+  meta:
+    is_full_time: true
+    city: Boston
+    last_login: '2026-03-19 22:40:00'
+- student_id: S-1003
+  name:
+    first: Lina
+    last: Kim
+  academics:
+    major: Data Science
+    gpa: 3.95
+    credits_completed: 46
+    graduation_year: 2027
+  finance:
+    tuition_balance: 420.75
+    scholarship_amount: 2500.0
+  meta:
+    is_full_time: false
+    city: Chicago
+    last_login: '2026-03-18 18:05:00'
+- student_id: S-1004
+  name:
+    first: Noah
+    last: Brown
+  academics:
+    major: History
+    gpa: 2.89
+    credits_completed: 96
+    graduation_year: 2025
+  finance:
+    tuition_balance: 2100.0
+    scholarship_amount: .nan
+  meta:
+    is_full_time: false
+    city: Denver
+    last_login: '2026-03-14 11:30:00'
+- student_id: S-1005
+  name:
+    first: Emma
+    last: Davis
+  academics:
+    major: Biology
+    gpa: .nan
+    credits_completed: 12
+    graduation_year: 2029
+  finance:
+    tuition_balance: 890.0
+    scholarship_amount: 1800.0
+  meta:
+    is_full_time: true
+    city: Seattle
+    last_login: .nan
+- student_id: S-1006
+  name:
+    first: Diego
+    last: Martinez
+  academics:
+    major: Engineering
+    gpa: 3.42
+    credits_completed: 70
+    graduation_year: 2026
+  finance:
+    tuition_balance: -150.25
+    scholarship_amount: 500.0
+  meta:
+    is_full_time: true
+    city: Miami
+    last_login: '2026-03-21 07:02:00'
+- student_id: S-1007
+  name:
+    first: Sophia
+    last: Nguyen
+  academics:
+    major: Economics
+    gpa: 3.67
+    credits_completed: 110
+    graduation_year: 2024
+  finance:
+    tuition_balance: 0.0
+    scholarship_amount: 0.0
+  meta:
+    is_full_time: false
+    city: San Francisco
+    last_login: '2026-03-10 16:48:00'
+- student_id: S-1008
+  name:
+    first: Leo
+    last: Patel
+  academics:
+    major: Physics
+    gpa: 3.05
+    credits_completed: 44
+    graduation_year: 2027
+  finance:
+    tuition_balance: 760.9
+    scholarship_amount: 900.0
+  meta:
+    is_full_time: true
+    city: New York
+    last_login: '2026-03-17 13:20:00'
+- student_id: S-1009
+  name:
+    first: Iris
+    last: Garcia
+  academics:
+    major: English
+    gpa: 3.88
+    credits_completed: 76
+    graduation_year: 2026
+  finance:
+    tuition_balance: 300.0
+    scholarship_amount: 1200.0
+  meta:
+    is_full_time: true
+    city: Phoenix
+    last_login: '2026-03-21 00:10:00'
+- student_id: S-1010
+  name:
+    first: Ethan
+    last: Wright
+  academics:
+    major: Chemistry
+    gpa: 2.74
+    credits_completed: 30
+    graduation_year: 2028
+  finance:
+    tuition_balance: 1450.0
+    scholarship_amount: .nan
+  meta:
+    is_full_time: true
+    city: Portland
+    last_login: '2026-03-11 08:55:00'

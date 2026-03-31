@@ -2,7 +2,7 @@
 # File: init_school_db.py
 # Date: 2026-03-29
 # Author: Florentino
-# Description: Build data/sql_files/school.db from schema and seed SQL files.
+# Description: Build data/sql/school.db from schema and seed SQL files.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

@@ -146,10 +146,10 @@ Create `.env` at the project root from the example file:
 
 Then edit **`.env`** and ensure **`SQLALCHEMY_DATABASE_URL`** is set — it is **required**. The app loads **`.env`** from the project directory (next to **`database.py`**), not from the shell’s current working directory.
 
-Example for the school SQLite file (same value on every OS). Create or refresh the file with **`python labs/sql/init_school_db.py`** before using SQLAlchemy; the path matches **`settings.SCHOOL_DB_PATH`** (**`data/sql_files/school.db`**):
+Example for the school SQLite file (same value on every OS). Create or refresh the file with **`python labs/sql/init_school_db.py`** before using SQLAlchemy; the path matches **`settings.SCHOOL_DB_PATH`** (**`data/sql/school.db`**):
 
 ```bash
-SQLALCHEMY_DATABASE_URL=sqlite:///./data/sql_files/school.db
+SQLALCHEMY_DATABASE_URL=sqlite:///./data/sql/school.db
 ```
 
 Relative SQLite paths are resolved against the project root, so the database file stays in the right place even if you run scripts from another directory.
@@ -186,12 +186,16 @@ Then point **`sqlalchemy.url`** in **`alembic.ini`** (or **`env.py`**) at the sa
 |------|---------|
 | `database.py` | SQLAlchemy engine, session, `Base`, `get_db()` |
 | `settings.py` | Project `BASE_PATH` and subpaths under `data/` and `labs/` |
-| `data/` | CSV, exports, JSON, PDFs, text files, SQL snippets, etc. (see `settings.py`) |
-| `data/text_files/` | Sample `.txt` files for `labs/files/` (`settings.FILES_PATH` / `TEXT_PATH`) |
-| `data/sql_files/` | School demo SQLite: versioned files are `school_schema.sql` and `school_seed.sql`. **`school.db` is not committed** (`*.db` is in `.gitignore`); create it locally with `python labs/sql/init_school_db.py` → `settings.SCHOOL_DB_PATH` |
+| `data/` | Excel/CSV, exports, generated datasets, JSON, PDFs, text files, SQL snippets, etc. (see `settings.py`) |
+| `data/excel/` | Spreadsheet-friendly datasets (`.csv` + `.xlsx`) such as `people.csv` and `students.*` |
+| `data/json/` | JSON/JSONL/YAML datasets for semi-structured practice |
+| `data/gen/` | Generated practice files (TSV, pipe-delimited TXT, XML, Pickle, NumPy binaries) |
+| `data/export/` | Export artifacts such as HTML tables |
+| `data/text/` | Sample `.txt` files for `labs/files/` (`settings.FILES_PATH` / `TEXT_PATH`) |
+| `data/sql/` | School demo SQLite: versioned files are `school_schema.sql` and `school_seed.sql`. **`school.db` is not committed** (`*.db` is in `.gitignore`); create it locally with `python labs/sql/init_school_db.py` → `settings.SCHOOL_DB_PATH` |
 | `labs/` | Lab code: `classes/`, `files/`, `pandas/`, `sql/`, etc. |
 | `labs/files/` | Text I/O exercises (read/write, append, upsert, folders, replace file) |
-| `labs/pandas/` | Pandas exercises (e.g. load CSV via `settings.CSV_PATH`) |
+| `labs/pandas/` | Pandas exercises (e.g. load CSV via `settings.EXCEL_PATH`) |
 | `labs/matplotlib/` | Small plots (e.g. `plot_people.py` from `people.csv`) |
 | `requirements.txt` | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.) |
 | `requirements-lock.txt` | Full pinned environment (`python -m pip freeze`) for reproducible installs |
@@ -214,7 +218,7 @@ From the repository root, with the venv activated and **`python -m pip install -
 
 Forward slashes work on Windows in current Python versions (`labs/files/read_test.py`).
 
-### `labs/files/` (text files under `data/text_files/`)
+### `labs/files/` (text files under `data/text/`)
 
 Scripts use **`settings.FILES_PATH`**. Naming follows **action + topic** (e.g. `read_test`, `write_student`, `read_fruits`) so similar exercises stay easy to tell apart.
 
@@ -232,7 +236,9 @@ Scripts use **`settings.FILES_PATH`**. Naming follows **action + topic** (e.g. `
 
 | Script | Role |
 |--------|------|
-| `read_people.py` | Load `people.csv` from **`settings.CSV_PATH`** into a DataFrame and print it |
+| `read_people.py` | Load `people.csv` from **`settings.EXCEL_PATH`** into a DataFrame and print it |
+
+`data/excel/people.csv` now includes richer columns for analysis practice: `name`, `age`, `city`, `department`, `salary`, `signup_date`, `is_active`.
 
 ### `labs/matplotlib/`
 
@@ -244,7 +250,7 @@ Scripts use **`settings.FILES_PATH`**. Naming follows **action + topic** (e.g. `
 
 | Script | Role |
 |--------|------|
-| `init_school_db.py` | Create or overwrite **`data/sql_files/school.db`** from `school_schema.sql` + `school_seed.sql` (departments, rooms, teachers, students, guardians, courses, prerequisites, offerings, enrollments) |
+| `init_school_db.py` | Create or overwrite **`data/sql/school.db`** from `school_schema.sql` + `school_seed.sql` (departments, rooms, teachers, students, guardians, courses, prerequisites, offerings, enrollments) |
 
 ---
 

@@ -1,0 +1,51 @@
+name,age,city,department,salary,signup_date,is_active
+Alice,22,Austin,Sales,48000,2023-01-15,True
+Bob,30,Boston,Engineering,72000,2021-11-03,True
+Carol,27,Chicago,Marketing,61000,2022-05-21,True
+David,24,Denver,Support,45000,2023-03-10,True
+Emma,29,Seattle,Finance,69000,2021-09-19,True
+Frank,33,Miami,Operations,76000,2020-07-08,True
+Grace,26,Phoenix,HR,54000,2022-08-11,False
+Henry,31,Portland,Engineering,74000,2021-02-26,True
+Ivy,23,San Diego,Sales,47000,2023-06-14,True
+Jack,28,San Jose,Engineering,70000,2022-01-09,True
+Karen,35,Dallas,Management,88000,2019-12-01,True
+Leo,21,New York,Intern,32000,2024-02-05,True
+Mia,25,Los Angeles,Marketing,59000,2022-10-18,True
+Noah,32,Houston,Operations,75000,2020-06-22,True
+Olivia,27,San Francisco,Design,64000,2021-08-30,True
+Paul,34,Atlanta,Finance,79000,2019-11-17,False
+Quinn,24,Charlotte,Support,46000,2023-04-29,True
+Ryan,29,Orlando,Sales,62000,2021-03-12,True
+Sofia,22,Las Vegas,Intern,33000,2024-01-27,True
+Tom,36,Philadelphia,Management,91000,2018-09-15,True
+Uma,26,Columbus,HR,55000,2022-07-07,True
+Victor,31,Indianapolis,Engineering,73500,2020-10-02,True
+Wendy,28,Detroit,Marketing,60500,2021-12-19,True
+Xavier,33,Nashville,Operations,77000,2019-05-09,True
+Yara,25,Baltimore,Design,58000,2022-09-23,True
+Zane,30,Cleveland,Sales,66000,2020-04-14,False
+Aaron,27,Milwaukee,Support,45500,2022-03-05,True
+Bella,23,Minneapolis,Intern,34000,2023-11-12,True
+Carlos,34,Kansas City,Finance,80000,2019-02-28,True
+Diana,29,New Orleans,HR,57000,2021-06-16,True
+Ethan,24,Salt Lake City,Support,44800,2023-08-20,True
+Fatima,32,Raleigh,Engineering,74500,2020-01-31,True
+Gavin,26,Tampa,Sales,61000,2022-11-08,True
+Hana,31,St. Louis,Operations,73000,2020-09-24,False
+Isaac,28,Cincinnati,Design,60000,2021-05-13,True
+Julia,35,Pittsburgh,Management,90000,2018-11-29,True
+Kevin,22,Richmond,Intern,33500,2024-03-01,True
+Lina,30,Jacksonville,Marketing,62500,2021-04-26,True
+Marco,27,Memphis,Support,45200,2022-06-03,True
+Nora,33,Buffalo,Finance,78500,2019-07-21,True
+Owen,25,Boise,Sales,59000,2023-02-14,True
+Priya,29,Sacramento,Engineering,71000,2021-01-18,True
+Rafael,34,Albuquerque,Operations,76500,2019-10-07,False
+Sara,24,Louisville,HR,53500,2023-05-25,True
+Thiago,31,Oklahoma City,Engineering,73800,2020-03-11,True
+Valeria,26,Omaha,Marketing,59800,2022-12-02,True
+Will,28,El Paso,Support,45900,2021-07-28,True
+Ximena,32,Birmingham,Finance,77200,2020-08-16,True
+Yusuf,23,Anchorage,Intern,34500,2024-04-09,True
+Zoe,27,Tucson,Design,60200,2022-02-22,True

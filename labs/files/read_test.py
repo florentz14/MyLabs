@@ -11,7 +11,7 @@ from settings import FILES_PATH
 
 
 def main() -> None:
-    # Lives under data/text_files/
+    # Lives under data/text/
     file_path = FILES_PATH / "test.txt"
     if not file_path.is_file():
         raise FileNotFoundError(f"File not found: {file_path}")

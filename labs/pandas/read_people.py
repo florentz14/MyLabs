@@ -1,26 +1,26 @@
 # File: read_people.py
 # Date: 2026-03-28
 # Author: Florentino
-# Description: Read people.csv from data/csv_files into a pandas DataFrame.
+# Description: Read people.csv from data/excel into a pandas DataFrame.
 
 from __future__ import annotations
 
 import pandas as pd
 
-# Import the CSV_PATH from the settings module
-from settings import CSV_PATH
+# EXCEL_PATH hosts both CSV and XLSX practice files.
+from settings import EXCEL_PATH
 
 
 def main() -> None:
-    # Path comes from the CSV_PATH import
-    csv_path = CSV_PATH / "people.csv"
+    # Read CSV from the shared spreadsheet directory.
+    csv_path = EXCEL_PATH / "people.csv"
     if not csv_path.is_file():
         raise FileNotFoundError(f"CSV not found: {csv_path}")
 
-    # First row is treated as column names
+    # First row is treated as column names.
     df = pd.read_csv(csv_path)
 
-    # Print the DataFrame
+    # Print the DataFrame.
     print(df)
     print()
 

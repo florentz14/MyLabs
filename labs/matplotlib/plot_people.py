@@ -10,13 +10,13 @@ from __future__ import annotations
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# Import the CSV_PATH from the settings module
-from settings import CSV_PATH
+# Import the EXCEL_PATH from the settings module
+from settings import EXCEL_PATH
 
 
 def main() -> None:
-    # Path comes from the CSV_PATH import
-    csv_path = CSV_PATH / "people.csv"
+    # Path comes from the EXCEL_PATH import
+    csv_path = EXCEL_PATH / "people.csv"
     if not csv_path.is_file():
         raise FileNotFoundError(f"CSV not found: {csv_path}")
 

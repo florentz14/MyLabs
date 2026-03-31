@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<students>
+  <student>
+    <student_id>S-1001</student_id>
+    <first_name>Ana</first_name>
+    <last_name>Lopez</last_name>
+    <age>19</age>
+    <enrollment_date>2024-09-01</enrollment_date>
+    <major>Computer Science</major>
+    <gpa>3.78</gpa>
+    <is_full_time>True</is_full_time>
+    <credits_completed>28</credits_completed>
+    <tuition_balance>1250.5</tuition_balance>
+    <graduation_year>2028</graduation_year>
+    <email>ana.lopez@school.edu</email>
+    <city>Austin</city>
+    <last_login>2026-03-20 09:15:00</last_login>
+    <scholarship_amount>1500.0</scholarship_amount>
+  </student>
+  <student>
+    <student_id>S-1002</student_id>
+    <first_name>Mark</first_name>
+    <last_name>Johnson</last_name>
+    <age>22</age>
+    <enrollment_date>2022-09-01</enrollment_date>
+    <major>Mathematics</major>
+    <gpa>3.21</gpa>
+    <is_full_time>True</is_full_time>
+    <credits_completed>82</credits_completed>
+    <tuition_balance>0.0</tuition_balance>
+    <graduation_year>2026</graduation_year>
+    <email>mark.johnson@school.edu</email>
+    <city>Boston</city>
+    <last_login>2026-03-19 22:40:00</last_login>
+    <scholarship_amount>0.0</scholarship_amount>
+  </student>
+  <student>
+    <student_id>S-1003</student_id>
+    <first_name>Lina</first_name>
+    <last_name>Kim</last_name>
+    <age>20</age>
+    <enrollment_date>2023-01-15</enrollment_date>
+    <major>Data Science</major>
+    <gpa>3.95</gpa>
+    <is_full_time>False</is_full_time>
+    <credits_completed>46</credits_completed>
+    <tuition_balance>420.75</tuition_balance>
+    <graduation_year>2027</graduation_year>
+    <email>lina.kim@school.edu</email>
+    <city>Chicago</city>
+    <last_login>2026-03-18 18:05:00</last_login>
+    <scholarship_amount>2500.0</scholarship_amount>
+  </student>
+  <student>
+    <student_id>S-1004</student_id>
+    <first_name>Noah</first_name>
+    <last_name>Brown</last_name>
+    <age>23</age>
+    <enrollment_date>2021-09-01</enrollment_date>
+    <major>History</major>
+    <gpa>2.89</gpa>
+    <is_full_time>False</is_full_time>
+    <credits_completed>96</credits_completed>
+    <tuition_balance>2100.0</tuition_balance>
+    <graduation_year>2025</graduation_year>
+    <email>noah.brown@school.edu</email>
+    <city>Denver</city>
+    <last_login>2026-03-14 11:30:00</last_login>
+    <scholarship_amount/>
+  </student>
+  <student>
+    <student_id>S-1005</student_id>
+    <first_name>Emma</first_name>
+    <last_name>Davis</last_name>
+    <age>18</age>
+    <enrollment_date>2025-09-01</enrollment_date>
+    <major>Biology</major>
+    <gpa/>
+    <is_full_time>True</is_full_time>
+    <credits_completed>12</credits_completed>
+    <tuition_balance>890.0</tuition_balance>
+    <graduation_year>2029</graduation_year>
+    <email>emma.davis@school.edu</email>
+    <city>Seattle</city>
+    <last_login/>
+    <scholarship_amount>1800.0</scholarship_amount>
+  </student>
+  <student>
+    <student_id>S-1006</student_id>
+    <first_name>Diego</first_name>
+    <last_name>Martinez</last_name>
+    <age>21</age>
+    <enrollment_date>2022-01-10</enrollment_date>
+    <major>Engineering</major>
+    <gpa>3.42</gpa>
+    <is_full_time>True</is_full_time>
+    <credits_completed>70</credits_completed>
+    <tuition_balance>-150.25</tuition_balance>
+    <graduation_year>2026</graduation_year>
+    <email>diego.martinez@school.edu</email>
+    <city>Miami</city>
+    <last_login>2026-03-21 07:02:00</last_login>
+    <scholarship_amount>500.0</scholarship_amount>
+  </student>
+  <student>
+    <student_id>S-1007</student_id>
+    <first_name>Sophia</first_name>
+    <last_name>Nguyen</last_name>
+    <age>24</age>
+    <enrollment_date>2020-09-01</enrollment_date>
+    <major>Economics</major>
+    <gpa>3.67</gpa>
+    <is_full_time>False</is_full_time>
+    <credits_completed>110</credits_completed>
+    <tuition_balance>0.0</tuition_balance>
+    <graduation_year>2024</graduation_year>
+    <email>sophia.nguyen@school.edu</email>
+    <city>San Francisco</city>
+    <last_login>2026-03-10 16:48:00</last_login>
+    <scholarship_amount>0.0</scholarship_amount>
+  </student>
+  <student>
+    <student_id>S-1008</student_id>
+    <first_name>Leo</first_name>
+    <last_name>Patel</last_name>
+    <age>20</age>
+    <enrollment_date>2023-09-01</enrollment_date>
+    <major>Physics</major>
+    <gpa>3.05</gpa>
+    <is_full_time>True</is_full_time>
+    <credits_completed>44</credits_completed>
+    <tuition_balance>760.9</tuition_balance>
+    <graduation_year>2027</graduation_year>
+    <email>leo.patel@school.edu</email>
+    <city>New York</city>
+    <last_login>2026-03-17 13:20:00</last_login>
+    <scholarship_amount>900.0</scholarship_amount>
+  </student>
+  <student>
+    <student_id>S-1009</student_id>
+    <first_name>Iris</first_name>
+    <last_name>Garcia</last_name>
+    <age>21</age>
+    <enrollment_date>2022-09-01</enrollment_date>
+    <major>English</major>
+    <gpa>3.88</gpa>
+    <is_full_time>True</is_full_time>
+    <credits_completed>76</credits_completed>
+    <tuition_balance>300.0</tuition_balance>
+    <graduation_year>2026</graduation_year>
+    <email>iris.garcia@school.edu</email>
+    <city>Phoenix</city>
+    <last_login>2026-03-21 00:10:00</last_login>
+    <scholarship_amount>1200.0</scholarship_amount>
+  </student>
+  <student>
+    <student_id>S-1010</student_id>
+    <first_name>Ethan</first_name>
+    <last_name>Wright</last_name>
+    <age>19</age>
+    <enrollment_date>2024-01-20</enrollment_date>
+    <major>Chemistry</major>
+    <gpa>2.74</gpa>
+    <is_full_time>True</is_full_time>
+    <credits_completed>30</credits_completed>
+    <tuition_balance>1450.0</tuition_balance>
+    <graduation_year>2028</graduation_year>
+    <email>ethan.wright@school.edu</email>
+    <city>Portland</city>
+    <last_login>2026-03-11 08:55:00</last_login>
+    <scholarship_amount/>
+  </student>
+</students>
