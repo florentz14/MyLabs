@@ -1,0 +1,74 @@
+[
+  {
+    "bill_id": "B-4001",
+    "patient_id": "P-1001",
+    "amount_usd": 1200.5,
+    "paid_usd": 1200.5,
+    "insurance_covered": true,
+    "billing_date": "2026-03-21",
+    "currency": "USD"
+  },
+  {
+    "bill_id": "B-4002",
+    "patient_id": "P-1002",
+    "amount_usd": "950",
+    "paid_usd": 600.0,
+    "insurance_covered": "yes",
+    "billing_date": "2026-03-22",
+    "currency": "USD"
+  },
+  {
+    "bill_id": "B-4003",
+    "patient_id": "P-1003",
+    "amount_usd": null,
+    "paid_usd": 0,
+    "insurance_covered": false,
+    "billing_date": "2026-03-23",
+    "currency": "USD"
+  },
+  {
+    "bill_id": "B-4004",
+    "patient_id": "P-1004",
+    "amount_usd": -200,
+    "paid_usd": -200,
+    "insurance_covered": false,
+    "billing_date": "2026-13-01",
+    "currency": "USD"
+  },
+  {
+    "bill_id": "B-4005",
+    "patient_id": "P-1005",
+    "amount_usd": 500000,
+    "paid_usd": 0,
+    "insurance_covered": false,
+    "billing_date": "2026-03-25",
+    "currency": "USD"
+  },
+  {
+    "bill_id": "B-4006",
+    "patient_id": "P-1006",
+    "amount_usd": 800.25,
+    "paid_usd": "full",
+    "insurance_covered": true,
+    "billing_date": "2026-03-26",
+    "currency": "USD"
+  },
+  {
+    "bill_id": "B-4006",
+    "patient_id": "P-1006",
+    "amount_usd": 800.25,
+    "paid_usd": "full",
+    "insurance_covered": true,
+    "billing_date": "2026-03-26",
+    "currency": "USD"
+  },
+  {
+    "bill_id": "B-4007",
+    "patient_id": "P-1007",
+    "amount_usd": 1100.0,
+    "paid_usd": 100.0,
+    "insurance_covered": null,
+    "billing_date": "2026-03-27",
+    "currency": "USD"
+  }
+]

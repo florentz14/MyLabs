@@ -1,0 +1,11 @@
+appointment_id,patient_id,doctor_id,appointment_datetime,status,duration_minutes,visit_type
+A-3001,P-1001,D-2001,2026-03-20 09:00,completed,45,regular
+A-3002,P-1002,D-2002,2026-03-20 09:30,completed,30,regular
+A-3003,P-9999,D-2003,2026-03-20 10:00,completed,40,regular
+A-3004,P-1004,D-9999,2026-03-20 10:30,cancelled,0,regular
+A-3005,P-1005,D-2005,2026-03-20 11:00,no_show,thirty,regular
+A-3006,P-1006,D-2006,20-03-2026 11:30,completed,35,regular
+A-3007,P-1007,D-2007,2026-03-20 12:00,completed,-15,regular
+A-3008,P-1008,D-2008,2026-03-20 12:30,completed,400,regular
+A-3008,P-1008,D-2008,2026-03-20 12:30,completed,400,regular
+A-3009,1009,D-2009,,completed,25,regular
