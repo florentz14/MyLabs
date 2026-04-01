@@ -238,17 +238,24 @@ Scripts use **`settings.FILES_PATH`**. Naming follows **action + topic** (e.g. `
 | `update_student.py` | Upsert a row in `student.txt` by `id` |
 | `exist_folder.py` | Ensure a folder exists (`mkdir` with parents) |
 | `replace_file.py` | Ensure folder, replace or create a file (e.g. avatar path) |
+| `append_log.py` | Append-mode demo writing to `birdwatch.txt` under **`FILES_PATH`** |
+| `google_stock.py` | Load stock `.xlsx` from **`EXCEL_PATH`** with pandas (`openpyxl`) |
+| `csv_read_write.py` | CSV `writer` / `reader` (output under **`CSV_PATH`**) |
+| `csv_dict_reader.py` | `csv.DictReader` |
+| `csv_dict_write.py` | `csv.DictWriter` |
+| `csv_tab_delimited.py` | Tab-separated values (`.tsv`) |
+| `phone_directory.py` | Interactive phone book (`phone_directory.txt`) |
 
 ### `labs/pandas/`
 
 | Script | Role |
 |--------|------|
 | `read_people.py` | Load `people.csv` from **`settings.EXCEL_PATH`** into a DataFrame and print it |
-| `pandas_cleaning_basic.py` | Tiny cleaning starter (`drop_duplicates`, type coercion, fillna) |
-| `pandas_features_basic.py` | Tiny feature-engineering starter (boolean and scaled numeric features) |
-| `pandas_stats_basic.py` | Tiny descriptive-statistics starter (`mean`, `median`, `value_counts`) |
+| `cleaning.py` | Tiny cleaning starter (`drop_duplicates`, type coercion, fillna) |
+| `features.py` | Tiny feature-engineering starter (boolean and scaled numeric features) |
+| `stats.py` | Tiny descriptive-statistics starter (`mean`, `median`, `value_counts`) |
 
-Recommended naming in `labs/pandas`: `pandas_<topic>_<level>.py` (examples: `pandas_cleaning_basic.py`, `pandas_stats_basic.py`).
+Scripts in `labs/pandas/` use short topic names (no `pandas_` prefix; the folder already indicates the stack).
 
 `data/excel/people.csv` now includes richer columns for analysis practice: `name`, `age`, `city`, `department`, `salary`, `signup_date`, `is_active`.
 
