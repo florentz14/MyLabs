@@ -195,15 +195,16 @@ Then point **`sqlalchemy.url`** in **`alembic.ini`** (or **`env.py`**) at the sa
 | `data/sql/` | School demo SQLite: versioned files are `school_schema.sql` and `school_seed.sql`. **`school.db` is not committed** (`*.db` is in `.gitignore`); create it locally with `python labs/db/init_school_db.py` → `settings.SCHOOL_DB_PATH` |
 | `labs/` | Lab code grouped by topic (`classes/`, `files/`, `pandas/`, `db/`, `ml/`, etc.) |
 | `labs/files/` | Text I/O exercises (read/write, append, upsert, folders, replace file) |
-| `labs/pandas/` | Pandas exercises (e.g. load CSV via `settings.EXCEL_PATH`) |
+| `labs/pandas/` | Pandas exercises: root scripts (`read_people.py`, `stock.py`, …), **`basics/`** (55 numbered one-topic scripts), **`advanced/`** (heavier examples); see **`labs/pandas/README.md`** and **`labs/pandas/index.md`** |
 | `labs/numpy/` | Small scripts by topic (`arithmetic/`, `aggregation/`, `shape/`, `linalg/`); see [labs/numpy/README.md](labs/numpy/README.md) |
 | `labs/cleaning/` | Missing values, duplicates, outliers, and type-fixing exercises |
-| `labs/viz/` | Basic charting practice (`viz_<topic>_<level>.py`) |
+| `labs/viz/` | Charting practice (`basic_viz.py`, `viz_<topic>_<level>.py`) |
 | `labs/stats/` | Intro statistics exercises for analysis workflows |
 | `labs/features/` | Encoding, scaling, and derived-feature practice |
 | `labs/eval/` | Intro metrics and validation exercises |
 | `labs/projects/` | Small end-to-end data projects |
 | `labs/ml/` | Very simple ML starter scripts and notes |
+| `labs/classes/` | OOP exercises; see `basic_oop.py` |
 | `requirements.txt` | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.) |
 | `requirements-lock.txt` | Full pinned environment (`python -m pip freeze`) for reproducible installs |
 | `pyproject.toml` | Local package metadata; `python -m pip install -e .` exposes `settings` and `database` |
@@ -239,7 +240,6 @@ Scripts use **`settings.FILES_PATH`**. Naming follows **action + topic** (e.g. `
 | `exist_folder.py` | Ensure a folder exists (`mkdir` with parents) |
 | `replace_file.py` | Ensure folder, replace or create a file (e.g. avatar path) |
 | `append_log.py` | Append-mode demo writing to `birdwatch.txt` under **`FILES_PATH`** |
-| `google_stock.py` | Load stock `.xlsx` from **`EXCEL_PATH`** with pandas (`openpyxl`) |
 | `csv_read_write.py` | CSV `writer` / `reader` (output under **`CSV_PATH`**) |
 | `csv_dict_reader.py` | `csv.DictReader` |
 | `csv_dict_write.py` | `csv.DictWriter` |
@@ -251,11 +251,14 @@ Scripts use **`settings.FILES_PATH`**. Naming follows **action + topic** (e.g. `
 | Script | Role |
 |--------|------|
 | `read_people.py` | Load `people.csv` from **`settings.EXCEL_PATH`** into a DataFrame and print it |
+| `stock.py` | Load stock `.xlsx` from **`EXCEL_PATH`** with pandas (`openpyxl`) |
 | `cleaning.py` | Tiny cleaning starter (`drop_duplicates`, type coercion, fillna) |
 | `features.py` | Tiny feature-engineering starter (boolean and scaled numeric features) |
 | `stats.py` | Tiny descriptive-statistics starter (`mean`, `median`, `value_counts`) |
+| `basics/` | **55** numbered scripts (`01_head.py` … `55_compare_small_vs_large.py`); shared **`sample_data.py`** (`sample_df`, `sample_df_large`) — catalog: **`labs/pandas/basics/README.md`** |
+| `advanced/` | Longer or dataset-heavy examples (mostly `exam_data.csv`; includes standalone Series arithmetic) — **`labs/pandas/advanced/README.md`** |
 
-Scripts in `labs/pandas/` use short topic names (no `pandas_` prefix; the folder already indicates the stack).
+Scripts in `labs/pandas/` use short topic names at the repo root (no `pandas_` prefix). The **`basics/`** track is a beginner path; **`advanced/`** builds on similar ideas with more code per file. Study order: **`labs/pandas/index.md`**. Folder guide: **`labs/pandas/README.md`**.
 
 `data/excel/people.csv` now includes richer columns for analysis practice: `name`, `age`, `city`, `department`, `salary`, `signup_date`, `is_active`.
 
@@ -276,6 +279,7 @@ Run from the repo root, for example: `python3 labs/numpy/arithmetic/add.py`. Det
 
 | Script | Role |
 |--------|------|
+| `basic_viz.py` | Line chart written to **`data/gen/basic_viz.png`** (no GUI; `Agg` backend) |
 | `viz_line_basic.py` | Very basic line chart starter with matplotlib |
 | `viz_bar_people_basic.py` | Bar chart of ages from **`people.csv`** (requires a display backend for `plt.show()`) |
 
@@ -287,12 +291,18 @@ Run from the repo root, for example: `python3 labs/numpy/arithmetic/add.py`. Det
 
 ### Other topic folders
 
-- `labs/cleaning/`
-- `labs/stats/`
-- `labs/features/`
-- `labs/eval/`
-- `labs/projects/`
-- `labs/ml/`
+Each folder has a **`basic_*.py`** starter and a **`README.md`** with details.
+
+| Folder | Starter script |
+|--------|----------------|
+| `labs/cleaning/` | `basic_cleaning.py` |
+| `labs/stats/` | `basic_stats.py` |
+| `labs/features/` | `basic_features.py` |
+| `labs/eval/` | `basic_metrics.py` |
+| `labs/projects/` | `basic_project.py` |
+| `labs/viz/` | `basic_viz.py` (saves PNG; see also `viz_*_basic.py`) |
+| `labs/ml/` | `basic_ml.py` (plus `ml_01` … `ml_03`) |
+| `labs/classes/` | `basic_oop.py` |
 
 ---
 
