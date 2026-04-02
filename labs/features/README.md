@@ -5,3 +5,9 @@ Basic feature engineering exercises:
 - scaling numeric features
 - date feature extraction
 - simple feature selection
+
+## Entry script
+
+| File | Role |
+|------|------|
+| `basic_features.py` | String length, boolean threshold, salary scaled to thousands |
