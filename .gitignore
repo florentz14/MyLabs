@@ -62,3 +62,5 @@ Thumbs.db
 data/text/birdwatch.txt
 data/text/phone_directory.txt
 data/excel/csv_lab_*
+data/excel/pandas_basics_sample.csv
+data/gen/basic_viz.png
