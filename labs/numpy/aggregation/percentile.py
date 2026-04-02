@@ -1,8 +1,8 @@
 # ------------------------------------------------------------ #
-# File: basic_numpy.py
+# File: percentile.py
 # Date: 2026-04-01
 # Author: Florentino
-# Description: Minimal array creation and mean (starting point).
+# Description: Percentile (here: 50th = median).
 # ------------------------------------------------------------ #
 
 from __future__ import annotations
@@ -11,9 +11,8 @@ import numpy as np
 
 
 def main() -> None:
-    arr = np.array([1, 2, 3, 4])
-    print("Array:", arr)
-    print("Mean:", arr.mean())
+    data = np.array([1, 5, 10, 15, 20])
+    print(np.percentile(data, 50))
 
 
 if __name__ == "__main__":

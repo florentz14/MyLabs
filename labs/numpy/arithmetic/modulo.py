@@ -1,8 +1,8 @@
 # ------------------------------------------------------------ #
-# File: basic_numpy.py
+# File: modulo.py
 # Date: 2026-04-01
 # Author: Florentino
-# Description: Minimal array creation and mean (starting point).
+# Description: Element-wise remainder (modulo).
 # ------------------------------------------------------------ #
 
 from __future__ import annotations
@@ -11,9 +11,8 @@ import numpy as np
 
 
 def main() -> None:
-    arr = np.array([1, 2, 3, 4])
-    print("Array:", arr)
-    print("Mean:", arr.mean())
+    a = np.array([10, 20])
+    print(a % 3)
 
 
 if __name__ == "__main__":

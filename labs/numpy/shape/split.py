@@ -1,8 +1,8 @@
 # ------------------------------------------------------------ #
-# File: basic_numpy.py
+# File: split.py
 # Date: 2026-04-01
 # Author: Florentino
-# Description: Minimal array creation and mean (starting point).
+# Description: Split array into equal parts (np.split).
 # ------------------------------------------------------------ #
 
 from __future__ import annotations
@@ -11,9 +11,8 @@ import numpy as np
 
 
 def main() -> None:
-    arr = np.array([1, 2, 3, 4])
-    print("Array:", arr)
-    print("Mean:", arr.mean())
+    m = np.array([1, 2, 3, 4, 5, 6])
+    print(np.split(m, 2))
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 # ------------------------------------------------------------ #
-# File: basic_numpy.py
+# File: total.py
 # Date: 2026-04-01
 # Author: Florentino
-# Description: Minimal array creation and mean (starting point).
+# Description: Sum of all elements (np.sum).
 # ------------------------------------------------------------ #
 
 from __future__ import annotations
@@ -11,9 +11,8 @@ import numpy as np
 
 
 def main() -> None:
-    arr = np.array([1, 2, 3, 4])
-    print("Array:", arr)
-    print("Mean:", arr.mean())
+    data = np.array([1, 5, 10, 15, 20])
+    print(np.sum(data))
 
 
 if __name__ == "__main__":

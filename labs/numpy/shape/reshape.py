@@ -1,8 +1,8 @@
 # ------------------------------------------------------------ #
-# File: basic_numpy.py
+# File: reshape.py
 # Date: 2026-04-01
 # Author: Florentino
-# Description: Minimal array creation and mean (starting point).
+# Description: Change array shape (here: 1-D length 6 -> 2x3).
 # ------------------------------------------------------------ #
 
 from __future__ import annotations
@@ -11,9 +11,8 @@ import numpy as np
 
 
 def main() -> None:
-    arr = np.array([1, 2, 3, 4])
-    print("Array:", arr)
-    print("Mean:", arr.mean())
+    m = np.array([1, 2, 3, 4, 5, 6])
+    print(m.reshape(2, 3))
 
 
 if __name__ == "__main__":

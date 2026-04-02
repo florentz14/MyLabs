@@ -8,7 +8,7 @@
 - **[Database (`database.py`)](#database-databasepy)** — SQLAlchemy engine and sessions  
 - **[Alembic](#alembic)** — migrations (initialize when needed)  
 - **[Repository layout](#repository-layout)** — main folders and files  
-- **[Running lab scripts](#running-lab-scripts)** — `labs/files`, `pandas`, `viz`, `db/`  
+- **[Running lab scripts](#running-lab-scripts)** — `labs/files`, `pandas`, `numpy`, `viz`, `db/`  
 - **[Tests](#tests)**  
 - **[Git](#git)** — branch tips, push to GitHub  
 - **[Get the project (clone or download)](#get-the-project-clone-or-download)**  
@@ -196,7 +196,7 @@ Then point **`sqlalchemy.url`** in **`alembic.ini`** (or **`env.py`**) at the sa
 | `labs/` | Lab code grouped by topic (`classes/`, `files/`, `pandas/`, `db/`, `ml/`, etc.) |
 | `labs/files/` | Text I/O exercises (read/write, append, upsert, folders, replace file) |
 | `labs/pandas/` | Pandas exercises (e.g. load CSV via `settings.EXCEL_PATH`) |
-| `labs/numpy/` | Basic NumPy arrays, vectorization, and numeric operations |
+| `labs/numpy/` | Small scripts by topic (`arithmetic/`, `aggregation/`, `shape/`, `linalg/`); see [labs/numpy/README.md](labs/numpy/README.md) |
 | `labs/cleaning/` | Missing values, duplicates, outliers, and type-fixing exercises |
 | `labs/viz/` | Basic charting practice (`viz_<topic>_<level>.py`) |
 | `labs/stats/` | Intro statistics exercises for analysis workflows |
@@ -220,8 +220,8 @@ From the repository root, with the venv activated and **`python -m pip install -
 
 | OS | Typical command |
 |----|-----------------|
-| **Linux** / **macOS** | `python3 labs/files/read_test.py` or `python labs/pandas/read_people.py` |
-| **Windows** | `python labs\files\read_test.py` or `py labs\pandas\read_people.py` |
+| **Linux** / **macOS** | e.g. `python3 labs/files/read_test.py`, `python labs/pandas/read_people.py`, `python3 labs/numpy/arithmetic/add.py` |
+| **Windows** | e.g. `python labs\files\read_test.py`, `py labs\pandas\read_people.py`, `py labs\numpy\arithmetic\add.py` |
 
 Forward slashes work on Windows in current Python versions (`labs/files/read_test.py`).
 
@@ -259,6 +259,19 @@ Scripts in `labs/pandas/` use short topic names (no `pandas_` prefix; the folder
 
 `data/excel/people.csv` now includes richer columns for analysis practice: `name`, `age`, `city`, `department`, `salary`, `signup_date`, `is_active`.
 
+### `labs/numpy/`
+
+No extra package imports beyond **`numpy`**. One short runnable example per operation, grouped by subfolder (file names match the idea, e.g. `add.py`, `mean.py`, `reshape.py`, `dot.py`).
+
+| Subfolder | What it covers |
+|-------------|----------------|
+| `arithmetic/` | Element-wise ops: `+`, `-`, `*`, `/`, power, modulo, `sqrt`, `exp`, `sin`, `log` |
+| `aggregation/` | `sum`, `mean`, `median`, `std`, `var`, `min`, `max`, `argmin`, `argmax`, `percentile` |
+| `shape/` | `reshape`, transpose, `flatten`, `concatenate`, `split`, `ravel`, `expand_dims`, `squeeze`, `vstack`, `hstack` |
+| `linalg/` | `dot`, determinant, `eye`, inverse, rank, eigenvalues, `solve`, norm, trace, outer product |
+
+Run from the repo root, for example: `python3 labs/numpy/arithmetic/add.py`. Details and file lists: **`labs/numpy/README.md`**. Legacy: `basic_numpy.py`.
+
 ### `labs/viz/`
 
 | Script | Role |
@@ -274,9 +287,7 @@ Scripts in `labs/pandas/` use short topic names (no `pandas_` prefix; the folder
 
 ### Other topic folders
 
-- `labs/numpy/`
 - `labs/cleaning/`
-- `labs/viz/`
 - `labs/stats/`
 - `labs/features/`
 - `labs/eval/`

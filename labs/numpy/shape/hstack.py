@@ -1,8 +1,8 @@
 # ------------------------------------------------------------ #
-# File: basic_numpy.py
+# File: hstack.py
 # Date: 2026-04-01
 # Author: Florentino
-# Description: Minimal array creation and mean (starting point).
+# Description: Stack arrays horizontally (column-wise for 1-D inputs).
 # ------------------------------------------------------------ #
 
 from __future__ import annotations
@@ -11,9 +11,7 @@ import numpy as np
 
 
 def main() -> None:
-    arr = np.array([1, 2, 3, 4])
-    print("Array:", arr)
-    print("Mean:", arr.mean())
+    print(np.hstack(([1, 2], [3, 4])))
 
 
 if __name__ == "__main__":
