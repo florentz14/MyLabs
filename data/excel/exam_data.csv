@@ -1,0 +1,21 @@
+label,name,last_name,score,attempts,qualify,region,country,age,study_hours,passed
+a,Valeria,Baez,12.5,1,yes,Americas,Dominican Republic,22,4.0,yes
+b,Thiago,Costa,9,3,no,Americas,Brazil,24,2.5,no
+c,Camila,Rojas,16.5,2,yes,Americas,Chile,21,5.0,yes
+d,Sergio,Gomez,,3,no,Americas,Mexico,23,1.5,no
+e,Daniela,Perez,9,2,no,Americas,Colombia,22,2.0,no
+f,Bruno,Warner,20,3,yes,Europe,Germany,25,6.0,yes
+g,Renata,Silva,14.5,1,yes,Americas,Argentina,20,4.5,yes
+h,Nicolas,Vega,,1,no,Americas,Peru,22,1.0,no
+i,Aitana,Ruiz,8,2,no,Europe,Spain,23,2.0,no
+j,Gael,Navarro,19,1,yes,Americas,Uruguay,21,5.5,yes
+k,Liam,OConnor,15.5,2,yes,Oceania,New Zealand,24,4.0,yes
+l,Yuki,Nakamura,17.2,1,yes,Asia,Japan,22,5.0,yes
+m,Chen,Wei,13.4,2,no,Asia,China,23,3.5,no
+n,Ananya,Sharma,18.1,1,yes,Asia,India,21,5.0,yes
+o,Kwame,Mensah,11.3,3,no,Africa,Ghana,24,2.5,no
+p,Amina,Diallo,16.8,2,yes,Africa,Senegal,22,4.5,yes
+q,Noa,Cohen,14.1,2,no,Asia,Israel,23,3.0,no
+r,Luca,Bianchi,19.4,1,yes,Europe,Italy,25,5.5,yes
+s,Mila,Kovac,12.7,3,no,Europe,Croatia,22,3.0,no
+t,Tane,Rangi,15.9,2,yes,Oceania,New Zealand,24,4.0,yes
