@@ -3,7 +3,7 @@
 ## Contents
 
 - **[Overview](#overview)** — what this repo contains; `requirements.txt` vs lockfile  
-- **[Prerequisites](#prerequisites)** — Python, Git, terminal  
+- **[Prerequisites](#prerequisites)** — **Python 3.14** (reference), minimum 3.10+, Git, terminal  
 - **[Setup](#setup)** — **virtual environment** (create, **activate on Linux/macOS/Windows/WSL/fish…**), **`python -m pip install`**, editable install, optional setup scripts, **`.env`**  
 - **[Database (`database.py`)](#database-databasepy)** — SQLAlchemy engine and sessions  
 - **[Alembic](#alembic)** — migrations (initialize when needed)  
@@ -19,6 +19,8 @@
 
 Personal Python lab materials: exercises under `labs/`, shared data under `data/`, and a small **SQLAlchemy** database layer (`database.py`) configured via **environment variables**. **Alembic** is included for future schema migrations.
 
+**Python version:** development and the pinned **`requirements-lock.txt`** assume **Python 3.14**. Use **3.14** in **`.venv`** and in the IDE for the closest match to this repo. **`pyproject.toml`** still declares **`requires-python = ">=3.10"`**, so **3.10–3.13** may work for many labs if you install dependencies with that interpreter and accept possible wheel or API differences.
+
 Dependencies are listed in two ways:
 
 - **`requirements.txt`** — direct packages only (what you would install on purpose); `pip` pulls the rest automatically.
@@ -26,11 +28,23 @@ Dependencies are listed in two ways:
 
 ## Prerequisites
 
-- **Python** `3.10` or newer (`3.13` is used in this project)
+- **Python 3.14** — **recommended** and what this repo is aligned with (lockfile, **`setup_repo.sh`** tries **`python3.14`** first when SSL works). The interpreter must support **`import ssl`** so **pip** can use HTTPS. Official builds from [python.org](https://www.python.org/downloads/) usually include SSL; a **custom `/usr/local` build** can omit OpenSSL — see [Python 3.14 and SSL](#python-314-and-ssl-when-pip-cannot-use-https).
+- **Python 3.10+** — minimum per **`pyproject.toml`** if you cannot use 3.14 yet; create the venv with that interpreter and install from **`requirements.txt`** (you may need to regenerate a local lockfile for your exact version).
 - **Git**
 - A terminal (Terminal on macOS, your distro’s terminal on Linux, **PowerShell** or **Command Prompt** on Windows)
 
 Commands below assume you **open a terminal**, **clone or enter the project folder**, and run steps from the **repository root** (`MyLabs/`).
+
+### Python 3.14 and SSL (when `pip` cannot use HTTPS)
+
+If you see errors like **`ModuleNotFoundError: No module named '_ssl'`** or **pip** saying **SSL module is not available**, your Python was linked without OpenSSL at build time.
+
+1. **Check:** `python3.14 -c "import ssl; print(ssl.OPENSSL_VERSION)"` — if it fails, fix the interpreter before creating **`.venv`**.
+2. **Debian / Ubuntu / Kali (build from source):** install dev headers, then rebuild Python, for example:
+   - `sudo apt install build-essential libssl-dev libffi-dev zlib1g-dev libncursesw5-dev libgdbm-dev libc6-dev libbz2-dev liblzma-dev tk-dev uuid-dev`
+   - Download the CPython **3.14.x** source, then configure with OpenSSL explicitly, e.g. `./configure --with-openssl=/usr` (or the path where `pkg-config --libs openssl` points), then `make` and `sudo make altinstall`.
+3. **After fixing the host Python:** remove the broken venv and run **`./setup_repo.sh`** again (or `rm -rf .venv && python3.14 -m venv .venv`). **`setup_repo.sh`** prefers **`python3.14`** when it passes the SSL check; set **`PYTHON=/path/to/python3.14`** if several 3.14 binaries exist.
+4. **Temporary fallback:** use another interpreter that has SSL (e.g. **`python3.13`** from the distro) until 3.14 is rebuilt — **`setup_repo.sh`** will pick the first of **`python3.14` → `python3.13` → `python3`** that passes **`import ssl`**.
 
 ---
 
@@ -40,14 +54,15 @@ Typical order: **create venv → activate → upgrade pip → install dependenci
 
 ### 1. Create a virtual environment
 
-This project keeps the environment in **`.venv/`** at the repo root (ignored by Git). Use `python3` on Linux/macOS if `python` still points to Python 2.
+This project keeps the environment in **`.venv/`** at the repo root (ignored by Git). Prefer **Python 3.14** when creating it (e.g. **`python3.14 -m venv .venv`** on Linux/macOS if that command exists).
 
 | OS | Command |
 | ---- | --------- |
-| **Linux** | `python3 -m venv .venv` |
-| **macOS** | `python3 -m venv .venv` (or `python -m venv .venv` if `python` is 3.x) |
-| **Windows — PowerShell or CMD** | `py -3 -m venv .venv` or `python -m venv .venv` |
-| **WSL** (Windows Subsystem for Linux) | Same as Linux: `python3 -m venv .venv` |
+| **Linux** (recommended for this repo) | `python3.14 -m venv .venv` |
+| **Linux** (fallback) | `python3 -m venv .venv` |
+| **macOS** | `python3.14 -m venv .venv` or `python3 -m venv .venv` (or `python -m venv .venv` if `python` is 3.x) |
+| **Windows — PowerShell or CMD** | `py -3.14 -m venv .venv` or `py -3 -m venv .venv` or `python -m venv .venv` |
+| **WSL** (Windows Subsystem for Linux) | Same as Linux: prefer `python3.14 -m venv .venv` |
 
 ### 2. Activate the virtual environment
 
@@ -396,8 +411,9 @@ ZIP downloads **do not** include Git history; use **clone** if you plan to contr
 ## Use this project (quick path)
 
 1. **Obtain** the code: [clone](#clone-with-git-recommended) or [download ZIP](#download-as-a-zip-no-git-required).
-2. **Follow [Setup](#setup)** above: create and activate **`.venv`**, install with **`requirements.txt`** or **`requirements-lock.txt`**, run **`python -m pip install -e .`**, copy **`.env.example`** to **`.env`**, set **`SQLALCHEMY_DATABASE_URL`**. Or use the **[optional setup scripts](#optional-setup-scripts)** (`./setup_repo.sh` on Linux/macOS/Git Bash, **`.\setup_repo.ps1`** on Windows PowerShell).
-3. **Run** what you need: e.g. [Running lab scripts](#running-lab-scripts), or import `database` / `settings` from the project root (or with `PYTHONPATH` set to the repo root if you run from elsewhere).
+2. **Install [Python 3.14](https://www.python.org/downloads/)** (or see [Prerequisites](#prerequisites) for older supported versions).
+3. **Follow [Setup](#setup)** above: create and activate **`.venv`** with **3.14**, install with **`requirements.txt`** or **`requirements-lock.txt`**, run **`python -m pip install -e .`**, copy **`.env.example`** to **`.env`**, set **`SQLALCHEMY_DATABASE_URL`**. Or use the **[optional setup scripts](#optional-setup-scripts)** (`./setup_repo.sh` on Linux/macOS/Git Bash, **`.\setup_repo.ps1`** on Windows PowerShell — the shell script prefers **`python3.14`** when SSL is available).
+4. **Run** what you need: e.g. [Running lab scripts](#running-lab-scripts), or import `database` / `settings` from the project root (or with `PYTHONPATH` set to the repo root if you run from elsewhere).
 
 If anything imports **`database.py`**, **`.env` must exist** with a valid **`SQLALCHEMY_DATABASE_URL`**.
 

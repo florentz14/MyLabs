@@ -43,6 +43,14 @@ function Invoke-CreateVenv {
 }
 
 $VenvPython = Join-Path $Root ".venv\Scripts\python.exe"
+if ((Test-Path ".venv") -and (Test-Path $VenvPython)) {
+    & $VenvPython -c "import ssl" 2>$null | Out-Null
+    if (-not $?) {
+        Write-Host "==> Existing .venv cannot import ssl; removing .venv ..."
+        Remove-Item -Recurse -Force ".venv"
+    }
+}
+
 if (-not (Test-Path ".venv")) {
     Write-Host "==> Creating virtual environment .venv ..."
     Invoke-CreateVenv
@@ -50,6 +58,11 @@ if (-not (Test-Path ".venv")) {
 
 if (-not (Test-Path $VenvPython)) {
     Write-Error "Expected $VenvPython after creating venv."
+}
+
+& $VenvPython -c "import ssl" 2>$null | Out-Null
+if (-not $?) {
+    Write-Error "venv Python has no ssl module (pip needs HTTPS). Remove .venv and use a Python build with OpenSSL (e.g. installer from python.org). See README: Python 3.14 and SSL."
 }
 
 Write-Host "==> Upgrading pip ..."
