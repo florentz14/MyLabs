@@ -1,0 +1,21 @@
+Student_ID,Name,Last_Name,Email,Age,Major,GPA,Region,Study_Hours_Week,Credits_Current,Scholarship,Year_Enrolled,International,Country,Letter_Grade,Last_Exam_Date,Advisor_Email,Minor,Honors_Program,Commute_Minutes
+1,Alice,Martinez,alice.martinez@student.campus.edu,20,Computer Sci,3.8,Northeast,18,16,Yes,2024,No,USA,A-,2025-11-01,alice.advisor@school.edu,Data Sci,Yes,25
+2,Bob,Chen,bob.chen@student.campus.edu,22,Math,3.2,Southwest,12,14,No,2022,No,USA,B+,2025-10-28,,Statistics,No,
+3,Charlie,Davis,charlie.davis@student.campus.edu,19,Physics,3.6,Midwest,15,12,Yes,2025,Yes,Canada,B,2025-11-03,charlie.advisor@school.edu,,No,40
+4,Diana,Evans,diana.evans@student.campus.edu,21,Biology,3.9,West,20,18,Yes,2023,No,USA,A-,2025-10-30,diana.advisor@school.edu,Chemistry,Yes,15
+5,Ethan,Foster,ethan.foster@student.campus.edu,23,Computer Sci,3.4,Northeast,10,15,No,2021,No,USA,B,2025-10-25,ethan.advisor@school.edu,,No,55
+6,Fiona,Garcia,,20,Math,3.7,South,16,15,No,2024,Yes,Mexico,A-,2025-11-02,,Economics,No,30
+7,George,Harris,george.harris@student.campus.edu,24,Physics,2.9,Midwest,8,12,No,2020,No,USA,C+,2025-10-20,geo.advisor@school.edu,,No,
+8,Hannah,Irving,hannah.irving@student.campus.edu,18,Biology,3.5,West,22,14,Yes,2025,No,USA,B+,2025-11-01,hannah.advisor@school.edu,,Yes,20
+9,Ivan,Petrov,ivan.petrov@student.campus.edu,22,Computer Sci,3.1,Northeast,11,16,No,2022,Yes,Ukraine,B,2025-10-22,,,No,45
+10,Julia,Roberts,julia.roberts@student.campus.edu,21,Math,3.85,Southwest,19,17,Yes,2023,No,USA,A-,2025-10-29,julia.advisor@school.edu,,Yes,10
+11,Kenji,Tanaka,kenji.tanaka@student.campus.edu,20,Chemistry,3.55,West,17,16,No,2024,Yes,Japan,B+,2025-11-04,kenji.advisor@school.edu,Biology,No,
+12,Laura,Wright,laura.wright@student.campus.edu,25,Economics,3.0,Midwest,9,12,No,2019,No,USA,B-,2025-10-15,laura.advisor@school.edu,,No,60
+13,Marco,Silva,marco.silva@student.campus.edu,19,Nursing,3.65,South,21,18,Yes,2025,No,USA,A-,2025-11-05,marco.advisor@school.edu,,Yes,35
+14,Nina,Lopez,,22,Computer Sci,2.8,Northeast,7,14,No,2022,No,USA,C,2025-10-18,,,No,50
+15,Omar,Hassan,omar.hassan@student.campus.edu,21,Physics,3.45,Southwest,14,15,Yes,2023,Yes,Egypt,B+,2025-10-30,omar.advisor@school.edu,,No,25
+16,Paula,Nguyen,paula.nguyen@student.campus.edu,20,Biology,3.92,West,24,16,Yes,2024,No,USA,A,2025-11-02,paula.advisor@school.edu,Public Health,Yes,
+17,Quinn,Parker,quinn.parker@student.campus.edu,23,Math,2.95,Midwest,13,13,No,2021,No,USA,C+,2025-10-12,quinn.advisor@school.edu,,No,0
+18,Rosa,Mendez,rosa.mendez@student.campus.edu,18,Chemistry,3.7,South,18,14,No,2025,No,USA,B+,2025-11-03,,Art,No,22
+19,Sam,Taylor,sam.taylor@student.campus.edu,24,Economics,3.15,Northeast,10,9,No,2020,Yes,UK,B,2025-10-14,sam.advisor@school.edu,,No,40
+20,Tara,Obrien,tara.obrien@student.campus.edu,21,Nursing,3.55,West,20,17,Yes,2023,No,USA,B+,2025-11-01,tara.advisor@school.edu,,Yes,18

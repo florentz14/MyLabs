@@ -1,0 +1,213 @@
+# ITSE-1003 — Python for Data Science (coursework)
+
+Scripts for labs and assignments live in this folder. **Source datasets live in `data/`**. Outputs from running scripts (summaries, SQLite DB, exports) go to **`generated/`**, which is **ignored by Git** except for `.gitkeep` — see the repo root `.gitignore`.
+
+## Layout
+
+| Location | Contents |
+|----------|----------|
+| This folder (`labs/ITSE-1003/`) | Python scripts (`.py`) and this **README** |
+| **`data/`** | Source CSV and other input data only (not generated outputs). |
+| **`generated/`** | Files created when you run labs (e.g. `lab2_summary*.txt`, `school.db`) — excluded from the repository. |
+
+## Run examples
+
+From the repository root:
+
+```bash
+python3 labs/ITSE-1003/pet_management_system.py
+python3 labs/ITSE-1003/lab2_csv_manipulation.py
+python3 labs/ITSE-1003/lab2_csv_manipulation_pandas.py
+python3 labs/ITSE-1003/lab2_csv_manipulation_rich.py
+python3 labs/ITSE-1003/build_school_db.py
+```
+
+## Data files (current)
+
+These CSVs are **independent** from `data/excel/` at the repo root (different schemas). Original key columns are preserved; **extra columns are appended** for richer analysis (mixed types, empty cells, dates).
+
+- **`data/lab2_students.csv`** — Lab 2 still relies on **`Name`**, **`Age`**, **`Major`**, **`GPA`**. Also includes **`Last_Name`** and **`Email`** (a few empty cells for null practice). Also includes: **`Student_ID`**, **`Region`**, **`Study_Hours_Week`**, **`Credits_Current`**, **`Scholarship`**, **`Year_Enrolled`**, **`International`**, plus **`Country`**, **`Letter_Grade`**, **`Last_Exam_Date`**, **`Advisor_Email`**, **`Minor`**, **`Honors_Program`**, **`Commute_Minutes`** (intentional blanks for null-handling practice).
+- **`data/vehicles.csv`** — Original vehicle fields unchanged; added **`Owner_Type`**, **`Warranty_Months_Left`**, **`Recall_Open`**, **`Listed_Date`**, **`Discount_Pct`**, **`Inspection_Status`** (some cells empty).
+- **`data/exam_data.csv`** — Long format for **`build_school_db.py`**: first columns remain **`Student_ID`** … **`Teacher`** (SQLite load unchanged). Added **`Region`**, **`Country`**, **`Age`**, **`International`**, **`Online_Exam`**, **`Bonus_Points`**, **`Attendance_Pct`**, **`Lab_Section`**, **`Notes`** (extras ignored by the DB builder; use in pandas/SQL exercises).
+- **`data/people.csv`** — small helper sample; optional.
+
+Add new **source** CSV or TXT files under **`data/`** only. Anything produced by a script should land in **`generated/`** (or a subfolder you create there).
+
+---
+
+# Lab 1 — Pet Management System (OOP)
+
+Mini project for **Module 2** focused on **Object-Oriented Programming** with inheritance.
+
+## Objective
+
+Build a simple pet management system that:
+
+- defines `Dog` and `Puppy` classes,
+- creates at least 2 dogs and 1 puppy,
+- stores objects in a list,
+- loops through the list to print descriptions and call methods.
+
+## Main file
+
+- `pet_management_system.py`
+
+## Implemented features
+
+- Base class **`Dog`** with:
+  - attributes `name` and `age`,
+  - method `describe()`,
+  - method `bark()`.
+- Derived class **`Puppy`** that inherits from `Dog` and adds:
+  - method `play()`.
+- Input validation for `age`:
+  - prevents negative values,
+  - enforces integer type (`TypeError` if not an `int`).
+- Main flow with a pet list and output loop.
+
+## Execution
+
+From the repository root:
+
+```bash
+python3 labs/ITSE-1003/pet_management_system.py
+```
+
+No dataset files are required for this lab.
+
+## Expected output (example)
+
+```text
+Buddy is 3 years old
+Woof!
+Rocky is 5 years old
+Woof!
+Max is 1 years old
+The puppy is playing!
+```
+
+## Covered rubric criteria
+
+- Class design and OOP structure  
+- Constructor and attributes  
+- Methods and functionality  
+- Inheritance  
+- Object creation and list-based management  
+- Loop-driven program flow and output  
+- Input validation  
+- Code readability  
+
+---
+
+# Lab 2 — CSV Manipulation with Python
+
+**Course:** Python for Data Science  
+**Estimated time:** 60–90 minutes  
+**Dataset:** `data/lab2_students.csv`
+
+## Overview
+
+In this lab you practice reading a CSV file, accessing values by column name, performing basic analysis, and printing useful summaries.
+
+## Learning objectives
+
+- Import and use Python’s built-in `csv` module.
+- Read a CSV file with `csv.DictReader()`.
+- Convert string values from a CSV file into numeric types when needed.
+- Compute summary statistics from tabular data.
+- Filter records and count repeated categories with a dictionary.
+
+## Instructions
+
+1. Keep `lab2_students.csv` under **`data/`** (with the other course CSV files).  
+2. Implement the tasks in `lab2_csv_manipulation.py` (and optionally `lab2_csv_manipulation_pandas.py` or **`lab2_csv_manipulation_rich.py`** for terminal tables via **Rich**).  
+3. Complete all tasks in one program unless the instructor says otherwise.  
+4. Add clear comments before each task.  
+5. Submit your Python file and a screenshot of your output.
+
+## Dataset preview
+
+| Name    | Age | Major         | GPA |
+|---------|-----|---------------|-----|
+| Alice   | 20  | Computer Sci  | 3.8 |
+| Bob     | 22  | Math          | 3.2 |
+| Charlie | 19  | Physics       | 3.6 |
+| Diana   | 21  | Biology       | 3.9 |
+| Ethan   | 23  | Computer Sci  | 3.4 |
+
+## Lab tasks
+
+### Task 1 — Import and open the file
+
+- Import the `csv` module.  
+- Open `data/lab2_students.csv` in read mode.  
+- Create a `DictReader` object named `reader`.
+
+### Task 2 — Print all students in a clean format
+
+- Loop through the CSV rows.  
+- Print each student in this exact style:
+
+`Name: Alice | Age: 20 | Major: Computer Sci | GPA: 3.8`
+
+### Task 3 — Calculate the average age
+
+- Compute the average age of all students in the file.  
+- Print the result with a label such as: `Average age: 21.0`
+
+### Task 4 — Find the oldest student
+
+- Determine which student has the highest age.  
+- Print both the name and age of the oldest student.
+
+### Task 5 — Print only Computer Sci students
+
+- Filter the data so that only students whose major is Computer Sci are printed.  
+- Print only the names of those students.
+
+### Task 6 — Count how many students are in each major
+
+- Use a dictionary to count the number of students in each major.  
+- Print the final dictionary or print one line per major.
+
+### Task 7 — Print students with GPA 3.5 or higher
+
+- Convert the GPA value to float.  
+- Print the names of all students whose GPA is 3.5 or higher.
+
+## Stretch challenge (optional)
+
+- Find the average GPA for the entire file.  
+- Print all students older than 21.  
+- Write a short summary of your results to **`data/lab2_summary.txt`**.
+
+## Grading rubric
+
+| Category | Points | What earns full credit |
+|----------|--------|-------------------------|
+| Correct use of csv module and DictReader | 15 | Imports csv, opens the file correctly, and reads rows by column names. |
+| Task 2: clean formatted output | 15 | All records print clearly and match the requested format. |
+| Task 3: average age | 15 | Average is computed correctly using numeric conversion. |
+| Task 4: oldest student | 15 | Program correctly identifies and prints the oldest student. |
+| Task 5: filter by major | 10 | Only Computer Sci students are printed. |
+| Task 6: count by major | 15 | Dictionary counting logic is correct and output is readable. |
+| Task 7: GPA filter | 10 | Students with GPA 3.5 or higher are correctly printed. |
+| Code quality and comments | 5 | Code is readable, organized, and includes helpful comments. |
+
+**Total: 100 points**
+
+## Submission checklist
+
+- `lab2_csv_manipulation.py`  
+- Screenshot of program output  
+- Optional: `data/lab2_summary.txt` if you complete the stretch challenge  
+
+---
+
+## Future labs
+
+When Lab 3, Lab 4, … are assigned, add a new section here using the same pattern as Lab 2:
+
+`## Lab N — Title`
+
+Include objectives, tasks, paths under `data/`, and submission items. Keep **this single `README.md`** for the whole course.

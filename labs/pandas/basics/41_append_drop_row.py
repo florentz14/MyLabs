@@ -32,6 +32,15 @@ def main() -> None:
         "age": 23,
         "study_hours": 4.0,
         "passed": "yes",
+        "letter_grade": "B",
+        "exam_date": "2025-03-15",
+        "online_exam": "yes",
+        "bonus_points": 0.0,
+        "campus": "North Campus",
+        "attendance_pct": 95.0,
+        "retake_count": 0,
+        "scholarship_active": "no",
+        "notes": "Inserted row demo",
     }
     print("\nPrint all records after inserting a new record:")
     print(df)

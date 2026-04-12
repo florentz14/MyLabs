@@ -1,0 +1,21 @@
+Vehicle_ID,Vehicle_Type,Make,Model,Year,Color,Doors,Wheels,Fuel_Type,Transmission,MSRP_USD,Mileage_KM,Condition,Region_Last_Title,CO2_g_per_km,In_Stock,Special_Features,Owner_Type,Warranty_Months_Left,Recall_Open,Listed_Date,Discount_Pct,Inspection_Status
+V001,Car,Toyota,Camry,2022,Silver,4,4,Hybrid,Automatic,32000,18500,Used,Northeast,98,Yes,Backup Camera; Lane Assist,Personal,18,No,2025-01-10,5.0,Pass
+V002,Truck,Ford,F-150,2024,White,2,6,Gasoline,10-Speed,48000,1200,New,Southwest,246,Yes,Tow Package; Pro Trailer,Fleet,36,,2025-02-01,0.0,
+V003,Bike,Trek,Marlin 7,2023,Blue,0,2,Human Power,24-Speed,850,450,Used,West,0,Yes,Mountain Tires; Hydraulic Disc,Personal,,No,2024-11-15,12.5,Pass
+V004,Car,Honda,Civic,2021,Red,4,4,Gasoline,Manual,26000,42000,Used,Midwest,138,No,Sport Mode; Sunroof,Personal,6,Yes,2025-03-01,8.0,Fail
+V005,Truck,Chevy,Silverado,2023,Black,4,6,Diesel,Automatic,55000,8000,Used,South,209,Yes,4WD; Off-Road Package,Dealer,24,No,2025-01-20,,Pass
+V006,Bike,Giant,Escape 3,2022,Green,0,2,Human Power,21-Speed,620,2800,Used,Northeast,0,No,Electric Assist; Rack,Personal,0,No,2024-09-05,15.0,
+V007,Car,Tesla,Model S,2023,Blue,4,4,Electric,Automatic,88000,5200,Used,West,0,Yes,Autopilot; Premium Audio,Personal,48,No,2025-02-14,0.0,Pass
+V008,Truck,Dodge,Ram 1500,2022,Red,2,4,Gasoline,Automatic,42000,31000,Used,Southwest,229,Yes,Hemi Engine; Crew Cab,Fleet,12,No,2024-12-01,3.5,Pass
+V009,Bike,Specialized,Roubaix,2021,Yellow,0,2,Human Power,11-Speed,3200,900,Used,Midwest,0,Yes,Carbon Frame; Disc Brakes,Personal,,,2024-10-10,10.0,Pass
+V010,Car,BMW,330i,2020,Black,4,4,Gasoline,Automatic,41000,55000,Used,Northeast,142,No,Sport Package; Heated Seats,Personal,3,Yes,2025-01-05,12.0,Fail
+V011,Car,Nissan,Leaf,2023,White,4,4,Electric,Automatic,29000,500,New,South,0,Yes,ProPilot; Fast Charge,Dealer,60,No,2025-03-10,0.0,Pass
+V012,Motorcycle,Yamaha,MT-07,2022,Gray,0,2,Gasoline,6-Speed,9200,6200,Used,West,93,Yes,ABS; LED Headlights,Personal,8,No,2024-11-20,,Pass
+V013,Van,Mercedes,Sprinter,2021,White,3,4,Diesel,Automatic,52000,78000,Used,Midwest,198,No,Cargo Partition; Bluetooth,Fleet,,No,2024-08-01,7.0,Pass
+V014,Car,Hyundai,Elantra,2024,Blue,4,4,Gasoline,CVT,24000,80,New,Southwest,127,Yes,Smart Cruise; Wireless CarPlay,Personal,60,No,2025-03-18,0.0,
+V015,SUV,Subaru,Outback,2020,Green,4,4,Gasoline,CVT,33000,48000,Used,Northeast,168,Yes,AWD; Roof Rails,Personal,0,No,2025-02-28,6.0,Pass
+V016,Truck,Toyota,Tacoma,2023,Gray,2,4,Gasoline,Automatic,38000,15000,Used,West,244,Yes,4WD; Bed Liner,Fleet,30,No,2025-01-12,4.0,Pass
+V017,Car,Mazda,CX-5,2022,Red,4,4,Gasoline,Automatic,31000,22000,Used,South,161,Yes,AWD; Bose Audio,Personal,14,No,2024-12-15,9.0,Pass
+V018,Bike,Cannondale,Quick 4,2023,Black,0,2,Human Power,9-Speed,980,150,New,Midwest,0,Yes,Urban Commuter; Lights,Personal,24,No,2025-03-01,0.0,Pass
+V019,Car,VW,Golf,2019,Silver,4,4,Gasoline,Manual,22000,67000,Used,Northeast,134,No,Manual; Hatchback,Personal,,Yes,2024-07-20,18.0,
+V020,Truck,Rivian,R1T,2024,Green,4,4,Electric,Automatic,73000,400,New,West,0,Yes,Quad Motor; Camp Kitchen,Dealer,60,No,2025-03-22,0.0,Pass

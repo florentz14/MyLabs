@@ -13,9 +13,20 @@ from sample_data import sample_df
 
 
 def main() -> None:
+    # get the sample DataFrame
     df = sample_df()
-    df["Score"] = df["Score"].fillna(df["Score"].mean())
-    print(df["Score"])
+
+    # print the DataFrame before filling NaN
+    print("DataFrame before filling NaN:")
+    print(df[["Name", "Score"]])
+    print()
+    # fill NaN with the mean of the Score column
+    fillna_mean = df["Score"].mean()
+    df["Score"] = df["Score"].fillna(fillna_mean)
+    print()
+    # print the DataFrame after filling NaN
+    print("DataFrame after filling NaN:")
+    print(df[["Name", "Score"]])
 
 
 if __name__ == "__main__":

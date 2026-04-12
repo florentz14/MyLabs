@@ -1,0 +1,21 @@
+id,username,first_name,last_name,email,dob,gender,password_hash,is_active,last_login,phone
+10002024001,asmith,Alice,Smith,a.smith@cybercorp.com,2002-05-14,F,,true,2024-03-20 14:22,+1-555-0101
+10002024002,broberts,Bob,Roberts,b.roberts@cybercorp.com,1994-11-03,M,,true,,+1-555-0102
+10002024003,cwhite,Carol,White,c.white@cybercorp.com,1997-08-21,,,false,2023-12-01 09:10,
+10002024004,dmiller,David,Miller,d.miller@cybercorp.com,2000-03-10,M,,true,2024-04-01 18:45,+1-555-0104
+10002024005,egarcia,Emma,Garcia,e.garcia@cybercorp.com,1995-09-19,F,,true,,
+10002024006,fjohnson,Frank,Johnson,f.johnson@cybercorp.com,1991-07-08,,,true,2024-01-15 11:30,+1-555-0106
+10002024007,gmartinez,Grace,Martinez,g.martinez@cybercorp.com,1998-08-11,F,,false,,+1-555-0107
+10002024008,hbrown,Henry,Brown,h.brown@cybercorp.com,1993-02-26,M,,true,2024-03-25 22:12,
+10002024009,idavis,Ivy,Davis,i.davis@cybercorp.com,2001-06-14,F,,true,,+1-555-0109
+10002024010,jwilson,Jack,Wilson,j.wilson@cybercorp.com,1996-01-09,M,,true,2024-02-28 10:05,+1-555-0110
+10002024011,kanderson,Karen,Anderson,k.anderson@cybercorp.com,1989-12-01,,,true,,
+10002024012,lthompson,Leo,Thompson,l.thompson@cybercorp.com,2003-02-05,M,,true,2024-03-30 15:40,+1-555-0112
+10002024013,mmoore,Mia,Moore,m.moore@cybercorp.com,1999-10-18,F,,true,,
+10002024014,ntaylor,Noah,Taylor,n.taylor@cybercorp.com,1992-06-22,M,,true,2024-04-02 08:20,+1-555-0114
+10002024015,oharris,Olivia,Harris,o.harris@cybercorp.com,1997-08-30,F,,true,,+1-555-0115
+10002024016,pwalker,Paul,Walker,p.walker@cybercorp.com,1990-11-17,M,,false,2023-11-20 13:00,
+10002024017,qcharlotte,Quinn,Charlotte,q.charlotte@cybercorp.com,2003-04-29,,,true,2024-03-12 19:45,+1-555-0117
+10002024018,rryan,Ryan,Orlando,r.ryan@cybercorp.com,1991-03-12,M,,true,,+1-555-0118
+10002024019,ssophia,Sofia,Vegas,s.sophia@cybercorp.com,2004-01-27,F,,true,2024-04-04 12:00,
+10002024020,ttom,Tom,Philly,t.tom@cybercorp.com,1988-09-15,M,,true,2024-03-29 09:30,+1-555-0120

@@ -1,0 +1,2 @@
+brand,model,year,color,price,is_new,is_used,is_electric,is_gasoline,is_diesel,is_hybrid
+Ford,Mustang,1964,red,10000,True,False,False,True,False,False

@@ -18,7 +18,7 @@ TEXT_PATH = DATA_PATH / "text"
 # Built by labs/db/init_school_db.py from school_schema.sql + school_seed.sql (SQLite database)
 SCHOOL_DB_PATH = SQL_PATH / "school.db"
 
-# Lab file examples (read/write in labs/files/)
+# Lab file examples (read/write in labs/files/; scripts named 01_*.py … 16_*.py)
 FILES_PATH = TEXT_PATH
 
 # Lab exercise directories (code under labs/)
@@ -33,3 +33,4 @@ EVAL_PATH = LABS_PATH / "eval"
 PROJECTS_PATH = LABS_PATH / "projects"
 ML_PATH = LABS_PATH / "ml"
 PANDAS_PATH = LABS_PATH / "pandas"
+ITSE_1003_PATH = LABS_PATH / "ITSE-1003"

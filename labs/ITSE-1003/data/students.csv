@@ -1,0 +1,14 @@
+Id,Name,Age,Major,GPA,Email,City,Phone,Birth_Date, grade, grade_letter
+1,Alice Johnson,35,Computer Science,3.5,alice@email.com,New York,555-0101,1990-05-15, 90, A
+2,Bob Smith,28,Mathematics,3.8,bob@email.com,Los Angeles,555-0202,1985-12-25, 85, B
+3,Charlie Brown,42,Physics,4.0,charlie@email.com,Chicago,555-0303,2000-02-29, 100, C
+4,Diana Prince,31,Chemistry,3.2,diana@email.com,Houston,555-0404,1992-08-30, 92, D
+5,Eve Wilson,45,Biology,3.5,eve@email.com,Phoenix,555-0505,1975-11-12, 75, E
+6,Frank Miller,29,Economics,3.8,frank@email.com,Boston,555-0606,1994-07-18, 94, F
+7,Grace Lee,38,English,3.5,grace@email.com,Seattle,555-0707,1983-03-22, 83, G
+8,Henry Davis,51,History,3.8,henry@email.com,Miami,555-0808,1970-09-05, 70, H
+9,Iris Chen,26,Art,3.2,iris@email.com,Denver,555-0909,1996-04-14, 96, I
+10,Kevin Ortiz,22,Computer Science,2.1,kevin.ortiz@email.com,Austin,555-1010,2002-01-10, 55, F
+11,Mia Wong,20,Mathematics,2.4,mia.wong@email.com,Portland,555-1111,2004-06-20, 62, D
+12,Leo King,24,Physics,2.0,leo.king@email.com,Dallas,555-1212,2000-11-05, 68, D
+13,Nora Ali,19,Chemistry,1.9,nora.ali@email.com,Tampa,555-1313,2005-03-18, 45, F
