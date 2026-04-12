@@ -1,22 +1,32 @@
-# Pandas Advanced Labs
+# Pandas Advanced Labs (`labs/pandas/advanced`)
 
-Short, focused scripts for intermediate/advanced pandas practice.
-Most use `data/excel/exam_data.csv`; `04_series_arithmetic.py` is standalone.
+Short intermediate-to-advanced pandas scripts. Most use **`data/excel/exam_data.csv`** (`settings.CSV_PATH`). **`04_series_arithmetic.py`** is self-contained (Series only).
 
-If `settings` import fails, run from repo root with `PYTHONPATH=.`.
+If **`import settings`** fails, run from the repo root with **`PYTHONPATH=.`** or **`python -m pip install -e .`**.
 
-| # | File | Description |
-|---|------|-------------|
-| 1 | `01_groupby_multiagg.py` | Group by multiple keys and apply several aggregations |
-| 2 | `02_pivot_table_report.py` | Build pivot tables with totals and multiple value columns |
-| 3 | `03_rank_and_quantiles.py` | Rank students and split scores into quartile bands (`qcut`) |
-| 4 | `04_series_arithmetic.py` | Arithmetic between two Series (operators, summary table, `.add`/`.sub`/…) |
+| File | Role | Description |
+| --- | --- | --- |
+| `01_groupby_multiagg.py` | Group | `groupby` with multiple keys and multiple aggregations |
+| `02_pivot_table_report.py` | Pivot | Pivot tables with margins and multiple value columns |
+| `03_rank_and_quantiles.py` | Rank / bin | Ranks and quantile bands with **`qcut`** |
+| `04_series_arithmetic.py` | Series | Arithmetic between two Series (operators and `.add` / `.sub` / …) |
+| `correlations.py` | Correlation | Correlation matrix of numeric columns in **`exam_data.csv`** |
+| `plotting.py` | Plot | Scatter **`score`** vs **`study_hours`** → PNG under **`data/export/`** |
 
-Run from repo root:
+## Running
+
+From the repository root:
 
 ```bash
 PYTHONPATH=. python3 labs/pandas/advanced/01_groupby_multiagg.py
 PYTHONPATH=. python3 labs/pandas/advanced/02_pivot_table_report.py
 PYTHONPATH=. python3 labs/pandas/advanced/03_rank_and_quantiles.py
-python3 labs/pandas/advanced/04_series_arithmetic.py
+PYTHONPATH=. python3 labs/pandas/advanced/04_series_arithmetic.py
+PYTHONPATH=. python3 labs/pandas/advanced/correlations.py
+PYTHONPATH=. python3 labs/pandas/advanced/plotting.py
 ```
+
+## See also
+
+- Pandas area index: [../index.md](../index.md)
+- Numbered basics: [../basics/README.md](../basics/README.md)

@@ -2,7 +2,7 @@
 
 Exercises for **reading and writing files** with the standard library: plain text, **CSV** (`csv.reader` / `writer`), **DictReader** / **DictWriter**, tab-separated values, **append** mode, and small **interactive** programs.
 
-Scripts are **numbered `01`–`18`** in suggested learning order (simple I/O first, then structured text, filesystem helpers, CSV APIs, interactive last)—same idea as `labs/pandas/basics/`.
+Scripts are **numbered `01`–`18`** in suggested learning order (simple I/O first, then structured text, filesystem helpers, CSV APIs, interactive last)—same idea as **`labs/pandas/basics/`** ([README](../pandas/basics/README.md)).
 
 All paths go through **`settings`** (`FILES_PATH` → `data/text/`, `CSV_PATH` → `data/excel/`). From the repo root, use an **editable install** so imports work:
 
@@ -21,32 +21,32 @@ python3 labs/files/12_csv_read_write.py
 
 ## Scripts
 
-| # | File | Description | Role |
-| --- | ------ | ------------- | ------ |
-| 1 | `01_read_test.py` | Read an entire text file into memory and print it. | Reads `test.txt` from **`FILES_PATH`**. |
-| 2 | `02_write_test.py` | Create or overwrite a simple text file. | Writes `test.txt` under **`FILES_PATH`**. |
-| 3 | `03_read_fruits.py` | Load a line-oriented list from disk. | Reads `test2.txt`. |
-| 4 | `04_write_fruits.py` | Save a list of lines to a file. | Writes `test2.txt`. |
-| 5 | `05_read_student.py` | Parse CSV-like rows stored in a `.txt` file. | Reads `student.txt`. |
-| 6 | `06_write_student.py` | Write student records as text rows. | Writes `student.txt`. |
-| 7 | `07_append_student.py` | Add new rows without rewriting the whole file. | Appends to `student.txt`. |
-| 8 | `08_update_student.py` | Change one record in place by identifier. | Upserts a row in `student.txt` by `id`. |
-| 9 | `09_exist_folder.py` | Create missing directories safely before writing. | `mkdir` with parents. |
-| 10 | `10_replace_file.py` | Combine path setup with writing a single output file. | Ensures folder, then writes/replaces a file (e.g. avatar path). |
-| 11 | `11_append_log.py` | Grow a log file over time using append mode. | Appends to `birdwatch.txt` under **`FILES_PATH`**. |
-| 12 | `12_csv_read_write.py` | Use list-based CSV rows with the standard `csv` module. | `csv.writer` / `csv.reader`; output under **`CSV_PATH`**. |
-| 13 | `13_csv_dict_reader.py` | Access columns by header name while reading. | **`csv.DictReader`**. |
-| 14 | `14_csv_dict_write.py` | Emit CSV from dictionaries with fieldnames. | **`csv.DictWriter`**. |
-| 15 | `15_csv_tab_delimited.py` | Use a tab delimiter instead of commas. | Tab-separated **`.tsv`** under **`CSV_PATH`**. |
-| 16 | `16_phone_directory.py` | Interactive loop: load, search, and save contacts. | Uses `phone_directory.txt`. |
-| 18 | `18_password_secret_check.py` | Read `SecretPasswordFile.txt`, compare with `input()`; `if` / `elif` / `else`. | **`FILES_PATH`**; joke branch for wrong password `12345`. |
+| File | Role | Description |
+| --- | --- | --- |
+| `01_read_test.py` | Read | **1.** Read an entire text file into memory and print it. Uses `test.txt` under **`FILES_PATH`**. |
+| `02_write_test.py` | Write | **2.** Create or overwrite a simple text file. Writes `test.txt` under **`FILES_PATH`**. |
+| `03_read_fruits.py` | Read | **3.** Load a line-oriented list from disk. Reads `test2.txt`. |
+| `04_write_fruits.py` | Write | **4.** Save a list of lines to a file. Writes `test2.txt`. |
+| `05_read_student.py` | Read | **5.** Parse CSV-like rows stored in a `.txt` file. Reads `student.txt`. |
+| `06_write_student.py` | Write | **6.** Write student records as text rows. Writes `student.txt`. |
+| `07_append_student.py` | Append | **7.** Add new rows without rewriting the whole file. Appends to `student.txt`. |
+| `08_update_student.py` | Update | **8.** Change one record in place by identifier. Upserts a row in `student.txt` by `id`. |
+| `09_exist_folder.py` | Filesystem | **9.** Create missing directories safely before writing. `mkdir` with parents. |
+| `10_replace_file.py` | Write | **10.** Combine path setup with writing a single output file. Ensures folder, then writes/replaces a file (e.g. avatar path). |
+| `11_append_log.py` | Append | **11.** Grow a log file over time using append mode. Appends to `birdwatch.txt` under **`FILES_PATH`**. |
+| `12_csv_read_write.py` | CSV | **12.** List-based CSV rows with the standard `csv` module. `csv.writer` / `csv.reader`; output under **`CSV_PATH`**. |
+| `13_csv_dict_reader.py` | CSV | **13.** Access columns by header name while reading. **`csv.DictReader`**. |
+| `14_csv_dict_write.py` | CSV | **14.** Emit CSV from dictionaries with fieldnames. **`csv.DictWriter`**. |
+| `15_csv_tab_delimited.py` | CSV | **15.** Tab delimiter instead of commas. Tab-separated **`.tsv`** under **`CSV_PATH`**. |
+| `16_phone_directory.py` | Interactive | **16.** Load, search, and save contacts in a loop. Uses `phone_directory.txt`. |
+| `18_password_secret_check.py` | Interactive | **18.** Read `SecretPasswordFile.txt`, compare with `input()`; `if` / `elif` / `else`. **`FILES_PATH`**; joke branch for wrong password `12345`. |
 
 ## Where data lives
 
-| Setting                   | Resolves to   | Typical use in these scripts                          |
-| ------------------------- | ------------- | ----------------------------------------------------- |
-| **`settings.FILES_PATH`** | `data/text/`  | `.txt` practice files (`test.txt`, `student.txt`, …). |
-| **`settings.CSV_PATH`**   | `data/excel/` | `.csv` / `.tsv` produced or read by the CSV modules.  |
+| File | Role | Description |
+| --- | --- | --- |
+| **`settings.FILES_PATH`** | Path constant | Resolves to `data/text/` — `.txt` practice files (`test.txt`, `student.txt`, …). |
+| **`settings.CSV_PATH`** | Path constant | Resolves to `data/excel/` — `.csv` / `.tsv` read or written by the CSV scripts. |
 
 Generated files may be listed in **`.gitignore`** (e.g. lab-specific CSV names); that is expected.
 
@@ -63,16 +63,16 @@ Same as the numeric prefixes:
 
 ## Concepts checklist
 
-| Topic | Scripts |
-| ----- | ------- |
-| `open()`, `read()`, `write()`, context managers | `01_read_test.py`, `02_write_test.py`, …, `18_password_secret_check.py` |
-| Append mode (`"a"`) | `07_append_student.py`, `11_append_log.py` |
-| CSV rows as lists | `12_csv_read_write.py` |
-| CSV rows as dicts | `13_csv_dict_reader.py`, `14_csv_dict_write.py` |
-| TSV / delimiters | `15_csv_tab_delimited.py` |
-| Paths with `pathlib` + `settings` | All |
+| File | Role | Description |
+| --- | --- | --- |
+| `open()`, `read()`, `write()`, context managers | Concept | Covered across `01_read_test.py`, `02_write_test.py`, …, `18_password_secret_check.py` |
+| Append mode (`"a"`) | Concept | `07_append_student.py`, `11_append_log.py` |
+| CSV rows as lists | Concept | `12_csv_read_write.py` |
+| CSV rows as dicts | Concept | `13_csv_dict_reader.py`, `14_csv_dict_write.py` |
+| TSV / delimiters | Concept | `15_csv_tab_delimited.py` |
+| Paths with `pathlib` + `settings` | Concept | All scripts |
 
 ## Related
 
-- Root project layout and **`FILES_PATH`**: [README.md](../../README.md) (section *Repository layout* / *Running lab scripts*).  
-- For **pandas** on CSV/Excel at scale, see **`labs/pandas/`** and **`labs/pandas/basics/`**.
+- Repo root and **`FILES_PATH`**: [README.md](../../README.md) (*Repository layout* / *Running lab scripts*).
+- **Pandas** for CSV/Excel: [../pandas/README.md](../pandas/README.md), [../pandas/basics/README.md](../pandas/basics/README.md).

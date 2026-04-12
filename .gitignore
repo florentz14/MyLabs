@@ -65,6 +65,7 @@ data/text/phone_directory.txt
 data/excel/csv_lab_*
 data/excel/pandas_basics_sample.csv
 data/gen/basic_viz.png
+data/export/pandas_score_vs_study_hours.png
 
 # ITSE-1003: outputs from lab scripts (summaries, SQLite build, exports)
 labs/ITSE-1003/generated/*

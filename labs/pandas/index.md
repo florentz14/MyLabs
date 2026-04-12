@@ -2,17 +2,19 @@
 
 Suggested order to study pandas labs in this repo.
 
-## 1) Foundation (single-file starters)
+## 1) Foundation (small starters)
 
-Start here to warm up with tiny scripts:
+Start here to warm up:
 
-- `read_people.py`
-- `cleaning.py`
-- `features.py`
-- `stats.py`
-- `stock.py`
+- `io/read_people.py`
+- `cleaning/quick_clean.py`
+- `features/derived_columns.py`
+- `stats/people_summary.py`
+- `io/stock.py`
 
 ## 2) Basics Track (01 to 55)
+
+Optional warm-up (same folder): `basics/introduction.py` → `basics/analyze_data.py` (short roadmap-style scripts).
 
 Work through the full basics sequence in order:
 
@@ -26,9 +28,20 @@ python3 labs/pandas/basics/01_head.py
 PYTHONPATH=. python3 labs/pandas/basics/52_column_headers.py
 ```
 
-## 3) Advanced Track (01 to 04)
+## 3) Analysis on `data/` (optional)
 
-After basics, continue with:
+After you are comfortable with **`read_csv`** and **`groupby`**, run the EDA scripts that summarize files under the repo **`data/`** folder:
+
+- `analysis/README.md` — catalog
+- Examples: `analysis/analyze_people.py`, `analysis/analyze_exam_data.py`
+
+```bash
+PYTHONPATH=. python3 labs/pandas/analysis/analyze_people.py
+```
+
+## 4) Advanced Track (01 to 04)
+
+Continue with:
 
 - `advanced/01_groupby_multiagg.py`
 - `advanced/02_pivot_table_report.py`

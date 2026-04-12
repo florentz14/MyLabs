@@ -8,7 +8,7 @@
 - **[Database (`database.py`)](#database-databasepy)** — SQLAlchemy engine and sessions  
 - **[Alembic](#alembic)** — migrations (initialize when needed)  
 - **[Repository layout](#repository-layout)** — main folders and files  
-- **[Running lab scripts](#running-lab-scripts)** — `labs/files`, `pandas`, `numpy`, `viz`, `db/`  
+- **[Running lab scripts](#running-lab-scripts)** — `labs/files`, `pandas` (incl. `analysis/`, `viz/`), `numpy`, `db/`  
 - **[Tests](#tests)**  
 - **[Git](#git)** — branch tips, push to GitHub  
 - **[Get the project (clone or download)](#get-the-project-clone-or-download)**  
@@ -182,37 +182,34 @@ Then point **`sqlalchemy.url`** in **`alembic.ini`** (or **`env.py`**) at the sa
 
 ## Repository layout
 
-| Path | Purpose |
-| ------ | --------- |
-| `database.py` | SQLAlchemy engine, session, `Base`, `get_db()` |
-| `settings.py` | Project `BASE_PATH` and subpaths under `data/` and `labs/` |
-| `data/` | Excel/CSV, exports, generated datasets, JSON, PDFs, text files, SQL snippets, etc. (see `settings.py`) |
-| `data/excel/` | Spreadsheet-friendly datasets (`.csv` + `.xlsx`) such as `people.csv` and `students.*` |
-| `data/json/` | JSON/JSONL/YAML datasets for semi-structured practice |
-| `data/gen/` | Generated practice files (TSV, pipe-delimited TXT, XML, Pickle, NumPy binaries) |
-| `data/export/` | Export artifacts such as HTML tables |
-| `data/text/` | Sample `.txt` files for `labs/files/` (`settings.FILES_PATH` / `TEXT_PATH`) |
-| `data/sql/` | School demo SQLite: versioned files are `school_schema.sql` and `school_seed.sql`. **`school.db` is not committed** (`*.db` is in `.gitignore`); create it locally with `python labs/db/init_school_db.py` → `settings.SCHOOL_DB_PATH` |
-| `labs/` | Lab code grouped by topic (`classes/`, `files/`, `pandas/`, `db/`, `ml/`, etc.) |
-| `labs/files/` | Text/CSV I/O exercises (`01_*.py`–`18_*.py`); see **[labs/files/README.md](labs/files/README.md)** |
-| `labs/pandas/` | Pandas exercises: root scripts (`read_people.py`, `stock.py`, …), **`basics/`** (55 numbered one-topic scripts), **`advanced/`** (heavier examples); see **`labs/pandas/README.md`** and **`labs/pandas/index.md`** |
-| `labs/ITSE-1003/` | Course assignments (Python for Data Science); inputs in **`labs/ITSE-1003/data/`**, generated outputs in **`labs/ITSE-1003/generated/`** (gitignored) — see **`labs/ITSE-1003/README.md`** |
-| `labs/numpy/` | Small scripts by topic (`arithmetic/`, `aggregation/`, `shape/`, `linalg/`, `datetime/`); see [labs/numpy/README.md](labs/numpy/README.md) |
-| `labs/cleaning/` | Missing values, duplicates, outliers, and type-fixing exercises |
-| `labs/viz/` | Charting practice (`basic_viz.py`, `viz_<topic>_<level>.py`) |
-| `labs/stats/` | Intro statistics exercises for analysis workflows |
-| `labs/features/` | Encoding, scaling, and derived-feature practice |
-| `labs/eval/` | Intro metrics and validation exercises |
-| `labs/projects/` | Small end-to-end data projects |
-| `labs/ml/` | Very simple ML starter scripts and notes |
-| `labs/classes/` | OOP exercises; see `basic_oop.py` |
-| `requirements.txt` | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.) |
-| `requirements-lock.txt` | Full pinned environment (`python -m pip freeze`) for reproducible installs |
-| `pyproject.toml` | Local package metadata; `python -m pip install -e .` exposes `settings` and `database` |
-| `setup_repo.sh` | Optional setup (Linux/macOS/Git Bash): venv, deps, editable install, `.env` from example |
-| `setup_repo.ps1` | Same automation for **Windows PowerShell** |
-| `.env` | Local secrets and config — **not committed** (see `.gitignore`) |
-| `.env.example` | Template for required variables (copy to `.env`) |
+| File | Role | Description |
+| --- | --- | --- |
+| `database.py` | Module | SQLAlchemy engine, session, `Base`, `get_db()`. |
+| `settings.py` | Module | Project `BASE_PATH` and subpaths under `data/` and `labs/`. |
+| `data/` | Directory | Excel/CSV, exports, generated datasets, JSON, PDFs, text files, SQL snippets, etc. (see `settings.py`). |
+| `data/excel/` | Directory | Spreadsheet-friendly datasets (`.csv` + `.xlsx`) such as `people.csv` and `students.*`. |
+| `data/json/` | Directory | JSON/JSONL/YAML datasets for semi-structured practice. |
+| `data/gen/` | Directory | Generated practice files (TSV, pipe-delimited TXT, XML, Pickle, NumPy binaries). |
+| `data/export/` | Directory | Export artifacts such as HTML tables. |
+| `data/text/` | Directory | Sample `.txt` files for `labs/files/` (`settings.FILES_PATH` / `TEXT_PATH`). |
+| `data/sql/` | Directory | School demo SQLite: versioned files are `school_schema.sql` and `school_seed.sql`. **`school.db` is not committed** (`*.db` is in `.gitignore`); create it locally with `python labs/db/init_school_db.py` → `settings.SCHOOL_DB_PATH`. |
+| `labs/` | Directory | Lab code grouped by topic (`classes/`, `files/`, `pandas/`, `db/`, `ml/`, etc.). |
+| `labs/files/` | Directory | Text/CSV I/O exercises (`01_*.py`–`18_*.py`); see **[labs/files/README.md](labs/files/README.md)**. |
+| `labs/pandas/` | Directory | Pandas exercises: topic folders (`io/`, `cleaning/`, `basics/`, `advanced/`, …); only **`README.md`** / **`index.md`** at the folder root — see **`labs/pandas/README.md`**. |
+| `labs/ITSE-1003/` | Directory | Course assignments (Python for Data Science); inputs in **`labs/ITSE-1003/data/`**, generated outputs in **`labs/ITSE-1003/generated/`** (gitignored) — see **`labs/ITSE-1003/README.md`**. |
+| `labs/numpy/` | Directory | Small scripts by topic (`arithmetic/`, `aggregation/`, `shape/`, `linalg/`, `datetime/`); see [labs/numpy/README.md](labs/numpy/README.md). |
+| `labs/stats/` | Directory | Intro statistics exercises (**stdlib** `statistics`; not pandas). |
+| `labs/eval/` | Directory | Intro metrics and validation exercises (e.g. sklearn). |
+| `labs/ml/` | Directory | Very simple ML starter scripts and notes. |
+| `labs/pandas/analysis/` | Directory | Pandas EDA on repo **`data/`** — see [labs/pandas/analysis/README.md](labs/pandas/analysis/README.md). |
+| `labs/classes/` | Directory | OOP exercises; see `basic_oop.py`. |
+| `requirements.txt` | Config | Direct dependencies (SQLAlchemy, Alembic, torch stack, Jupyter, etc.). |
+| `requirements-lock.txt` | Config | Full pinned environment (`python -m pip freeze`) for reproducible installs. |
+| `pyproject.toml` | Config | Local package metadata; `python -m pip install -e .` exposes `settings` and `database`. |
+| `setup_repo.sh` | Script | Optional setup (Linux/macOS/Git Bash): venv, deps, editable install, `.env` from example. |
+| `setup_repo.ps1` | Script | Same automation for **Windows PowerShell**. |
+| `.env` | Config | Local secrets and config — **not committed** (see `.gitignore`). |
+| `.env.example` | Config | Template for required variables (copy to `.env`). |
 
 ---
 
@@ -220,10 +217,10 @@ Then point **`sqlalchemy.url`** in **`alembic.ini`** (or **`env.py`**) at the sa
 
 From the repository root, with the venv activated and **`python -m pip install -e .`** run once so `import settings` works.
 
-| OS                    | Typical command                                                                                                        |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| **Linux** / **macOS** | e.g. `python3 labs/files/01_read_test.py`, `python labs/pandas/read_people.py`, `python3 labs/numpy/arithmetic/add.py` |
-| **Windows**           | e.g. `python labs\files\01_read_test.py`, `py labs\pandas\read_people.py`, `py labs\numpy\arithmetic\add.py`           |
+| File | Role | Description |
+| --- | --- | --- |
+| **Linux** / **macOS** | Platform | e.g. `python3 labs/files/01_read_test.py`, `python labs/pandas/io/read_people.py`, `python3 labs/numpy/arithmetic/add.py` |
+| **Windows** | Platform | e.g. `python labs\files\01_read_test.py`, `py labs\pandas\io\read_people.py`, `py labs\numpy\arithmetic\add.py` |
 
 Forward slashes work on Windows in current Python versions (`labs/files/01_read_test.py`).
 
@@ -231,36 +228,43 @@ Forward slashes work on Windows in current Python versions (`labs/files/01_read_
 
 Scripts use **`settings.FILES_PATH`**. Files are **numbered `01`–`18`** by suggested learning order (like `labs/pandas/basics/`). Full table: **[labs/files/README.md](labs/files/README.md)**.
 
-| Script                                       | Role                                                                   |
-| -------------------------------------------- | ---------------------------------------------------------------------- |
-| `01_read_test.py` / `02_write_test.py`       | Read/write `test.txt`                                                  |
-| `03_read_fruits.py` / `04_write_fruits.py`   | Read/write `test2.txt` (line list)                                     |
-| `05_read_student.py` / `06_write_student.py` | Read/write `student.txt` (CSV-style rows)                              |
-| `07_append_student.py`                       | Append rows to `student.txt`                                           |
-| `08_update_student.py`                       | Upsert a row in `student.txt` by `id`                                  |
-| `09_exist_folder.py`                         | Ensure a folder exists (`mkdir` with parents)                          |
-| `10_replace_file.py`                         | Ensure folder, replace or create a file (e.g. avatar path)             |
-| `11_append_log.py`                           | Append-mode demo writing to `birdwatch.txt` under **`FILES_PATH`**     |
-| `12_csv_read_write.py`                       | CSV `writer` / `reader` (output under **`CSV_PATH`**)                  |
-| `13_csv_dict_reader.py`                      | `csv.DictReader`                                                       |
-| `14_csv_dict_write.py`                       | `csv.DictWriter`                                                       |
-| `15_csv_tab_delimited.py`                    | Tab-separated values (`.tsv`)                                          |
-| `16_phone_directory.py`                      | Interactive phone book (`phone_directory.txt`)                         |
-| `18_password_secret_check.py`                | Compare `input()` to `SecretPasswordFile.txt` (`if` / `elif` / `else`) |
+| File | Role | Description |
+| --- | --- | --- |
+| `01_read_test.py` / `02_write_test.py` | Text I/O | Read/write `test.txt`. |
+| `03_read_fruits.py` / `04_write_fruits.py` | Text I/O | Read/write `test2.txt` (line list). |
+| `05_read_student.py` / `06_write_student.py` | Text I/O | Read/write `student.txt` (CSV-style rows). |
+| `07_append_student.py` | Append | Append rows to `student.txt`. |
+| `08_update_student.py` | Update | Upsert a row in `student.txt` by `id`. |
+| `09_exist_folder.py` | Filesystem | Ensure a folder exists (`mkdir` with parents). |
+| `10_replace_file.py` | Write | Ensure folder, replace or create a file (e.g. avatar path). |
+| `11_append_log.py` | Append | Append-mode demo writing to `birdwatch.txt` under **`FILES_PATH`**. |
+| `12_csv_read_write.py` | CSV | CSV `writer` / `reader` (output under **`CSV_PATH`**). |
+| `13_csv_dict_reader.py` | CSV | `csv.DictReader`. |
+| `14_csv_dict_write.py` | CSV | `csv.DictWriter`. |
+| `15_csv_tab_delimited.py` | CSV | Tab-separated values (`.tsv`). |
+| `16_phone_directory.py` | Interactive | Interactive phone book (`phone_directory.txt`). |
+| `18_password_secret_check.py` | Interactive | Compare `input()` to `SecretPasswordFile.txt` (`if` / `elif` / `else`). |
 
 ### `labs/pandas/`
 
-| Script           | Role                                                                                                                                                                                |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `read_people.py` | Load `people.csv` from **`settings.EXCEL_PATH`** into a DataFrame and print it                                                                                                      |
-| `stock.py`       | Load stock `.xlsx` from **`EXCEL_PATH`** with pandas (`openpyxl`)                                                                                                                   |
-| `cleaning.py`    | Tiny cleaning starter (`drop_duplicates`, type coercion, fillna)                                                                                                                    |
-| `features.py`    | Tiny feature-engineering starter (boolean and scaled numeric features)                                                                                                              |
-| `stats.py`       | Tiny descriptive-statistics starter (`mean`, `median`, `value_counts`)                                                                                                              |
-| `basics/`        | **55** numbered scripts (`01_head.py` … `55_compare_small_vs_large.py`); shared **`sample_data.py`** (`sample_df`, `sample_df_large`) — catalog: **`labs/pandas/basics/README.md`** |
-| `advanced/`      | Longer or dataset-heavy examples (mostly `exam_data.csv`; includes standalone Series arithmetic) — **`labs/pandas/advanced/README.md`**                                             |
+| File | Role | Description |
+| --- | --- | --- |
+| `io/read_people.py` | Pandas I/O | Load `people.csv` from **`settings.EXCEL_PATH`** into a DataFrame and print it. |
+| `io/stock.py` | Pandas I/O | Load stock `.xlsx` from **`EXCEL_PATH`** with pandas (`openpyxl`). |
+| `cleaning/quick_clean.py` | Cleaning | Tiny cleaning starter (`drop_duplicates`, type coercion, fillna). |
+| `cleaning/basic_cleaning.py` | Cleaning | Starter on **`people.csv`** (dedupe, coerce/fill `age`). |
+| `cleaning/*.py` | Cleaning | Step-by-step hospital-CSV cleaning topics. |
+| `features/derived_columns.py` | Features | Tiny feature-engineering starter (boolean and scaled numeric). |
+| `features/basic_features.py` | Features | In-memory DataFrame — string length, flags, scaled salary. |
+| `stats/people_summary.py` | Statistics | Descriptive stats on **`people.csv`** (`mean`, `median`, `value_counts`). |
+| `viz/` | Visualization | Matplotlib + pandas charts — **`labs/pandas/viz/README.md`**. |
+| `projects/` | Workflow | Small workflows — **`labs/pandas/projects/README.md`** (`basic_project.py`). |
+| `analysis/` | EDA | Pandas scripts on repo **`data/`** — **`labs/pandas/analysis/README.md`**. |
+| `settings` | Config / helpers | `load_students()`, `ITSE_STUDENTS_CSV`, `ITSE_STUDENTS_UPDATED_CSV` for ITSE-1003 demos. |
+| `basics/` | Topic track | **55** numbered scripts plus **7** roadmap scripts — **`labs/pandas/basics/README.md`**. |
+| `advanced/` | Topic track | Groupby, pivot, correlations, plotting, … — **`labs/pandas/advanced/README.md`**. |
 
-Scripts in `labs/pandas/` use short topic names at the repo root (no `pandas_` prefix). The **`basics/`** track is a beginner path; **`advanced/`** builds on similar ideas with more code per file. Study order: **`labs/pandas/index.md`**. Folder guide: **`labs/pandas/README.md`**.
+Scripts live in topic subfolders under `labs/pandas/`. Study order: **`labs/pandas/index.md`**. Overview: **`labs/pandas/README.md`**.
 
 `data/excel/people.csv` now includes richer columns for analysis practice: `name`, `age`, `city`, `department`, `salary`, `signup_date`, `is_active`.
 
@@ -268,43 +272,34 @@ Scripts in `labs/pandas/` use short topic names at the repo root (no `pandas_` p
 
 No extra package imports beyond **`numpy`**. One short runnable example per operation, grouped by subfolder (file names match the idea, e.g. `add.py`, `mean.py`, `reshape.py`, `dot.py`).
 
-| Subfolder      | What it covers                                                                                                 |
-| -------------- | -------------------------------------------------------------------------------------------------------------- |
-| `arithmetic/`  | Element-wise ops: `+`, `-`, `*`, `/`, power, modulo, `sqrt`, `exp`, `sin`, `log`                               |
-| `aggregation/` | `sum`, `mean`, `median`, `std`, `var`, `min`, `max`, `argmin`, `argmax`, `percentile`                          |
-| `shape/`       | `reshape`, transpose, `flatten`, `concatenate`, `split`, `ravel`, `expand_dims`, `squeeze`, `vstack`, `hstack` |
-| `linalg/`      | `dot`, determinant, `eye`, inverse, rank, eigenvalues, `solve`, norm, trace, outer product                     |
+| File | Role | Description |
+| --- | --- | --- |
+| `arithmetic/` | Subfolder | Element-wise ops: `+`, `-`, `*`, `/`, power, modulo, `sqrt`, `exp`, `sin`, `log`. |
+| `aggregation/` | Subfolder | `sum`, `mean`, `median`, `std`, `var`, `min`, `max`, `argmin`, `argmax`, `percentile`. |
+| `shape/` | Subfolder | `reshape`, transpose, `flatten`, `concatenate`, `split`, `ravel`, `expand_dims`, `squeeze`, `vstack`, `hstack`. |
+| `linalg/` | Subfolder | `dot`, determinant, `eye`, inverse, rank, eigenvalues, `solve`, norm, trace, outer product. |
 
 Run from the repo root, for example: `python3 labs/numpy/arithmetic/add.py`. Details and file lists: **`labs/numpy/README.md`**. Legacy: `basic_numpy.py`.
 
-### `labs/viz/`
-
-| Script                    | Role                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------- |
-| `basic_viz.py`            | Line chart written to **`data/gen/basic_viz.png`** (no GUI; `Agg` backend)            |
-| `viz_line_basic.py`       | Very basic line chart starter with matplotlib                                         |
-| `viz_bar_people_basic.py` | Bar chart of ages from **`people.csv`** (requires a display backend for `plt.show()`) |
-
 ### `labs/db/`
 
-| Script              | Role                                                                                                                                                                                          |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `init_school_db.py` | Create or overwrite **`data/sql/school.db`** from `school_schema.sql` + `school_seed.sql` (departments, rooms, teachers, students, guardians, courses, prerequisites, offerings, enrollments) |
+| File | Role | Description |
+| --- | --- | --- |
+| `init_school_db.py` | Database setup | Create or overwrite **`data/sql/school.db`** from `school_schema.sql` + `school_seed.sql` (departments, rooms, teachers, students, guardians, courses, prerequisites, offerings, enrollments). |
 
 ### Other topic folders
 
-Each folder has a **`basic_*.py`** starter and a **`README.md`** with details.
+Each folder has a **`basic_*.py`** starter and a **`README.md`** where applicable.
 
-| Folder           | Starter script                                        |
-| ---------------- | ----------------------------------------------------- |
-| `labs/cleaning/` | `basic_cleaning.py`                                   |
-| `labs/stats/`    | `basic_stats.py`                                      |
-| `labs/features/` | `basic_features.py`                                   |
-| `labs/eval/`     | `basic_metrics.py`                                    |
-| `labs/projects/` | `basic_project.py`                                    |
-| `labs/viz/`      | `basic_viz.py` (saves PNG; see also `viz_*_basic.py`) |
-| `labs/ml/`       | `basic_ml.py` (plus `ml_01` … `ml_03`)                |
-| `labs/classes/`  | `basic_oop.py`                                        |
+| File | Role | Description |
+| --- | --- | --- |
+| `labs/stats/` | Lab area | Starter: `basic_stats.py` (stdlib `statistics`). |
+| `labs/eval/` | Lab area | Starter: `basic_metrics.py`. |
+| `labs/ml/` | Lab area | Starter: `basic_ml.py`. |
+| `labs/pandas/analysis/` | Lab area | EDA over **`data/`** (`overview_data_inventory.py`, `analyze_*.py`). |
+| `labs/classes/` | Lab area | Starter: `basic_oop.py`. |
+
+Pandas-related starters (`basic_cleaning.py`, `basic_features.py`, `basic_project.py`, `viz/*.py`) live under **`labs/pandas/`** — see the **`labs/pandas/`** table above.
 
 ---
 

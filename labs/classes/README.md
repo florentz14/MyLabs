@@ -10,13 +10,13 @@ python3 labs/classes/basic_oop.py
 
 ## Scripts
 
-| File | What it covers |
-|------|----------------|
-| `basic_oop.py` | Entry point: `Person` with `__init__`, `greet()`, `__repr__` — minimal runnable example. |
-| `employee.py` | `Employee` with `__str__` vs `__repr__` for readable vs debug output. |
-| `person.py` | `@dataclass` `Person`; `User` → `Seller` / `Vendor` / `Student` — inheritance stacks, `from_dict`, email check. |
-| `invoice.py` | `InvoiceDetails` + `Invoice`; tax/discount math, line items, **`tabulate`** grid output (`pip install tabulate` or use project `requirements.txt`). |
-| `microwave.py` | Stateful `Microwave` simulator (timer, express cook, tick loop) — attributes and methods driving behavior. |
+| File | Role | Description |
+| --- | --- | --- |
+| `basic_oop.py` | OOP intro | Entry point: `Person` with `__init__`, `greet()`, `__repr__` — minimal runnable example. |
+| `employee.py` | String forms | `Employee` with `__str__` vs `__repr__` for readable vs debug output. |
+| `person.py` | Dataclass / inheritance | `@dataclass` `Person`; `User` → `Seller` / `Vendor` / `Student` — inheritance stacks, `from_dict`, email check. |
+| `invoice.py` | Domain model | `InvoiceDetails` + `Invoice`; tax/discount math, line items, **`tabulate`** grid output (`pip install tabulate` or project `requirements.txt`). |
+| `microwave.py` | Stateful object | `Microwave` simulator (timer, express cook, tick loop) — attributes and methods driving behavior. |
 
 ## Suggested order
 
@@ -28,14 +28,14 @@ python3 labs/classes/basic_oop.py
 
 ## Concepts checklist
 
-| Idea | Where to look |
-|------|----------------|
-| Constructors, instance attributes | `basic_oop.py`, `employee.py` |
-| `__repr__` vs `__str__` | `basic_oop.py`, `employee.py` |
-| `@dataclass`, `field(default_factory=…)` | `person.py` |
-| Inheritance / `super` patterns (implicit via dataclass) | `person.py` (`User`, `Seller`, `Vendor`, `Student`) |
-| Composition | `invoice.py` |
-| Encapsulation and state machines | `microwave.py` |
+| File | Role | Description |
+| --- | --- | --- |
+| Constructors, instance attributes | Concept | `basic_oop.py`, `employee.py` |
+| `__repr__` vs `__str__` | Concept | `basic_oop.py`, `employee.py` |
+| `@dataclass`, `field(default_factory=…)` | Concept | `person.py` |
+| Inheritance / `super` patterns (implicit via dataclass) | Concept | `person.py` (`User`, `Seller`, `Vendor`, `Student`) |
+| Composition | Concept | `invoice.py` |
+| Encapsulation and state machines | Concept | `microwave.py` |
 
 ## Dependencies
 
@@ -45,3 +45,8 @@ python3 labs/classes/basic_oop.py
 ## Related course work
 
 For a graded **pet management** mini-project (dogs, puppies, list loop), see **`labs/ITSE-1003/pet_management_system.py`** and **`labs/ITSE-1003/README.md`** (Lab 1).
+
+## Other labs
+
+- Tables and analysis: [../pandas/README.md](../pandas/README.md)
+- Text/CSV I/O (stdlib): [../files/README.md](../files/README.md)
