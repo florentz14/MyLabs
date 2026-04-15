@@ -1,11 +1,21 @@
-country_key,value
-USA,United States
-Canada,Canada
-Mexico,Mexico
-Brazil,Brazil
-Argentina,Buenos Aires
-Chile,Santiago
-Peru,Lima
-Colombia,Bogota
-Republica Dominicana,Santo Domingo
-Ecuador,Quito
+country_id,country_code,country_key,value
+1,USA,USA,United States
+2,CAN,Canada,Canada
+3,MEX,Mexico,Mexico
+4,BRA,Brazil,Brazil
+5,ARG,Argentina,Buenos Aires
+6,CHL,Chile,Santiago
+7,PER,Peru,Lima
+8,COL,Colombia,Bogota
+9,DOM,Republica Dominicana,Santo Domingo
+10,ECU,Ecuador,Quito
+11,URY,Uruguay,Montevideo
+12,PRY,Paraguay,Asuncion
+13,BOL,Bolivia,Sucre
+14,VEN,Venezuela,Caracas
+15,CRI,Costa Rica,San Jose
+16,PAN,Panama,Panama City
+17,GTM,Guatemala,Guatemala City
+18,HND,Honduras,Tegucigalpa
+19,SLV,El Salvador,San Salvador
+20,NIC,Nicaragua,Managua

@@ -8,7 +8,7 @@
 
 import pandas as pd
 
-
+# create a dataframe with the original index
 frame = pd.DataFrame(
     {
         "colors": ["blue", "green", "yellow", "red", "white"],
@@ -17,11 +17,13 @@ frame = pd.DataFrame(
     }
 )
 
+# reindex the dataframe with the new index
 frame = frame.reindex(
     range(5),
     method="ffill",
     columns=["colors", "price", "new", "object"],
 )
 
+# print the dataframe with the new index
 print("colors price new object")
 print(frame)

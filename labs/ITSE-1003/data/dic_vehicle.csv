@@ -1,2 +1,12 @@
-brand,model,year,color,price,is_new,is_used,is_electric,is_gasoline,is_diesel,is_hybrid
-Ford,Mustang,1964,red,10000,True,False,False,True,False,False
+vehicle_id,vehicle_code,brand,model,year,color,price,is_new,is_used,is_electric,is_gasoline,is_diesel,is_hybrid
+1,FOR-MUS-1964,Ford,Mustang,1964,red,10000,True,False,False,True,False,False
+2,TOY-COR-2020,Toyota,Corolla,2020,white,18000,False,True,False,True,False,False
+3,TES-M3-2023,Tesla,Model 3,2023,black,42000,True,False,True,False,False,False
+4,HON-CIV-2018,Honda,Civic,2018,blue,16000,False,True,False,True,False,False
+5,CHE-SIL-2021,Chevrolet,Silverado,2021,gray,35000,False,True,False,True,True,False
+6,HYU-ELA-2022,Hyundai,Elantra,2022,silver,21000,True,False,False,True,False,False
+7,KIA-NIR-2024,Kia,Niro,2024,green,29000,True,False,False,False,False,True
+8,NIS-LEA-2019,Nissan,Leaf,2019,white,17000,False,True,True,False,False,False
+9,BMW-X5-2017,BMW,X5,2017,black,33000,False,True,False,True,False,False
+10,AUD-A4-2016,Audi,A4,2016,red,24000,False,True,False,True,False,False
+11,VOL-GOL-2015,Volkswagen,Golf,2015,blue,14000,False,True,False,True,False,False

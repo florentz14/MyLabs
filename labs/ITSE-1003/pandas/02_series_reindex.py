@@ -8,8 +8,16 @@
 
 import pandas as pd
 
-
+# print the series with the original index
 ser = pd.Series([2, 5, 7, 4], index=["one", "two", "three", "four"])
-ser = ser.reindex(["three", "four", "five", "one"])
-
+print("\nOriginal series:")
 print(ser)
+
+# print the series with the new index
+ser = ser.reindex(["three", "four", "five", "one"])
+print("\nNew series:")
+print(ser)
+
+# print the series with the new index
+print("\nNew index:")
+print(ser.index)

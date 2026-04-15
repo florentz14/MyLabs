@@ -12,6 +12,8 @@ from config import data_file
 
 # step 1: load student rows from CSV
 df = pd.read_csv(data_file("students.csv"))
+
+# strip the column names
 df.columns = df.columns.str.strip()
 
 # step 2: print the full DataFrame
