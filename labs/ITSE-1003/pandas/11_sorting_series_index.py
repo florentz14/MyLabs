@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 11_sorting_series_index.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 11 sorting series index script.
+# Explanation: It explains 11 sorting series index script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 

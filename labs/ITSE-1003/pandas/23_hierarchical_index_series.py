@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 23_hierarchical_index_series.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 23 hierarchical index series script.
+# Explanation: It explains 23 hierarchical index series script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 

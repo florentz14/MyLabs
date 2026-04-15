@@ -1,10 +1,11 @@
-# -------------------------------------------------
-# File Name: labs/ITSE-1003/build_school_db.py
-# Author: Florentino Báez
-# Date: 3/21/2026
+# ------------------------------------------------------------ #
+# File: build_school_db.py
+# Date: 2026-04-15
+# Author: Florentino
 # Description: Build school.db from exam_data.csv (users + exam_scores).
+# Explanation: It explains build school.db from exam_data.csv (users + exam_scores) and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
 # Run from repo root: python3 labs/ITSE-1003/build_school_db.py
-# -------------------------------------------------
 
 from __future__ import annotations
 

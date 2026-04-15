@@ -1,11 +1,11 @@
-# -------------------------------------------------
-# File Name: pet_management_system.py
-# Author: Florentino Baez
-# Course: ITSE-1003
-# Professor: Mauricio Quiroga
-# Date: 18/03/2026
+# ------------------------------------------------------------ #
+# File: pet_management_system.py
+# Date: 2026-04-15
+# Author: Florentino
 # Description: Lab 1 - Mini project - Pet Management System using OOP.
-# -------------------------------------------------
+# Explanation: It explains lab 1 - mini project - pet management system using oop and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 
 class Dog:
     """Base class for a dog."""

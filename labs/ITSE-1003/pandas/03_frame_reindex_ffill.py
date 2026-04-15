@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 03_frame_reindex_ffill.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 03 frame reindex ffill script.
+# Explanation: It explains 03 frame reindex ffill script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 

@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 09_statistics_sum_mean.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 09 statistics sum mean script.
+# Explanation: It explains 09 statistics sum mean script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import numpy as np
 import pandas as pd
 

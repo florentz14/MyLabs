@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 29_io_api_basic_roundtrip.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 29 io api basic roundtrip script.
+# Explanation: It explains 29 io api basic roundtrip script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 from pathlib import Path
 
 import pandas as pd

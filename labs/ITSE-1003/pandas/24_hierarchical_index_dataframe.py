@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 24_hierarchical_index_dataframe.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 24 hierarchical index dataframe script.
+# Explanation: It explains 24 hierarchical index dataframe script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import numpy as np
 import pandas as pd
 

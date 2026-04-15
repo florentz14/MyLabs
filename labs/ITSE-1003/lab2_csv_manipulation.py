@@ -1,11 +1,11 @@
-# -------------------------------------------------
-# File Name: ITSE-1003/Lab2CSV/lab2_csv_manipulation.py
-# Author: Florentino Baez
-# Course: ITSE-1003 (Python for Data Science)
-# Professor: Mauricio Quiroga
-# Date: 3/27/2026
+# ------------------------------------------------------------ #
+# File: lab2_csv_manipulation.py
+# Date: 2026-04-15
+# Author: Florentino
 # Description: Lab 2 - CSV manipulation with csv.DictReader, summaries, filters, stretch output.
-# -------------------------------------------------
+# Explanation: It explains lab 2 - csv manipulation with csv.dictreader, summaries, filters, stretch output and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 
 # import csv module to read the csv file
 import csv

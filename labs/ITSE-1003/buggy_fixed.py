@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: buggy_fixed.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: Buggy fixed script.
+# Explanation: It explains buggy fixed script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 class BankAccount:
     def __init__(self, owner, balance):
         self.owner = owner

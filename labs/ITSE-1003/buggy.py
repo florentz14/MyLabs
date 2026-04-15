@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: buggy.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: Buggy script.
+# Explanation: It explains buggy script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 class BankAccount:
     def __init__(self, owner, balance):
         self.owner = owner

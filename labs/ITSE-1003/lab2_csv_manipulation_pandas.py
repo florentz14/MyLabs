@@ -1,12 +1,11 @@
-# -------------------------------------------------
-# File Name: ITSE-1003/Lab2CSV/lab2_csv_manipulation_pandas.py
-# Author: Florentino Baez
-# Course: ITSE-1003 (Python for Data Science)
-# Professor: Mauricio Quiroga
-# Date: 3/27/2026
+# ------------------------------------------------------------ #
+# File: lab2_csv_manipulation_pandas.py
+# Date: 2026-04-15
+# Author: Florentino
 # Description: Lab 2 - Same tasks as lab2_csv_manipulation.py using pandas (read_csv, filters, groupby).
+# Explanation: It explains lab 2 - same tasks as lab2_csv_manipulation.py using pandas (read_csv, filters, groupby) and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
 # Requires: pip install pandas
-# -------------------------------------------------
 
 from pathlib import Path
 from typing import cast

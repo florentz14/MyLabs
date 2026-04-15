@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 06_arithmetic_data_alignment.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 06 arithmetic data alignment script.
+# Explanation: It explains 06 arithmetic data alignment script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 

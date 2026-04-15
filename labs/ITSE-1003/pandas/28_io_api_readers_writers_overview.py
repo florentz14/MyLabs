@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 28_io_api_readers_writers_overview.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 28 io api readers writers overview script.
+# Explanation: It explains 28 io api readers writers overview script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 

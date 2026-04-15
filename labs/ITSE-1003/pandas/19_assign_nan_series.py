@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 19_assign_nan_series.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 19 assign nan series script.
+# Explanation: It explains 19 assign nan series script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import numpy as np
 import pandas as pd
 

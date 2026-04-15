@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 12_sorting_dataframe_index_axes.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 12 sorting dataframe index axes script.
+# Explanation: It explains 12 sorting dataframe index axes script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import numpy as np
 import pandas as pd
 

@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 26_stack_unstack_leveling.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 26 stack unstack leveling script.
+# Explanation: It explains 26 stack unstack leveling script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import numpy as np
 import pandas as pd
 

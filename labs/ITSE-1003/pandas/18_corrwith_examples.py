@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 18_corrwith_examples.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 18 corrwith examples script.
+# Explanation: It explains 18 corrwith examples script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 

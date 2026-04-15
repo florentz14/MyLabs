@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 17_correlation_covariance_dataframe.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 17 correlation covariance dataframe script.
+# Explanation: It explains 17 correlation covariance dataframe script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 

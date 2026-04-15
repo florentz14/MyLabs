@@ -1,12 +1,11 @@
-# -------------------------------------------------
+# ------------------------------------------------------------ #
 # File: lab2_csv_manipulation_rich.py
-# Author: Florentino Baez
-# Course: ITSE-1003 (Python for Data Science)
-# Professor: Mauricio Quiroga
-# Date: 2026-04-02
+# Date: 2026-04-15
+# Author: Florentino
 # Description: Lab 2 — same logic as lab2_csv_manipulation.py with Rich tables/panels.
+# Explanation: It explains lab 2 — same logic as lab2_csv_manipulation.py with rich tables/panels and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
 # Requires: pip install rich
-# -------------------------------------------------
 
 from __future__ import annotations
 

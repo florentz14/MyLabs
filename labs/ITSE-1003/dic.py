@@ -1,7 +1,11 @@
+# ------------------------------------------------------------ #
 # File: dic.py
-# Date: 2026-04-02
+# Date: 2026-04-15
 # Author: Florentino
 # Description: DictWriter → CSV under data/; read back with DictReader.
+# Explanation: It explains dictwriter → csv under data/; read back with dictreader and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 
 from __future__ import annotations
 

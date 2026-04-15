@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 21_dropna_dataframe.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 21 dropna dataframe script.
+# Explanation: It explains 21 dropna dataframe script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import numpy as np
 import pandas as pd
 

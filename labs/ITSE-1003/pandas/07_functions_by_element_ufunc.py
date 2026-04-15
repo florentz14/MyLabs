@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 07_functions_by_element_ufunc.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 07 functions by element ufunc script.
+# Explanation: It explains 07 functions by element ufunc script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import numpy as np
 import pandas as pd
 

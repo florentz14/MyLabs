@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 20_filter_dropna_series.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 20 filter dropna series script.
+# Explanation: It explains 20 filter dropna series script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import numpy as np
 import pandas as pd
 

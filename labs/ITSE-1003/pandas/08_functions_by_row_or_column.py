@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 08_functions_by_row_or_column.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 08 functions by row or column script.
+# Explanation: It explains 08 functions by row or column script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import numpy as np
 import pandas as pd
 

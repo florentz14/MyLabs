@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 05_dataframe_drop_rows_columns.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 05 dataframe drop rows columns script.
+# Explanation: It explains 05 dataframe drop rows columns script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import numpy as np
 import pandas as pd
 

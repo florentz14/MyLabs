@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 32_read_csv_multiindex.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 32 read csv multiindex script.
+# Explanation: It explains 32 read csv multiindex script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 from pathlib import Path
 
 import pandas as pd

@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 15_ranking_series.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 15 ranking series script.
+# Explanation: It explains 15 ranking series script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 

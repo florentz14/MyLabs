@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: panda_live_demo.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: Panda live demo script.
+# Explanation: It explains panda live demo script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 from config import data_file

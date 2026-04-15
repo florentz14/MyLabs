@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: panda_demo.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: Panda demo script.
+# Explanation: It explains panda demo script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 # step 1: create a dataset (dictionary)

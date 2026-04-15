@@ -1,3 +1,11 @@
+# ------------------------------------------------------------ #
+# File: 13_sorting_series_values.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: 13 sorting series values script.
+# Explanation: It explains 13 sorting series values script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
+
 import pandas as pd
 
 

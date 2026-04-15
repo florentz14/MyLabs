@@ -1,9 +1,14 @@
-# -------------------------------------------------
+# ------------------------------------------------------------ #
+# File: csv_crud_people.py
+# Date: 2026-04-15
+# Author: Florentino
+# Description: Csv crud people script.
+# Explanation: It explains csv crud people script and why it is useful in basic data analysis.
+# ------------------------------------------------------------ #
 # ITSE-1003 — CSV CRUD with stdlib csv.DictReader / csv.DictWriter
 # Schema matches data/people.csv (Id, Name, Age, Email, …).
 # Output: labs/ITSE-1003/generated/people.csv — see README.md
 # Use import_from_data_csv() to seed generated/ from data/people.csv.
-# -------------------------------------------------
 
 from __future__ import annotations
 
