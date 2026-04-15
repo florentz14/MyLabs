@@ -3,6 +3,7 @@
 # Date: 2026-04-02
 # Author: Florentino
 # Description: Compare sample_df() vs sample_df_large() quickly.
+# Explanation: It explains compare sample_df vs sample_df_large quickly and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

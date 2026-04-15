@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Explore a DataFrame with head, tail, info, describe, dtypes, and value_counts.
+# Explanation: It explains explore a DataFrame with head, tail, info, describe, dtypes, and value_counts and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

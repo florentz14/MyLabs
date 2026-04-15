@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Read a CSV into a DataFrame and export a copy.
+# Explanation: It explains read a CSV into a DataFrame and export a copy and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

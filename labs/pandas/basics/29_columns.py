@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Select and create columns in a DataFrame.
+# Explanation: It explains select and create columns in a DataFrame and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

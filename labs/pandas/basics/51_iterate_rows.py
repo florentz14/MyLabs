@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Iterate over DataFrame rows with iterrows().
+# Explanation: It explains iterate over DataFrame rows with iterrows and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Add a column from existing data (approximate birth year).
+# Explanation: It explains add a column from existing data and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

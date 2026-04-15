@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Insert a new color column into the DataFrame.
+# Explanation: It explains insert a new color column into the DataFrame and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

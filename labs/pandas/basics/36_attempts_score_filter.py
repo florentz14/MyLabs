@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Filter rows where attempts < 2 and score > 15.
+# Explanation: It explains filter rows where attempts < 2 and score > 15 and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

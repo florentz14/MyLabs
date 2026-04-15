@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Create a DataFrame from a NumPy array.
+# Explanation: It explains create a DataFrame from a NumPy array and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

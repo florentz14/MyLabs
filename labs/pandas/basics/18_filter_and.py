@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Combine boolean conditions with & (parentheses required).
+# Explanation: It explains combine boolean conditions with & and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Create a DataFrame with custom index labels.
+# Explanation: It explains create a DataFrame with custom index labels and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

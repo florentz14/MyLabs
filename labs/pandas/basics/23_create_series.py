@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Create a pandas Series with a custom index.
+# Explanation: It explains create a pandas Series with a custom index and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

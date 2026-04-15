@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Drop rows, columns, and duplicate rows.
+# Explanation: It explains drop rows, columns, and duplicate rows and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

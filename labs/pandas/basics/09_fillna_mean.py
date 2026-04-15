@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Replace NaN in a column with that column's mean.
+# Explanation: It explains replace NaN in a column with that column's mean and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

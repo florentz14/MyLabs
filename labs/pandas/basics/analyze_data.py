@@ -3,6 +3,7 @@
 # Date: 2026-04-12
 # Author: Florentino
 # Description: Basic track — head, info, describe, and value_counts.
+# Explanation: It explains basic track — head, info, describe, and value_counts and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

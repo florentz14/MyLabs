@@ -3,6 +3,7 @@
 # Date: 2026-04-12
 # Author: Florentino
 # Description: Basic track — Series index, dtype, and element-wise ops.
+# Explanation: It explains basic track — Series index, dtype, and element-wise ops and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

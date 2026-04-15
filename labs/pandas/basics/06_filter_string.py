@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Filter rows where a string column equals a value.
+# Explanation: It explains filter rows where a string column equals a value and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

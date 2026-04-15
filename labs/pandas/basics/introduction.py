@@ -3,6 +3,7 @@
 # Date: 2026-04-12
 # Author: Florentino
 # Description: Basic track — what pandas is and verify the install.
+# Explanation: It explains basic track — what pandas is and verify the install and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

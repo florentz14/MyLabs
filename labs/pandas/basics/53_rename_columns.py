@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Rename multiple DataFrame columns in one rename() call.
+# Explanation: It explains rename multiple DataFrame columns in one rename call and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

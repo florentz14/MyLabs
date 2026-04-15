@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Frequency counts and percentages with value_counts.
+# Explanation: It explains frequency counts and percentages with value_counts and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

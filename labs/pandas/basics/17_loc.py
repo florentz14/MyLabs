@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Select by label (index/column names) with loc.
+# Explanation: It explains select by label with loc and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

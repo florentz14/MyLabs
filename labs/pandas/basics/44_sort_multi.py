@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Sort the DataFrame by multiple columns.
+# Explanation: It explains sort the DataFrame by multiple columns and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

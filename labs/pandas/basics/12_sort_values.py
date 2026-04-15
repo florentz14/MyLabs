@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Sort rows by a column (sort_values).
+# Explanation: It explains sort rows by a column and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

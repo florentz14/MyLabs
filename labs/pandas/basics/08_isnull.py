@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Count missing values per column (isnull + sum).
+# Explanation: It explains count missing values per column and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

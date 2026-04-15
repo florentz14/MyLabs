@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Load exam_data.csv and select the first three rows.
+# Explanation: It explains load exam_data.csv and select the first three rows and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

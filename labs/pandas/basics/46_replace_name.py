@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Replace one specific value in the name column.
+# Explanation: It explains replace one specific value in the name column and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

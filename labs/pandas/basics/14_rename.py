@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Rename columns (rename).
+# Explanation: It explains rename columns and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Shared tiny DataFrame for pandas basics scripts.
+# Explanation: It explains shared tiny DataFrame for pandas basics scripts and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

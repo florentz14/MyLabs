@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Create a Series from a Python dictionary.
+# Explanation: It explains create a Series from a Python dictionary and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

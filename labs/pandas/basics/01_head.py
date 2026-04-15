@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Show the first n rows of a DataFrame (head).
+# Explanation: It explains show the first n rows of a DataFrame and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

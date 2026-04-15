@@ -3,6 +3,7 @@
 # Date: 2026-04-12
 # Author: Florentino
 # Description: Basic track — load a CSV into a DataFrame (repo data/excel).
+# Explanation: It explains basic track — load a CSV into a DataFrame and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

@@ -3,6 +3,7 @@
 # Date: 2026-04-12
 # Author: Florentino
 # Description: Basic track — DataFrame columns, dtypes, and selection.
+# Explanation: It explains basic track — DataFrame columns, dtypes, and selection and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

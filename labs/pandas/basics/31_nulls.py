@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Handle null values with isna, fillna, and dropna.
+# Explanation: It explains handle null values with isna, fillna, and dropna and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

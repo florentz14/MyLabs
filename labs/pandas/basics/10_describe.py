@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Summary statistics for numeric columns (describe).
+# Explanation: It explains summary statistics for numeric columns and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations

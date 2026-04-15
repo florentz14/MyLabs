@@ -3,6 +3,7 @@
 # Date: 2026-04-01
 # Author: Florentino
 # Description: Merge and concatenate DataFrames.
+# Explanation: It explains merge and concatenate DataFrames and why it is useful in basic data analysis.
 # ------------------------------------------------------------ #
 
 from __future__ import annotations
