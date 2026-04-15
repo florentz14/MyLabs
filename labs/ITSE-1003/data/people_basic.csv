@@ -1,0 +1,11 @@
+person_id,name,age,city,country,major,gpa,enrollment_date,is_active,study_hours_weekly,scholarship_pct,last_exam_score
+P001,Ana Rivera,21,San Juan,Puerto Rico,Computer Science,3.6,2023-08-15,True,14,25,88
+P002,Luis Perez,24,Ponce,Puerto Rico,Mathematics,3.2,2022-08-15,True,10,10,79
+P003,Marta Soto,19,Mayaguez,Puerto Rico,Biology,3.9,2024-01-10,True,16,40,93
+P004,Carlos Diaz,27,Arecibo,Puerto Rico,Economics,2.8,2021-08-20,False,6,0,65
+P005,Elena Cruz,22,Caguas,Puerto Rico,Computer Science,3.4,2023-01-12,True,12,20,84
+P006,Jorge Leon,30,Bayamon,Puerto Rico,Physics,,2020-08-15,False,5,0,58
+P007,Sofia Mendez,25,Carolina,Puerto Rico,Data Science,3.7,2022-01-11,True,15,30,91
+P008,Diego Morales,20,Humacao,Puerto Rico,Chemistry,2.9,2024-08-15,True,11,,72
+P009,Valeria Ortiz,23,Guaynabo,Puerto Rico,Mathematics,3.1,2021-01-10,True,9,15,76
+P010,Ricardo Vega,28,San Juan,Puerto Rico,Engineering,2.5,2019-08-15,False,4,0,61

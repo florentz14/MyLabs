@@ -1,0 +1,11 @@
+color,status,value,sample_size,error_rate,temperature_c,batch_date,region,sensor_id,notes,color_hex,color_rgb
+red,ok,10,120,0.01,22.5,2026-04-01,north,SEN-01,baseline,#FF0000,"255,0,0"
+red,bad,3,40,0.12,25.1,2026-04-01,north,SEN-01,calibration_needed,#FF0000,"255,0,0"
+blue,ok,8,98,0.02,21.7,2026-04-02,west,SEN-02,,#0000FF,"0,0,255"
+blue,bad,1,22,0.18,26.4,2026-04-02,west,SEN-02,high_variance,#0000FF,"0,0,255"
+green,ok,6,75,0.03,20.9,2026-04-03,east,SEN-03,stable,#008000,"0,128,0"
+green,bad,2,30,0.09,24.8,2026-04-03,east,SEN-03,,#008000,"0,128,0"
+yellow,ok,9,88,0.02,23.0,2026-04-04,south,SEN-04,new_sensor,#FFFF00,"255,255,0"
+yellow,bad,4,27,0.15,27.2,2026-04-04,south,SEN-04,outlier_detected,#FFFF00,"255,255,0"
+black,ok,7,64,0.04,22.1,2026-04-05,central,SEN-05,,#000000,"0,0,0"
+black,bad,2,19,0.20,28.3,2026-04-05,central,SEN-05,manual_review,#000000,"0,0,0"

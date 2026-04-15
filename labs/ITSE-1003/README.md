@@ -20,7 +20,11 @@ python3 labs/ITSE-1003/lab2_csv_manipulation.py
 python3 labs/ITSE-1003/lab2_csv_manipulation_pandas.py
 python3 labs/ITSE-1003/lab2_csv_manipulation_rich.py
 python3 labs/ITSE-1003/build_school_db.py
+python3 labs/ITSE-1003/csv_crud_people.py
+python3 labs/ITSE-1003/csv_crud_people.py demo
 ```
+
+**`csv_crud_people.py`** — stdlib **CSV CRUD** with **`csv.DictReader`** / **`csv.DictWriter`**. Schema matches **`data/people.csv`**. Writes **`generated/people.csv`** (not tracked). Running without arguments starts **`run_crud_menu()`** (interactive options); **`demo`** runs the scripted walkthrough. In code, **`import_from_data_csv()`** copies the sample CSV into `generated/` before editing.
 
 ## See also (pandas in this repo)
 
@@ -33,7 +37,7 @@ These CSVs are **independent** from `data/excel/` at the repo root (different sc
 - **`data/lab2_students.csv`** — Lab 2 still relies on **`Name`**, **`Age`**, **`Major`**, **`GPA`**. Also includes **`Last_Name`** and **`Email`** (a few empty cells for null practice). Also includes: **`Student_ID`**, **`Region`**, **`Study_Hours_Week`**, **`Credits_Current`**, **`Scholarship`**, **`Year_Enrolled`**, **`International`**, plus **`Country`**, **`Letter_Grade`**, **`Last_Exam_Date`**, **`Advisor_Email`**, **`Minor`**, **`Honors_Program`**, **`Commute_Minutes`** (intentional blanks for null-handling practice).
 - **`data/vehicles.csv`** — Original vehicle fields unchanged; added **`Owner_Type`**, **`Warranty_Months_Left`**, **`Recall_Open`**, **`Listed_Date`**, **`Discount_Pct`**, **`Inspection_Status`** (some cells empty).
 - **`data/exam_data.csv`** — Long format for **`build_school_db.py`**: first columns remain **`Student_ID`** … **`Teacher`** (SQLite load unchanged). Added **`Region`**, **`Country`**, **`Age`**, **`International`**, **`Online_Exam`**, **`Bonus_Points`**, **`Attendance_Pct`**, **`Lab_Section`**, **`Notes`** (extras ignored by the DB builder; use in pandas/SQL exercises).
-- **`data/people.csv`** — small helper sample; optional.
+- **`data/people.csv`** — small helper sample with unique **`Id`**, person fields, and extras **`Country`**, **`Department`** for filter/group practice; optional.
 
 Add new **source** CSV or TXT files under **`data/`** only. Anything produced by a script should land in **`generated/`** (or a subfolder you create there).
 

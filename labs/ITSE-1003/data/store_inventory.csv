@@ -1,0 +1,11 @@
+sku,item,category,brand,quantity,price,cost,supplier,received_date,expiry_date,warehouse,is_active,discount_pct,rating
+ST001,Notebook,Stationery,WriteWell,35,2.50,1.10,Supplier A,2026-03-01,,WH-A,True,0,4.3
+ST002,Pen,Stationery,InkPro,120,1.00,0.35,Supplier B,2026-02-15,,WH-A,True,5,4.1
+ST003,Backpack,Accessories,CarryMax,18,25.00,14.00,Supplier C,2026-01-20,,WH-B,True,10,4.7
+ST004,Marker,Stationery,InkPro,0,1.80,0.70,Supplier B,2026-03-10,,WH-A,True,0,3.9
+ST005,Laptop Stand,Electronics,DeskTech,12,32.00,19.50,Supplier D,2025-12-05,,WH-C,True,15,4.5
+ST006,USB Cable,Electronics,ByteLink,50,8.00,3.10,Supplier D,2026-02-01,,WH-C,True,0,4.0
+ST007,Water Bottle,Lifestyle,HydroGo,28,12.00,5.20,Supplier E,2026-03-12,,WH-B,False,20,4.2
+ST008,Snack Bar,Food,NutriPlus,90,1.50,0.60,Supplier F,2026-03-18,2026-10-10,WH-D,True,0,3.8
+ST009,Coffee Beans,Food,RoastLab,40,14.00,8.00,Supplier F,2026-02-28,2027-02-28,WH-D,True,5,4.6
+ST010,Desk Lamp,Electronics,LumaHome,15,29.00,17.00,Supplier G,2026-01-08,,WH-C,True,,4.4
