@@ -53,6 +53,8 @@ debugpy==1.8.20
 # --- CLI & UX ---
 rich==14.3.3
 tqdm==4.67.3
+# --- Labs (used in code) ---
+tabulate==0.10.0
 
 # --- Parsing & config files ---
 beautifulsoup4==4.14.3
@@ -60,5 +62,4 @@ jsonschema==4.26.0
 json5==0.14.0
 PyYAML==6.0.3
 
-# --- Labs (used in code) ---
-tabulate==0.10.0
+
