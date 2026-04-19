@@ -55,3 +55,4 @@ print(df['major'].value_counts())
 # step 10: Quick Analysis: Mean GPA by major
 print("\nQuick Analysis: Mean GPA by major?")
 print(df.groupby('major')['gpa'].mean())
+

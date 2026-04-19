@@ -1,14 +1,64 @@
-Id,Name,Age,Major,GPA,Email,City,Phone,Birth_Date, grade, grade_letter
-1,Alice Johnson,35,Computer Science,3.5,alice@email.com,New York,555-0101,1990-05-15, 90, A
-2,Bob Smith,28,Mathematics,3.8,bob@email.com,Los Angeles,555-0202,1985-12-25, 85, B
-3,Charlie Brown,42,Physics,4.0,charlie@email.com,Chicago,555-0303,2000-02-29, 100, C
-4,Diana Prince,31,Chemistry,3.2,diana@email.com,Houston,555-0404,1992-08-30, 92, D
-5,Eve Wilson,45,Biology,3.5,eve@email.com,Phoenix,555-0505,1975-11-12, 75, E
-6,Frank Miller,29,Economics,3.8,frank@email.com,Boston,555-0606,1994-07-18, 94, F
-7,Grace Lee,38,English,3.5,grace@email.com,Seattle,555-0707,1983-03-22, 83, G
-8,Henry Davis,51,History,3.8,henry@email.com,Miami,555-0808,1970-09-05, 70, H
-9,Iris Chen,26,Art,3.2,iris@email.com,Denver,555-0909,1996-04-14, 96, I
-10,Kevin Ortiz,22,Computer Science,2.1,kevin.ortiz@email.com,Austin,555-1010,2002-01-10, 55, F
-11,Mia Wong,20,Mathematics,2.4,mia.wong@email.com,Portland,555-1111,2004-06-20, 62, D
-12,Leo King,24,Physics,2.0,leo.king@email.com,Dallas,555-1212,2000-11-05, 68, D
-13,Nora Ali,19,Chemistry,1.9,nora.ali@email.com,Tampa,555-1313,2005-03-18, 45, F
+Id,Name,Age,Major,GPA,Email,City,Phone,Birth_Date,Grade,Grade_Letter
+1,Alice Johnson,35,Computer Science,3.5,alice@email.com,New York,555-0101,1990-05-15,90,A
+2,Bob Smith,28,Mathematics,3.8,bob@email.com,Los Angeles,555-0202,1985-12-25,85,B
+3,Charlie Brown,42,Physics,4.0,charlie@email.com,Chicago,555-0303,2000-02-29,100,C
+4,Diana Prince,31,Chemistry,3.2,diana@email.com,Houston,555-0404,1992-08-30,92,D
+5,Eve Wilson,45,Biology,3.5,eve@email.com,Phoenix,555-0505,1975-11-12,75,E
+6,Frank Miller,29,Economics,3.8,frank@email.com,Boston,555-0606,1994-07-18,94,F
+7,Grace Lee,38,English,3.5,grace@email.com,Seattle,555-0707,1983-03-22,83,G
+8,Henry Davis,51,History,3.8,henry@email.com,Miami,555-0808,1970-09-05,70,H
+9,Iris Chen,26,Art,3.2,iris@email.com,Denver,555-0909,1996-04-14,96,I
+10,Kevin Ortiz,22,Computer Science,2.1,kevin.ortiz@email.com,Austin,555-1010,2002-01-10,55,F
+11,Mia Wong,20,Mathematics,2.4,mia.wong@email.com,Portland,555-1111,2004-06-20,62,D
+12,Leo King,24,Physics,2.0,leo.king@email.com,Dallas,555-1212,2000-11-05,68,D
+13,Nora Ali,19,Chemistry,1.9,nora.ali@email.com,Tampa,555-1313,2005-03-18,45,F
+14,Alice,20,Biology,2.4,alice@student.week3,New York,555-0014,2006-06-15,59,F
+15,Bob,24,Physics,2.0,bob@student.week3,Los Angeles,555-0015,2002-06-15,51,F
+16,Carlos,20,Engineering,3.6,carlos@student.week3,Chicago,555-0016,2006-06-15,90,A
+17,Diana,22,Biology,2.5,diana@student.week3,Houston,555-0017,2004-06-15,63,D
+18,Elena,19,Mathematics,2.4,elena@student.week3,Phoenix,555-0018,2007-06-15,59,F
+19,Frank,22,Engineering,3.9,frank@student.week3,Boston,555-0019,2004-06-15,98,A
+20,Grace,21,Biology,2.2,grace@student.week3,Seattle,555-0020,2005-06-15,55,F
+21,Henry,21,Computer Science,4.0,henry@student.week3,Miami,555-0021,2005-06-15,100,A
+22,Isabel,22,Engineering,3.4,isabel@student.week3,Denver,555-0022,2004-06-15,85,B
+23,Jack,18,Biology,2.8,jack@student.week3,Austin,555-0023,2008-06-15,70,C
+24,Karen,18,Physics,3.4,karen@student.week3,New York,555-0024,2008-06-15,84,B
+25,Luis,21,Physics,2.6,luis@student.week3,Los Angeles,555-0025,2005-06-15,64,D
+26,Maria,19,Engineering,2.0,maria@student.week3,Chicago,555-0026,2007-06-15,50,F
+27,Nina,22,Biology,2.3,nina@student.week3,Houston,555-0027,2004-06-15,58,F
+28,Oscar,23,Engineering,2.7,oscar@student.week3,Phoenix,555-0028,2003-06-15,68,D
+29,Paula,22,Biology,3.8,paula@student.week3,Boston,555-0029,2004-06-15,96,A
+30,Quinn,19,Biology,3.3,quinn@student.week3,Seattle,555-0030,2007-06-15,82,B
+31,Rosa,19,Physics,3.6,rosa@student.week3,Miami,555-0031,2007-06-15,89,B
+32,Sam,23,Biology,3.3,sam@student.week3,Denver,555-0032,2003-06-15,82,B
+33,Tina,24,History,3.1,tina@student.week3,Austin,555-0033,2002-06-15,77,C
+34,Umar,19,History,4.0,umar@student.week3,New York,555-0034,2007-06-15,99,A
+35,Victor,18,Mathematics,3.2,victor@student.week3,Los Angeles,555-0035,2008-06-15,79,C
+36,Wendy,24,Engineering,2.2,wendy@student.week3,Chicago,555-0036,2002-06-15,55,F
+37,Xavier,22,Engineering,3.0,xavier@student.week3,Houston,555-0037,2004-06-15,74,C
+38,Yara,20,Mathematics,3.8,yara@student.week3,Phoenix,555-0038,2006-06-15,96,A
+39,Zane,21,Computer Science,3.1,zane@student.week3,Boston,555-0039,2005-06-15,77,C
+40,Aaron,23,Engineering,3.6,aaron@student.week3,Seattle,555-0040,2003-06-15,89,B
+41,Bianca,21,Biology,3.5,bianca@student.week3,Miami,555-0041,2005-06-15,87,B
+42,Cesar,23,Biology,2.0,cesar@student.week3,Denver,555-0042,2003-06-15,51,F
+43,Denise,22,Biology,3.7,denise@student.week3,Austin,555-0043,2004-06-15,92,A
+44,Ethan,24,Physics,2.2,ethan@student.week3,New York,555-0044,2002-06-15,56,F
+45,Fiona,25,History,3.2,fiona@student.week3,Los Angeles,555-0045,2001-06-15,79,C
+46,Gina,24,Computer Science,2.9,gina@student.week3,Chicago,555-0046,2002-06-15,72,C
+47,Hector,24,History,2.1,hector@student.week3,Houston,555-0047,2002-06-15,53,F
+48,Irene,21,Physics,3.2,irene@student.week3,Phoenix,555-0048,2005-06-15,80,B
+49,Jon,18,Computer Science,3.6,jon@student.week3,Boston,555-0049,2008-06-15,90,A
+50,Kylie,24,Engineering,3.7,kylie@student.week3,Seattle,555-0050,2002-06-15,93,A
+51,Leo,22,Biology,2.1,leo@student.week3,Miami,555-0051,2004-06-15,52,F
+52,Mona,21,Physics,3.6,mona@student.week3,Denver,555-0052,2005-06-15,89,B
+53,Nate,25,History,3.2,nate@student.week3,Austin,555-0053,2001-06-15,79,C
+54,Olivia,25,Biology,3.1,olivia@student.week3,New York,555-0054,2001-06-15,77,C
+55,Pablo,19,History,3.9,pablo@student.week3,Los Angeles,555-0055,2007-06-15,97,A
+56,Queen,24,Biology,3.0,queen@student.week3,Chicago,555-0056,2002-06-15,74,C
+57,Rafael,23,Physics,2.7,rafael@student.week3,Houston,555-0057,2003-06-15,68,D
+58,Sara,25,History,3.7,sara@student.week3,Phoenix,555-0058,2001-06-15,93,A
+59,Tom,20,Mathematics,3.7,tom@student.week3,Boston,555-0059,2006-06-15,92,A
+60,Uma,21,Biology,3.5,uma@student.week3,Seattle,555-0060,2005-06-15,87,B
+61,Vince,25,Biology,3.5,vince@student.week3,Miami,555-0061,2001-06-15,87,B
+62,Will,22,Engineering,2.0,will@student.week3,Denver,555-0062,2004-06-15,51,F
+63,Zoe,19,History,3.6,zoe@student.week3,Austin,555-0063,2007-06-15,89,B
