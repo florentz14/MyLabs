@@ -1,0 +1,25 @@
+Id,CompanyName,Address,Website,Email,Industry,HasWebsite
+4,BlueWave Marketing,210 Ocean Dr Miami FL,bluewavemarketing.com,contact@bluewavemarketing.com,Marketing,Yes
+1,Bright Tech Solutions,1200 Main St Houston TX,brighttech.com,contact@brighttech.com,Technology,Yes
+9,Cedar Legal Group,150 Justice Ave Phoenix AZ,cedarlegal.com,contact@cedarlegal.com,Legal,Yes
+27,City Courier Express,95 Delivery Ave Columbus OH,citycourierexpress.com,dispatch@citycourierexpress.com,Transportation,Yes
+18,ClearWater Plumbing,77 Pipe St Tampa FL,clearwaterplumbing.com,service@clearwaterplumbing.com,Home Services,Yes
+24,CloudBridge IT,880 Server St San Jose CA,cloudbridgeit.com,support@cloudbridgeit.com,Technology,Yes
+26,EcoHome Interiors,430 Green St Boulder CO,ecohomeinteriors.com,contact@ecohomeinteriors.com,Design,Yes
+10,Elite Fitness Hub,65 Power Rd Chicago IL,elitefitnesshub.com,info@elitefitnesshub.com,Fitness,Yes
+11,Golden State Repairs,700 Service St Los Angeles CA,goldenstaterepairs.com,support@goldenstaterepairs.com,Maintenance,Yes
+2,Green Leaf Organics,455 River Rd Austin TX,greenleaforganics.com,hello@greenleaforganics.com,Agriculture,Yes
+25,Harmony Dental,121 Smile Ave Nashville TN,harmonydental.com,care@harmonydental.com,Healthcare,Yes
+23,Harvest Moon Cafe,25 Lake Rd Madison WI,harvestmooncafe.com,hello@harvestmooncafe.com,Food,Yes
+15,Luna Travel Agency,910 Sunset Rd Orlando FL,lunatravel.com,bookings@lunatravel.com,Travel,Yes
+13,Metro Design Studio,412 Art St New York NY,metrodesignstudio.com,hello@metrodesignstudio.com,Design,Yes
+17,NorthStar Finance,333 Capital Ave Charlotte NC,northstarfinance.com,info@northstarfinance.com,Finance,Yes
+20,Pioneer Education Center,501 Learning Way Boston MA,pioneeredu.org,admin@pioneeredu.org,Education,Yes
+14,Prime Auto Sales,55 Highway Blvd San Antonio TX,primeautosales.com,info@primeautosales.com,Automotive,Yes
+8,Rapid Freight Lines,999 Cargo Ln Memphis TN,rapidfreight.com,dispatch@rapidfreight.com,Transportation,Yes
+22,Silverline Architects,640 Drafting Blvd San Diego CA,silverlinearch.com,info@silverlinearch.com,Architecture,Yes
+3,Skyline Builders,890 Market Ave Dallas TX,skylinebuilders.com,info@skylinebuilders.com,Construction,Yes
+29,Summit HR Partners,1000 People Plaza Dallas TX,,hr@summithrpartners.com,Human Resources,No
+7,Sunrise Bakery,14 Maple St Portland OR,,orders@sunrisebakery.com,Food,No
+6,Urban Health Clinic,78 Wellness Blvd Denver CO,urbanhealthclinic.com,care@urbanhealthclinic.com,Healthcare,Yes
+21,Vision Security Group,222 Shield Dr Las Vegas NV,visionsecurity.com,contact@visionsecurity.com,Security,Yes

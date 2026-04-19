@@ -1,0 +1,93 @@
+================================================================================
+ITSE-1003 — LAB 03: DATA SCIENCE
+Lab 3: Company Directory — Data Cleaning and Analysis (Pandas)
+================================================================================
+
+OBJECTIVE
+---------
+Practice Pandas on a company directory dataset:
+  • Load a CSV file
+  • Identify missing data
+  • Clean missing values
+  • Find duplicates
+  • Sort data
+  • Group data
+  • Basic analysis with Pandas
+
+DATA FILE
+---------
+  Source file:  data/companies_lab3.csv
+
+PROJECT FILES / DELIVERABLES (reference)
+-----------------------------------------
+  • Solution script:        week3_companies_lab3.py
+  • Exported cleaned CSV:   data/companies_lab3_cleaned.csv
+    (should include the HasWebsite column if the bonus is completed)
+
+INSTRUCTIONS — QUESTIONS (use Pandas)
+-------------------------------------
+1. Load the dataset into a Pandas DataFrame. Display the first 5 rows.
+
+2. Show how many missing values there are in each column.
+
+3. Remove rows with missing values in the Email column.
+
+4. Remove duplicate rows from the dataset.
+   Data note: if two rows match on every field except "Id", use
+   drop_duplicates with a subset that excludes "Id" so the same business
+   listed twice is treated as a duplicate. If the instructor requires plain
+   drop_duplicates() with no subset, only rows that are 100% identical
+   (including Id) count as duplicates.
+
+5. Sort the companies alphabetically by CompanyName.
+
+6. Sort the companies by Industry.
+
+7. Count how many companies belong to each industry using groupby.
+
+8. Show all companies that belong to the Technology industry.
+
+BONUS QUESTION (+5 extra points)
+--------------------------------
+Create a new column called HasWebsite:
+  • If the company has a website → value "Yes"
+  • If the company does not have a website → value "No"
+  (Treat empty strings and NaN in Website as "no website".)
+
+ADDITIONAL SUBMISSION REQUIREMENT (rubric)
+------------------------------------------
+EXPORT the cleaned data to a NEW CSV file (for example
+companies_lab3_cleaned.csv) after cleaning (and include the HasWebsite
+column if applicable).
+
+GRADING RUBRIC — LAB 3 (100 points + 5 bonus)
+---------------------------------------------
+Category                                                           Points
+---------------------------------------------------------------------------
+Correctly loads the CSV and displays the first 5 rows                  10
+Correctly identifies missing values in each column                    15
+Correctly removes rows with missing Email values                        15
+Correctly removes duplicate rows                                      15
+Correctly sorts by CompanyName                                        10
+Correctly sorts by Industry                                           10
+Correctly counts companies per Industry using groupby                 15
+Correctly filters and displays Technology companies                     10
+Code readability, comments, organization, proper Pandas syntax,
+  and EXPORT of the cleaned CSV                                         10
+---------------------------------------------------------------------------
+TOTAL                                                                  100
+
+BONUS: Creates HasWebsite column correctly using website availability    +5
+
+QUALITY GUIDELINES (recommended)
+--------------------------------
+  • Paths relative to the script (e.g. Path(__file__).parent / "data") so
+    the script runs regardless of the current working directory.
+  • Clear comments or sections for each question (1–8 and bonus).
+  • Printed output (print) so each answer can be verified when you run it.
+  • Idiomatic Pandas: read_csv, isnull/sum, dropna, drop_duplicates,
+    sort_values, groupby, boolean filtering, to_csv.
+
+================================================================================
+End of Lab 3 instructions
+================================================================================
