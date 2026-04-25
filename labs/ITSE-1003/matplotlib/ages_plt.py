@@ -1,4 +1,7 @@
+# description: distribution of ages of students
+
 import matplotlib.pyplot as plt
+
 
 ages = [25, 30, 35, 40, 45, 50, 55, 60, 65, 70]
 
