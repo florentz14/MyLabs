@@ -25,11 +25,11 @@ plt.figure(figsize=(10, 10), dpi=100)
 plt.pie(
     df_count, 
     labels=df_count.index.tolist(), 
-    autopct="%1.1f%%",
-    startangle=90,
+    autopct="%1.1f%%", # display the percentage of each slice
+    startangle=90, # start the pie chart at a 90 degree angle
     counterclock=False, # counterclockwise rotation
-    shadow=True, # add a shadow to the pie chart
-    explode=[0.1, 0.1, 0.1, 0.1, 0.1] # explode the slices
+    shadow=False, # add a shadow to the pie chart
+    explode=[0.1, 0.1, 0.1, 0.1, 0.1] # explode the slices to make them stand out (0.1 is 10% of the pie chart)
 )
 
 # add the title
