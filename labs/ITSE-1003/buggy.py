@@ -2,23 +2,35 @@
 # File: buggy.py
 # Date: 2026-04-15
 # Author: Florentino
-# Description: Buggy script.
-# Explanation: It explains buggy script and why it is useful in basic data analysis.
+# Description: Bank account hierarchy exercise (fixed version).
+# Explanation: Demonstrates inheritance, polymorphism and controlled
+# attribute access. Uses a single-underscore `_balance` so subclasses
+# can read it, and exposes a read-only `balance` property for callers.
 # ------------------------------------------------------------ #
+
 
 class BankAccount:
     def __init__(self, owner, balance):
         self.owner = owner
-        self.__balance = balance
+        self._balance = balance
+
+    @property
+    def balance(self):
+        return self._balance
 
     def deposit(self, amount):
-        # Ignora amount ≤ 0: deposit(-fee) no descuenta la comisión.
-        if amount > 0: #lack of : after if statement
-            self.__balance += amount
+        if amount > 0:
+            self._balance += amount
             print(amount, "deposited.")
 
+    def charge(self, amount):
+        """Deduct a positive amount (fees, withdrawals, etc.)."""
+        if amount > 0:
+            self._balance -= amount
+            print(amount, "charged.")
+
     def show_balance(self):
-        print("Balance:", self.__balance)
+        print("Balance:", self._balance)
 
     def monthly_update(self):
         print("General account update")
@@ -30,8 +42,7 @@ class SavingsAccount(BankAccount):
         self.interest_rate = interest_rate
 
     def monthly_update(self):
-        # __balance aquí es mangling de la subclase, no el saldo de BankAccount.
-        interest = self.__balance * self.interest_rate
+        interest = self._balance * self.interest_rate
         self.deposit(interest)
         print("Savings interest added.")
 
@@ -42,20 +53,16 @@ class CheckingAccount(BankAccount):
         self.fee = fee
 
     def monthly_update(self):
-        # deposit(-fee) no pasa el if amount > 0 del padre.
-        self.deposit(-self.fee)
+        self.charge(self.fee)
         print("Checking account fee charged.")
 
 
-account1 = SavingsAccount("Maria", 1000, 0.05)
-account2 = CheckingAccount("John", 800, 20)
+if __name__ == "__main__":
+    account1 = SavingsAccount("Maria", 1000, 0.05)
+    account2 = CheckingAccount("John", 800, 20)
 
-accounts = [account1, account2]
+    for account in (account1, account2):
+        account.monthly_update()
+        account.show_balance()
 
-# lack of : after for statement
-for account in accounts:
-    account.monthly_update()
-    account.show_balance()
-
-# __balance mangled: no accesible desde fuera → AttributeError.
-print(account1.__balance)
+    print("Maria's balance via property:", account1.balance)

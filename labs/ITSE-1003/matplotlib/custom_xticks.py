@@ -14,6 +14,4 @@ plt.title("Custom X and Y Ticks", fontsize=14, fontweight="bold")
 plt.xlabel("X Axis", fontsize=12)
 plt.ylabel("Y Axis", fontsize=12)
 
-# save before show so the file is written reliably
-plt.savefig("custom_xticks.png")
 plt.show()
