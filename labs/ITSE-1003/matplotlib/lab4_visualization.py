@@ -199,11 +199,11 @@ plt.pie(
 
 # Add a title and axis labels.
 plt.title("Category Distribution")
-plt.xlabel("Category")
-plt.ylabel("Frequency")
+#plt.xlabel("Category")
+#plt.ylabel("Frequency")
 
 # Add a grid.
-plt.grid(True, linestyle="--", alpha=0.5)
+#plt.grid(True, linestyle="--", alpha=0.5)
 
 # Keep the pie circular.
 plt.axis("equal")
