@@ -4,7 +4,7 @@ import pandas as pd
 
 # week 3 mini lab: read data.json and print the data
 
-_DATA_DIR = Path(__file__).resolve().parent / "data"
+_DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 # load the data set from students.csv (path works no matter the cwd)
 df = pd.read_csv(_DATA_DIR / "students.csv")

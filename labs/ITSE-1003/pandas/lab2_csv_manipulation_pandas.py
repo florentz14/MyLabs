@@ -12,8 +12,9 @@ from typing import cast
 
 import pandas as pd
 
-# Paths next to this script (works regardless of current working directory)
-_LAB_DIR = Path(__file__).resolve().parent
+# Paths anchored to the course root (parent of pandas/) so the script keeps
+# finding labs/ITSE-1003/data/ and labs/ITSE-1003/generated/ after the move.
+_LAB_DIR = Path(__file__).resolve().parent.parent
 _DATA_DIR = _LAB_DIR / "data"
 _GENERATED_DIR = _LAB_DIR / "generated"
 CSV_PATH = _DATA_DIR / "lab2_students.csv"
