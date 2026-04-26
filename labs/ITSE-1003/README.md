@@ -33,6 +33,111 @@ python3 labs/ITSE-1003/query_music_database.py
 
 **`csv_crud_people.py`** — stdlib **CSV CRUD** with **`csv.DictReader`** / **`csv.DictWriter`**. Schema matches **`data/people.csv`**. Writes **`generated/people.csv`** (not tracked). Running without arguments starts **`run_crud_menu()`** (interactive options); **`demo`** runs the scripted walkthrough. In code, **`import_from_data_csv()`** copies the sample CSV into `generated/` before editing.
 
+## Jupyter Lab — step-by-step (terminal)
+
+How to open this folder's notebooks (`matplotlib.ipynb`, `pandas/panda_live_demo_step.ipynb`, `pandas/panda_demo.ipynb`, …) from a terminal. Assumes you already completed [Setup](../../README.md#setup) at the repo root (created `.venv`, installed `requirements.txt`, ran `python -m pip install -e .`). **JupyterLab 4.5.6** is pinned in `requirements.txt` and `requirements-lock.txt`.
+
+### 1. Open a terminal at the repo root
+
+```bash
+cd ~/MyLabs   # or wherever you cloned MyLabs
+```
+
+All Jupyter commands below must be launched from here so notebooks can resolve paths like `data/`, `labs/ITSE-1003/data/`, and `labs/ITSE-1003/matplotlib/generated/`.
+
+### 2. Activate the virtual environment
+
+| OS / shell | Command |
+| --- | --- |
+| Linux / macOS — bash, zsh | `source .venv/bin/activate` |
+| Linux / macOS — fish | `source .venv/bin/activate.fish` |
+| Windows — PowerShell | `.\.venv\Scripts\Activate.ps1` |
+| Windows — CMD | `.venv\Scripts\activate.bat` |
+
+Your prompt should now show **`(.venv)`**.
+
+### 3. Verify Jupyter is installed (one-time check)
+
+```bash
+jupyter lab --version
+```
+
+Should print **`4.5.6`**. If the command is missing, install dependencies into the active venv:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Launch Jupyter Lab
+
+```bash
+jupyter lab
+```
+
+What happens:
+
+- A local server starts on `http://localhost:8888/lab`.
+- Your default browser opens automatically.
+- The terminal also prints a fallback URL with a token (`http://localhost:8888/lab?token=…`). Copy that line if the browser does not open or you are on a remote machine.
+
+Useful flags:
+
+| Flag | Use case |
+| --- | --- |
+| `--no-browser` | Start the server but skip auto-opening the browser (typical on remote machines). |
+| `--port=8889` | Use a non-default port when `8888` is already busy. |
+| `--ip=0.0.0.0` | Listen on all interfaces (only when you intentionally want external access). |
+| `--notebook-dir=labs/ITSE-1003` | Restrict the file browser to a subfolder. |
+
+### 5. Open a notebook
+
+In the JupyterLab file browser (left sidebar), navigate to:
+
+- **`labs/ITSE-1003/matplotlib.ipynb`** — Lab 4 visualisation walkthrough.
+- **`labs/ITSE-1003/pandas/panda_live_demo_step.ipynb`** — pandas live demo (step-by-step).
+- **`labs/ITSE-1003/pandas/panda_demo.ipynb`** — pandas quick demo.
+
+Double-click the file to open it.
+
+### 6. Pick the right kernel
+
+Top-right of the notebook → click the kernel name → select the one pointing at `.venv/bin/python` (typically shown as **`Python 3 (ipykernel)`** when you launched JupyterLab from the activated venv). This is required so `seaborn`, `matplotlib`, `pandas`, … import correctly.
+
+If no `.venv` kernel is listed, register one once (with the venv activated):
+
+```bash
+python -m ipykernel install --user --name mylabs --display-name "Python (MyLabs .venv)"
+```
+
+Then refresh the page and pick **Python (MyLabs .venv)**.
+
+### 7. Run cells
+
+| Action | Shortcut |
+| --- | --- |
+| Run current cell and advance | `Shift` + `Enter` |
+| Run current cell, stay | `Ctrl` + `Enter` (`Cmd` + `Enter` on macOS) |
+| Run all cells | Menu *Run* → *Run All Cells* |
+| Restart kernel (clears variables) | Menu *Kernel* → *Restart Kernel…* |
+| Restart and run all | Menu *Kernel* → *Restart Kernel and Run All Cells…* |
+
+### 8. Stop the server
+
+- In the JupyterLab tab: **File → Shut Down**.
+- Or in the terminal: press **`Ctrl` + `C`**, then confirm with **`y`**.
+
+When you are done, leave the venv with **`deactivate`**.
+
+### Common issues
+
+| Symptom | Fix |
+| --- | --- |
+| `command not found: jupyter` | The venv is not activated or `jupyterlab` is in another interpreter. Re-activate, then `python -m pip install -r requirements.txt`. |
+| `ModuleNotFoundError` inside a cell | Wrong kernel selected. Repeat step 6 and pick the `.venv` kernel. |
+| `Address already in use` on port 8888 | Another Jupyter instance is running. Reuse it, or launch with `jupyter lab --port=8889`. |
+| Browser does not open | Copy the `http://localhost:…/?token=…` line from the terminal into your browser manually. |
+| `NameError: name '__file__' is not defined` | Notebooks have no `__file__`. Use `Path.cwd()`-based paths (see how `matplotlib.ipynb` resolves `DATA_PATH` / `OUTPUT_DIR`). |
+
 ## See also (pandas in this repo)
 
 Short demos that use this course’s **`students.csv`** via **`settings`** (`ITSE_STUDENTS_CSV`, **`load_students()`**): **`labs/pandas/io/`**, **`inspect/`**, **`select/`**, **`filter/`**, and related folders. Guide: [../pandas/README.md](../pandas/README.md) and [../pandas/index.md](../pandas/index.md).
