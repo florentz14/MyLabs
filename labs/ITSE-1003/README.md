@@ -17,7 +17,7 @@ From the repository root:
 ```bash
 python3 labs/ITSE-1003/pet_management_system.py
 python3 labs/ITSE-1003/lab2_csv_manipulation.py
-python3 labs/ITSE-1003/lab2_csv_manipulation_pandas.py
+python3 labs/ITSE-1003/pandas/lab2_csv_manipulation_pandas.py
 python3 labs/ITSE-1003/lab2_csv_manipulation_rich.py
 python3 labs/ITSE-1003/build_school_db.py
 python3 labs/ITSE-1003/csv_crud_people.py
@@ -133,7 +133,7 @@ In this lab you practice reading a CSV file, accessing values by column name, pe
 ### Instructions
 
 1. Keep `lab2_students.csv` under **`data/`** (with the other course CSV files).  
-2. Implement the tasks in `lab2_csv_manipulation.py` (and optionally `lab2_csv_manipulation_pandas.py` or **`lab2_csv_manipulation_rich.py`** for terminal tables via **Rich**).  
+2. Implement the tasks in `lab2_csv_manipulation.py` (and optionally `pandas/lab2_csv_manipulation_pandas.py` or **`lab2_csv_manipulation_rich.py`** for terminal tables via **Rich**).  
 3. Complete all tasks in one program unless the instructor says otherwise.  
 4. Add clear comments before each task.  
 5. Submit your Python file and a screenshot of your output.
