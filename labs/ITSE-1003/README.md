@@ -9,6 +9,8 @@ Scripts for labs and assignments live in this folder. **Source datasets live in 
 | `labs/ITSE-1003/` | Course folder | Python scripts (`.py`) and this **README**. |
 | `data/` | Inputs | Source CSV and other input data only (not generated outputs). |
 | `generated/` | Outputs | Files created when you run labs (e.g. `lab2_summary*.txt`, `school.db`) — excluded from the repository. |
+| `pandas/` | Subfolder | Pandas demos and labs (`lab2_csv_manipulation_pandas.py`, `week3_students_pandas_lab.py`, `panda_demo*.py`/`.ipynb`, `panda_live_demo*.py`, plus 32 numbered topic scripts `01_*..32_*`). |
+| `matplotlib/` | Subfolder | Lab 4 main script (`lab4_visualization.py`) plus a curated gallery of standalone matplotlib examples — see [Matplotlib gallery](#matplotlib-gallery). |
 
 ## Run examples
 
@@ -23,6 +25,7 @@ python3 labs/ITSE-1003/build_school_db.py
 python3 labs/ITSE-1003/csv_crud_people.py
 python3 labs/ITSE-1003/csv_crud_people.py demo
 python3 labs/ITSE-1003/week3_companies_lab3.py
+python3 labs/ITSE-1003/matplotlib/lab4_visualization.py
 python3 labs/ITSE-1003/music_database.py
 python3 labs/ITSE-1003/seed_music_database.py
 python3 labs/ITSE-1003/query_music_database.py
@@ -253,6 +256,68 @@ python3 labs/ITSE-1003/week3_companies_lab3.py
 
 ---
 
+## Lab 4 — Data Visualization (Matplotlib + Seaborn)
+
+**Course:** Python for Data Science  
+**Dataset:** `data/lab4_data.csv` (`Day`, `Sales`, `Profit`, `Expenses`, `Category`)  
+**Main file:** `matplotlib/lab4_visualization.py`  
+**Bonus output:** `matplotlib/generated/lab4_bonus_sales.png` (saved at 300 dpi).
+
+### Lab 4 overview
+
+Builds nine required charts from one CSV plus a customised bonus figure. Each part lives in its own banner-commented section in `lab4_visualization.py` and is rendered as a separate Matplotlib figure (a single `plt.show()` at the end displays them all).
+
+### Tasks (mapped to the lab handout)
+
+1. **Data Setup** — `pd.read_csv`, `df.head()`, `df.columns`, `df.dtypes`.
+2. **Line chart** — daily Sales trend (`plt.plot(df["Day"], df["Sales"])`).
+3. **Bar chart** — daily Profit (`plt.bar(df["Day"], df["Profit"])`).
+4. **Histogram** — Sales distribution with `bins=6`.
+5. **Scatter plot** — Profit vs Expenses (positive correlation observed).
+6. **Pie chart** — Category share via `df["Category"].value_counts()` and `autopct='%1.1f%%'`.
+7. **Box plot** — Sales / Profit / Expenses spread; uses `tick_labels=` (matplotlib 3.9+).
+8. **Heatmap (Seaborn)** — `df.drop(columns=["Category"]).corr()` rendered with `sns.heatmap(corr, annot=True, cmap="coolwarm")`.
+9. **Subplots** — line + pie in a single figure with `plt.subplot(1,2,*)` and `plt.tight_layout()`.
+
+**Bonus.** Customised daily-sales bar chart (per-bar colours, rotated x-ticks, custom tick interval, y-axis grid) saved as PNG with `plt.savefig(..., dpi=300)`.
+
+### Run Lab 4
+
+```bash
+python3 labs/ITSE-1003/matplotlib/lab4_visualization.py
+```
+
+Requires **matplotlib**, **pandas**, **seaborn**. The repo's `.venv` already includes them; if not, `python -m pip install -r requirements.txt` from the repo root.
+
+### Matplotlib gallery
+
+`labs/ITSE-1003/matplotlib/` also contains standalone examples that go beyond the lab. Each is self-contained, runs with `python3 labs/ITSE-1003/matplotlib/<file>.py`, and uses the same banner-comment header style.
+
+| File | Topic |
+| --- | --- |
+| `lab4_visualization.py` | The Lab 4 main script (all 9 parts + bonus). |
+| `2plotgeneration.py` | Three subplots (line, bar, pie) sharing the same dataset. |
+| `animal_speeds_bar.py` | `bar_label` with a callable `fmt=` (mph → km/h). |
+| `bakery_recipe_donut.py` | Donut chart with elbow-style annotation callouts. |
+| `bakery_recipe_pie.py` | Pie chart with combined `%`+absolute labels and external legend. |
+| `cat_vs_dog_moods.py` | Line plot with strings on **both** axes. |
+| `categorical_three_views.py` | Same data shown as bar, scatter, line in `sharey` subplots. |
+| `error_band_along_curve.py` | 2D normal-aware error band along a parametric curve. |
+| `gelato_sales_bar.py` | `bar_label fmt='{:,.0f}'` thousand-separator formatting. |
+| `likert_survey_stacked.py` | Horizontal stacked Likert chart with RdYlGn diverging palette. |
+| `penguins_above_avg_mass.py` | Stacked bars with mathtext (`$\\mu$`) in tick labels. |
+| `penguins_attributes_grouped_bar.py` | Grouped bar chart via offset positions. |
+| `penguins_stacked_bar.py` | Stacked bar chart counting penguins by sex. |
+| `people_performance_barh.py` | Horizontal bars with `xerr` and value labels. |
+| `people_performance_barh_errlabels.py` | Variant labelling each bar with `±err`. |
+| `scatter_3d_two_groups.py` | 3D scatter with two clusters and different markers. |
+| `sine_wave_simple.py` | Sine wave + `fig.savefig()` to PNG. |
+| `wireframe_animated_phase.py` | Animated 3D wireframe using `plt.pause()` (needs an interactive backend). |
+
+Existing helper scripts in the same folder (`basic_plot.py`, `boxplot.py`, `pie_chart.py`, `headmap.py`, `headmap_seaborn.py`, etc.) remain as warm-up / class-demo references.
+
+---
+
 ## Lab — SQLite Music Database (artists / genres / albums)
 
 **Files:**
@@ -294,7 +359,7 @@ Both `seed_music_database.py` and `query_music_database.py` accept `--db PATH` t
 
 ## Future labs
 
-When Lab 4, Lab 5, … are assigned, add a new section here using the same pattern as Lab 2/Lab 3:
+When **Lab 5**, **Lab 6**, … are assigned, add a new section here using the same pattern as Lab 2 / Lab 3 / Lab 4:
 
 `## Lab N — Title`
 
