@@ -176,6 +176,14 @@ plt.tight_layout()
 # Count the number of days in each category (returns a pandas Series).
 category_counts = df["Category"].value_counts()
 
+# Convert the category labels to a list.
+category_labels = category_counts.index.tolist()
+
+# print the counts for each category
+print("\nCategory counts:")
+for cat, count in zip(category_labels, category_counts):
+    print(f"  {cat}: {count}")
+
 # Create a figure with a specific size.
 plt.figure(figsize=(7, 7))
 
@@ -185,7 +193,7 @@ pie_colors = ["#4c72b0", "#dd8452", "#55a467"]
 # Plot the category distribution: Series for values, Index for labels.
 plt.pie(
     category_counts,
-    labels=category_counts.index.tolist(),
+    labels=category_labels,
     autopct="%1.1f%%",
     colors=pie_colors,
     startangle=90,
@@ -293,7 +301,7 @@ plt.subplot(1, 2, 2)
 # Plot the category distribution (reuse pie_colors from Part 6).
 plt.pie(
     category_counts,
-    labels=category_counts.index.tolist(),
+    labels=category_labels,
     autopct="%1.1f%%",
     colors=pie_colors,
     startangle=90,
