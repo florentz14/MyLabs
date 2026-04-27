@@ -70,3 +70,4 @@ data/export/pandas_score_vs_study_hours.png
 # ITSE-1003: outputs from lab scripts (summaries, SQLite build, exports)
 labs/ITSE-1003/generated/*
 !labs/ITSE-1003/generated/.gitkeep
+labs/ITSE-1003/data/generated/
