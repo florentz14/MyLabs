@@ -170,7 +170,6 @@ plt.tight_layout()
 # Part 6: Pie Chart (Category distribution)  -- ALTERNATIVE 1
 # Porpose: Show the distribution of categories.
 # Alternative: Pass the pandas Series and its Index directly to plt.pie().
-# No .to_numpy() / .tolist() conversions are needed at runtime.
 # ----------------------------------------------------------------------------
 
 # Count the number of days in each category (returns a pandas Series).
